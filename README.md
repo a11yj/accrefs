@@ -21,14 +21,16 @@ Sass を利用しています。`src/style/**/*.scss`を修正してください
 
 ### 記事の修正
 
-Markdown を利用しています。`src/md/post/*.md`を修正してください。タグを増やす場合は `src/md/tag/` に、他のタグファイルと体裁を合わせて保存してください。mdファイルの中身はYAMLブロックしかありません。下記が雛形です。
+Markdown を利用しています。`src/md/post/*.md`を修正してください。
+
+タグを増やす場合は `src/md/tag/` に、他のタグファイルと体裁を合わせて保存してください。mdファイルの中身はYAMLブロックしかありません。下記が雛形です。
 
 ```yaml
 ---
-layout: './src/html/tag.pug' /*変えない*/
-type: 'tag' /*変えない*/
-title: 'Webアクセシビリティとは？的なもの' /*日本語タグ名*/
-name: 'introduction_to_web_accessibility' /*safe urlなタグ名*
+layout: './src/html/tag.pug' # 変えない
+type: 'tag' # 変えない
+title: 'Webアクセシビリティとは？的なもの' # 日本語タグ名
+name: 'introduction_to_web_accessibility' # safe urlなタグ名
 ---
 ```
 
