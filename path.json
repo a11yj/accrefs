@@ -5,6 +5,7 @@
     "feed": "src/md/feed.md",
     "post": "src/md/post/*.md",
     "tag": "src/md/tag/*.md",
+    "md": "src/md/**/*.md",
     "html": "src/html/**/*.pug",
     "html_ignore": "!src/html/**/_*.pug",
     "style": "src/style/**/*.scss",

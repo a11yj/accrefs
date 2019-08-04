@@ -24,7 +24,7 @@ const build_feed = require('./task/feed')
 
 // watch
 const watch = done => {
-  gulp.watch(path.src.html, gulp.series(
+  gulp.watch([path.src.html, path.src.md], gulp.series(
     build_html_home,
     build_html_tags,
     build_feed)
