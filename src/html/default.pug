@@ -1,0 +1,20 @@
+doctype html
+html(lang='ja')
+  head
+    meta(charset='UTF-8')
+    meta(content='viewport-fit=cover, width=device-width, initial-scale=1' name='viewport')
+    title accrefs
+
+  body(class= page_type)
+    header.Header(role='banner')
+      .Header__inner
+        hgroup.Header__hgroup
+          h1.Header__heading accrefs
+          h2.Header__subheading Webアクセシビリティ関連の資料まとめ
+
+    main.contents(role='main')
+      block contents
+
+    footer.Footer(role='contentinfo')
+      .Footer__inner
+        p.Footer__credit このウェブサイトはA11YJ Slackメンバーと有志の協力によって制作されました

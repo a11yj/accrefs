@@ -1,0 +1,27 @@
+doctype xml
+rss(version='2.0',
+    xmlns:atom='http://www.w3.org/2005/Atom',
+    xmlns:content='http://purl.org/rss/1.0/modules/content/',
+    xmlns:creativeCommons='http://blogs.law.harvard.edu/tech/creativeCommonsRssModule')
+  channel
+    title=blog_name
+    link=blog_url
+    description=('<![CDATA['+blog_description+']]>')
+    language ja-JP
+    pubdate=(new Date())
+    lastbuilddate=(new Date())
+    docs http://blogs.law.harvard.edu/tech/rss
+    generator Node.js v12.7.0
+    managingeditor=blog_address+' ('+blog_author+')'
+    webmaster=blog_address+' ('+blog_author+')'
+    atom:link(href=blog_url+'feed', rel='self', type='application/rss+xml')/
+    creativeCommons:license https://creativecommons.org/licenses/by-nc/4.0/deed.ja
+
+    each post, i in archives
+      item
+        title=post.page_title
+        link=blog_url+archives_base+post.page_id+'.html'
+        description=post.page_description
+        pubdate=(new Date(post.page_datetime))
+        guid(isPermaLink='true')=blog_url+archives_base+post.page_id+'.html'
+        //- content:encoded=('<![CDATA['+post.page_body+']]>')
