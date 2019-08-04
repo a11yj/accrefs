@@ -1,5 +1,4 @@
 ---
-layout: ./src/html/post.pug
 type: 'post'
 title: 'これでわかる！Webアクセシビリティって？JIS X 8341-3って？'
 tags:

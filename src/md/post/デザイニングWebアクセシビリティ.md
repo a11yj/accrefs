@@ -1,5 +1,4 @@
 ---
-layout: ./src/html/post.pug
 type: 'post'
 title: 'デザイニングWebアクセシビリティ'
 tags:
