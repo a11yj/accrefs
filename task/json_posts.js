@@ -17,11 +17,7 @@ const build_posts_json = () => {
     .pipe(frontMatter())
     .pipe(listStream.obj((err, data) => {
       if (err) throw err
-      const json = {
-        posts: data.map(post => post.frontMatter)
-      }
-
-      fs.writeFileSync(`${path.src.json}posts.json`, jsonPretty(json))
+      fs.writeFileSync(`${path.src.json}posts.json`, jsonPretty({posts: data.map(post => post.frontMatter)}))
     }))
     .pipe(browserSync.stream())
 }
