@@ -19,13 +19,7 @@ const build_home_html = () => {
     .pipe(frontMatter())
     .pipe(md())
     .pipe(layout(function(file) {
-      const data = file.frontMatter
-      return {
-        data,
-        ...path,
-        ...posts,
-        ...tags
-      }
+      return Object.assign(file.frontMatter, {path: path}, posts, tags)
     }))
     .pipe(prettify({indent_char: ' ', indent_size: 2}))
     .pipe(gulp.dest(path.dist.html))
