@@ -40,7 +40,8 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
     "json-pretty": "0.0.1",
-    "list-stream": "^1.0.1"
+    "list-stream": "^1.0.1",
+    "pug-cli": "^1.0.0-alpha6"
   },
   "scripts": {
     "start": "gulp"
