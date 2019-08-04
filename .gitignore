@@ -2,3 +2,4 @@
 .sass-cache
 npm-debug.log
 node_modules
+src/json/
