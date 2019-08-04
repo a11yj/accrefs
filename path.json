@@ -1,0 +1,17 @@
+{
+  "root": "docs/",
+  "src": {
+    "html": "src/html/**/*.pug",
+    "html_ignore": "!src/html/**/_*.pug",
+    "style": "src/style/**/*.scss",
+    "script": "src/script/**/*.js",
+    "image": "src/image/**/*",
+    "json": "src/json/"
+  },
+  "dist": {
+    "html": "docs/",
+    "style": "docs/asset/style",
+    "script": "docs/asset/script",
+    "image": "docs/asset/image"
+  }
+}
