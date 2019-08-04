@@ -19,6 +19,8 @@ const build_tags_html = () => {
     .pipe(frontMatter())
     .pipe(md())
     .pipe(layout(function(file) {
+      // ファイル名をタグの name に差し替える
+      file.basename = file.frontMatter.name
       return Object.assign(file.frontMatter, {path: path}, posts, tags)
     }))
     .pipe(prettify({indent_char: ' ', indent_size: 2}))
