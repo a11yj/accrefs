@@ -5,7 +5,6 @@ const browserSync = require('browser-sync')
 const sass = require('gulp-sass')
 const autoprefixer = require('autoprefixer')
 const glob = require('gulp-sass-glob')
-const notify = require('gulp-notify')
 const plumber = require('gulp-plumber')
 const postcss = require('gulp-postcss')
 const csswring = require('csswring')
@@ -16,9 +15,7 @@ const build_style = () => {
   return gulp.src(path.src.style , {
     sourcemaps: true
   })
-    .pipe(plumber({
-      errorHandler: notify.onError('Error: <%= error.message %>'),
-    }))
+    .pipe(plumber())
     .pipe(glob())
     .pipe(sass({
       outputStyle: 'compressed'
