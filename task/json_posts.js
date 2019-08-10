@@ -16,8 +16,18 @@ const build_posts_json = () => {
     .pipe(plumber())
     .pipe(frontMatter())
     .pipe(listStream.obj((err, data) => {
+      // console.log(JSON.parse(JSON.stringify(data.map(value => value))))
       if (err) throw err
-      fs.writeFileSync(`${path.src.json}posts.json`, jsonPretty({posts: data.map(post => post.frontMatter)}))
+      fs.writeFileSync(
+        `${path.src.json}posts.json`,
+        jsonPretty({
+          posts: data.map(post => ({
+            // 本文を取り出して frontMatter と混ぜて返す
+            body: new Buffer(Array.from(JSON.parse(JSON.stringify(post))._contents.data)).toString('utf8'),
+            ...post.frontMatter
+          }))
+        })
+      )
     }))
     .pipe(browserSync.stream())
 }
