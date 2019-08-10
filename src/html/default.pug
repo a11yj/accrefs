@@ -13,8 +13,9 @@ html(lang='ja')
           h1.Header__heading accrefs
           h2.Header__subheading Webアクセシビリティ関連の資料まとめ
 
-    main.contents(role='main')
-      block contents
+    main.Main(role='main')
+      .Main__inner
+        block main
 
     footer.Footer(role='contentinfo')
       .Footer__inner
