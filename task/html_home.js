@@ -9,8 +9,8 @@ const layout = require('gulp-layout')
 const md = require('gulp-markdown')
 
 const path = require('../path.json')
-const posts = require(`../${path.src.json}posts.json`)
-const tags = require(`../${path.src.json}tags.json`)
+
+const PromiseReadFile = require('./utilities/PromiseReadFile')
 
 // ブログインデックス作成（index.md -> index.html）
 const build_home_html = () => {
@@ -19,6 +19,8 @@ const build_home_html = () => {
     .pipe(frontMatter())
     .pipe(md())
     .pipe(layout(function(file) {
+      const posts = PromiseReadFile(`../${path.src.json}posts.json`)
+      const tags = PromiseReadFile(`../${path.src.json}tags.json`)
       return Object.assign(file.frontMatter, {path: path}, posts, tags)
     }))
     .pipe(prettify({indent_char: ' ', indent_size: 2}))
