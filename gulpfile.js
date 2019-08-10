@@ -51,4 +51,7 @@ gulp.task('default', gulp.series(
   build_image,
   watch,
   server
-))
+), (err, data) => {
+  if (err) throw err
+  console.log(data)
+})
