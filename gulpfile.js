@@ -24,10 +24,15 @@ const build_feed = require('./task/feed')
 
 // watch
 const watch = done => {
-  gulp.watch([path.src.html, path.src.md], gulp.series(
-    build_html_home,
-    build_html_tags,
-    build_feed)
+  gulp.watch(
+    [path.src.html, path.src.md],
+    gulp.series(
+      build_json_posts,
+      build_json_tags,
+      build_html_home,
+      build_html_tags,
+      build_feed
+    )
   )
   gulp.watch(path.src.style, gulp.parallel(build_style))
   gulp.watch(path.src.image, gulp.parallel(build_image))
@@ -37,10 +42,8 @@ const watch = done => {
 
 // // Gulpタスク ====================
 gulp.task('default', gulp.series(
-  gulp.parallel(
-    build_json_posts,
-    build_json_tags
-  ),
+  build_json_posts,
+  build_json_tags,
   build_html_home,
   build_html_tags,
   build_feed,
