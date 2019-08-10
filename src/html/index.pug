@@ -3,3 +3,25 @@
 extends default
 
 block main
+  section.Main__section
+    h3.Main__heading カテゴリー
+
+    .Card
+      each tag, i in tags
+        .Card__item
+          h4.Card__heading
+            a.Card__link(href=`./${tag.name}.html`)= tag.title
+          p.Card__desc= tag.desc
+
+  section.Main__section
+    h3.Main__heading このウェブサイトを編集する
+
+    p.Main__desc 下記のいずれかから可能です！
+
+    ul.ContributeList
+      li.ContributeList__item
+        a.ContributeList__link(href='https://github.com/oti/accrefs/') GitHubからプルリクエストを送る
+      li.ContributeList__item
+        a.ContributeList__link(href='') Googleフォームで送信する
+      li.ContributeList__item
+        a.ContributeList__link(href='') A11YJのSlackで発言する
