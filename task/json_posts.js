@@ -23,7 +23,7 @@ const build_posts_json = () => {
         jsonPretty({
           posts: data.map(post => ({
             // 本文を取り出して frontMatter と混ぜて返す
-            body: new Buffer(Array.from(JSON.parse(JSON.stringify(post))._contents.data)).toString('utf8'),
+            body: new Buffer.from(Array.from(JSON.parse(JSON.stringify(post))._contents.data)).toString('utf8'),
             ...post.frontMatter
           }))
         })
