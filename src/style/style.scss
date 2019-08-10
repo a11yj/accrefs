@@ -1,22 +1,32 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap");
 :root {
   font-size: 10px;
+  --fz-title: 10rem;
+  --fz-heading: 2.4rem;
+  --fz-subheading: 2rem;
+  --fz-general: 1.6rem;
+  --space-lg: 10rem;
+  --space-md: 5rem;
+  --space-sm: 3rem;
+  --space-xs: 1rem;
+}
+
+html {
 }
 
 body {
   margin: 0;
   padding: 0;
   color: #333333;
-  font-size: 1.6rem;
+  font-size: var(--fz-general);
   font-family: 'Noto Sans JP', sans-serif;
-  background-color: #e1e1e1;
 }
 
 .Header__inner {
   margin: auto;
-  padding-left: 30px;
-  padding-right: 30px;
-  max-width: 1280px;
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+  max-width: 128rem;
 }
 
 .Header__hgroup {
@@ -27,70 +37,59 @@ body {
 
 .Header__heading {
   margin: 0;
-  font-size: 10rem;
+  font-size: var(--fz-title);
   font-family: serif;
   line-height: 1;
 }
 
 .Header__subheading {
-  position: relative;
-  margin-top: 3rem;
+  margin-top: var(--space-sm);
   margin-bottom: 0;
-  font-size: 2rem;
-}
-.Header__subheading::before {
-  content: '';
-  position: absolute;
-  bottom: calc(100% + 1.5rem);
-  left: 50%;
-  width: 10rem;
-  height: 0.2rem;
-  background-color: currentColor;
-  transform: translateX(-50%);
+  font-size: var(--fz-subheading);
 }
 
 .Main {
-  margin-top: 5rem;
+  margin-top: var(--space-lg);
 }
 
 .Main__inner {
   margin: auto;
-  padding-left: 30px;
-  padding-right: 30px;
-  max-width: 1280px;
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+  max-width: 128rem;
 }
 
 .Main__heading {
-  margin-top: 5rem;
+  margin-top: var(--space-lg);
   margin-bottom: 0;
-  font-size: 1.8rem;
+  font-size: var(--fz-heading);
 }
 
-.Main__desc {
-  font-size: 1.4rem;
-}
+.Main__desc {}
 
 .Card {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  margin-right: -1rem;
+  margin-left: -1rem;
 }
 
 .Card__item {
   position: relative;
   box-sizing: border-box;
   margin-top: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   padding: 1rem;
-  border-radius: 0.6rem;
+  border: 0.3rem solid #cfcfcf;
+  border-radius: 0.4rem;
   max-width: calc(100% / 4 - 1rem);
-  background-color: #fff;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.025);
 }
 
 .Card__heading {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.6rem;
+  font-size: var(--fz-subheading);
 }
 
 .Card__link::after {
@@ -102,9 +101,7 @@ body {
   height: 100%;
 }
 
-.Card__desc {
-  font-size: 1.4rem;
-}
+.Card__desc {}
 
 .Article {}
 
@@ -112,43 +109,39 @@ body {
   box-sizing: border-box;
   margin-top: 1rem;
   padding: 1rem;
-  border-radius: 0.6rem;
-  background-color: #fff;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.025);
+  border: 0.3rem solid #cfcfcf;
+  border-radius: 0.4rem;
 }
 
-.Article h4 {
+.Article__heading {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.6rem;
+  font-size: var(--fz-subheading);
 }
 
-.Article p {
-  font-size: 1.4rem;
-}
+.Article__link {}
 
-.Article ul {
-  font-size: 1.4rem;
-}
+.Article__body p {}
 
-.ContributeList {
-  font-size: 1.4rem;
-}
+.Article__body ul {}
+
+.ContributeList {}
+
+.ContributeList__item {}
+
+.ContributeList__link {}
 
 .Footer {
-  margin-top: 5rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: var(--space-lg);
 }
 
 .Footer__inner {
-  padding: 1.5rem;
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
   text-align: center;
 }
 
 .Footer__credit {
   margin: auto;
-  padding-left: 30px;
-  padding-right: 30px;
-  max-width: 1280px;
-  font-size: 1.4rem;
+  max-width: 128rem;
 }
