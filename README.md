@@ -4,9 +4,10 @@ Webアクセシビリティ関連の資料まとめページです。
 
 ## 開発
 
-Required: Node.js  v12.7.0
+Node.js >= v12.7.0  
+gulp >= v4.0.2
 
-```shell
+```bash
 npm ci
 npm start
 ```
@@ -30,13 +31,14 @@ Markdown を利用しています。`src/md/post/*.md`を修正してくださ�
 layout: './src/html/tag.pug' # 変えない
 type: 'tag' # 変えない
 title: 'Webアクセシビリティとは？的なもの' # 日本語タグ名
-name: 'introduction_to_web_accessibility' # safe urlなタグ名
+desc: 'Webにおけるアクセシビリティを知りましょう。' # 日本語説明文
+name: 'introduction_to_web_accessibility' # タグのファイル名。URLになるのでそれを見越した文字列にしてください。
 ---
 ```
 
-変えられるのは `title` と `name` です。他を変えるとビルドができないので注意してください。
+変えられるのは `title` と `desc` と `name` です。他を変えるとビルドができないので注意してください。
 
-## 管理者のとメンテナの連絡先
+## 管理者とメンテナの連絡先
 
 - 伊原力也（[@magi1125](https://twitter.com/magi1125)）
 - 伊藤由暁（[@otiext](https://twitter.com/otiext)）
