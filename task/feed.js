@@ -11,8 +11,6 @@ const rename = require('gulp-rename')
 
 const path = require('../path.json')
 
-const PromiseReadFile = require('./utilities/PromiseReadFile')
-
 // RSS作成（feed.md -> feed.xml）
 const build_feed_xml = () => {
   return gulp.src(path.src.feed, {allowEmpty:true})
@@ -20,8 +18,8 @@ const build_feed_xml = () => {
     .pipe(frontMatter())
     .pipe(md())
     .pipe(layout(function(file) {
-      const posts = PromiseReadFile(`../${path.src.json}posts.json`)
-      const tags = PromiseReadFile(`../${path.src.json}tags.json`)
+      const posts = require(`../${path.src.json}posts.json`)
+      const tags = require(`../${path.src.json}tags.json`)
       const frontMatter = file.frontMatter
       return {
         frontMatter,
