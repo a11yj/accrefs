@@ -27,5 +27,11 @@
       margin-bottom: 0;
       font-size: var(--fz-subheading);
     }
+
+    .Header__link {
+      &:link {
+        text-decoration: none;
+      }
+    }
   }
 }
