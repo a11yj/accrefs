@@ -8,3 +8,12 @@ body {
   font-size: var(--fz-general);
   font-family: 'Noto Sans JP', sans-serif;
 }
+
+a {
+  &:link,
+  &:link:hover,
+  &:visited,
+  &:active {
+    color: var(--color-primary);
+  }
+}
