@@ -8,6 +8,7 @@ const prettify = require('gulp-prettify')
 const layout = require('gulp-layout')
 const md = require('gulp-markdown')
 
+const config = require('../config.json')
 const path = require('../path.json')
 
 // カテゴリートップ作成（カテゴリー.md -> category_name.html）
@@ -23,7 +24,7 @@ const build_tags_html = () => {
        * ファイル名をタグの name に差し替える
        */
       file.basename = file.frontMatter.name
-      return Object.assign(file.frontMatter, {path: path}, posts, tags)
+      return Object.assign(file.frontMatter, config, {path: path}, posts, tags)
     }))
     .pipe(prettify({indent_char: ' ', indent_size: 2}))
     .pipe(gulp.dest(path.dist.html))
