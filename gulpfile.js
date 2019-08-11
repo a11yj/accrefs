@@ -6,6 +6,7 @@ const path = require('./path.json')
 const server = require('./task/server')
 const build_html_home = require('./task/html_home')
 const build_html_tags = require('./task/html_tags')
+const build_html_archive = require('./task/html_archive')
 const build_style = require('./task/style')
 const build_image = require('./task/image')
 
@@ -31,6 +32,7 @@ const watch = done => {
       build_json_tags,
       build_html_home,
       build_html_tags,
+      build_html_archive,
       build_feed
     )
   )
@@ -46,6 +48,7 @@ gulp.task('default', gulp.series(
   build_json_tags,
   build_html_home,
   build_html_tags,
+  build_html_archive,
   build_feed,
   build_style,
   build_image,

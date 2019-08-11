@@ -2,6 +2,7 @@
   "root": "docs/",
   "src": {
     "home": "src/md/index.md",
+    "archive": "src/md/archive.md",
     "feed": "src/md/feed.md",
     "post": "src/md/post/*.md",
     "tag": "src/md/tag/*.md",
