@@ -4,14 +4,14 @@ html(lang='ja')
     meta(charset='UTF-8')
     meta(content='viewport-fit=cover, width=device-width, initial-scale=1' name='viewport')
     link(rel='stylesheet' href='./asset/style/style.css')
-    title accrefs
+    title= (type !== 'index') ? `${accrefs.title} - ${title}` : accrefs.title
 
   body(class= page_type)
     header.Header(role='banner')
       .Header__inner
         hgroup.Header__hgroup
-          h1.Header__heading accrefs
-          h2.Header__subheading Webアクセシビリティ関連の資料まとめ
+          h1.Header__heading= accrefs.title
+          h2.Header__subheading= accrefs.desc
 
     main.Main(role='main')
       .Main__inner
