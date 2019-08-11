@@ -17,6 +17,12 @@
       font-size: var(--fz-heading);
     }
     
-    .Main__desc {}
+    .Main__desc {
+      margin-top: var(--space-sm)
+    }
+    
+    .Main__more {
+      margin-top: var(--space-md)
+    }
   }
 }

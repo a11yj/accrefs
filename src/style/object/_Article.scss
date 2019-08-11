@@ -1,13 +1,15 @@
 .Article {
   @at-root {
-    & {}
+    & {
+      margin-top: var(--space-md);
+    }
 
     .Article__item {
       box-sizing: border-box;
-      margin-top: 1rem;
-      padding: 1rem;
       border: 0.3rem solid #cfcfcf;
-      border-radius: 0.4rem;
+      margin-top: var(--space-sm);
+      padding: 1.5rem;
+      border-radius: 0.2rem;
     }
     
     .Article__heading {
@@ -16,12 +18,14 @@
       font-size: var(--fz-subheading);
     }
     
-    .Article__link {}
+    .Article__back {
+      margin-top: var(--space-md);
+    }
     
     .Article__body {
-      p {}
+      margin-top: var(--space-sm);
+    }
 
-      ul {}
     }
   }
 }

@@ -13,9 +13,9 @@
       margin-top: 1rem;
       margin-right: 1rem;
       margin-left: 1rem;
-      padding: 1rem;
       border: 0.3rem solid #cfcfcf;
-      border-radius: 0.4rem;
+      padding: 1.5rem;
+      border-radius: 0.2rem;
       max-width: calc(100% / 4 - 1rem);
     }
     
@@ -25,15 +25,9 @@
       font-size: var(--fz-subheading);
     }
     
-    .Card__link::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    .Card__desc {
+      margin-top: var(--space-sm);
+      margin-bottom: 0;
     }
-    
-    .Card__desc {}
   }
 }

@@ -10,8 +10,8 @@
     }
     
     .Header__hgroup {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
+      padding-top: var(--space-md);
+      padding-bottom: var(--space-sm);
       text-align: center;
     }
     
