@@ -10,7 +10,8 @@ html(lang='ja')
     header.Header(role='banner')
       .Header__inner
         hgroup.Header__hgroup
-          h1.Header__heading= accrefs.title
+          h1.Header__heading
+            a.Header__link(href=(type !== 'index') ? './' : false)= accrefs.title
           h2.Header__subheading= accrefs.desc
 
     main.Main(role='main')
