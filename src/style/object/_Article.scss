@@ -26,6 +26,31 @@
       margin-top: var(--space-sm);
     }
 
+    .Article__tags {
+      display: flex;
+      margin-top: var(--space-sm);
+      margin-bottom: 0;
+    }
+
+    .Article__tagHead {
+      flex-shrink: 1;
+      margin-right: var(--space-xs);
+    }
+
+    .Article__tagData {
+      margin: 0;
+    }
+
+    .Article__tagItem {
+      & + & {
+        margin-top: var(--space-xs);
+      }
+
+      &::before {
+        content: '-';
+        display: inline-block;
+        margin-right: var(--space-xs);
+      }
     }
   }
 }
