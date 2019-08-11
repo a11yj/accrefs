@@ -6,9 +6,9 @@
 
     .Article__item {
       box-sizing: border-box;
-      border: 0.3rem solid #cfcfcf;
       margin-top: var(--space-sm);
       padding: 1.5rem;
+      border: 0.5rem solid var(--color-primary-sub);
       border-radius: 0.2rem;
     }
     
