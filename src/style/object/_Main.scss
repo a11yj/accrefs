@@ -1,0 +1,22 @@
+.Main {
+  @at-root {
+    & {
+      margin-top: var(--space-lg);
+    }
+    
+    .Main__inner {
+      margin: auto;
+      padding-left: var(--space-sm);
+      padding-right: var(--space-sm);
+      max-width: 128rem;
+    }
+    
+    .Main__heading {
+      margin-top: var(--space-lg);
+      margin-bottom: 0;
+      font-size: var(--fz-heading);
+    }
+    
+    .Main__desc {}
+  }
+}

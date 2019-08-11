@@ -1,0 +1,27 @@
+.Article {
+  @at-root {
+    & {}
+
+    .Article__item {
+      box-sizing: border-box;
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 0.3rem solid #cfcfcf;
+      border-radius: 0.4rem;
+    }
+    
+    .Article__heading {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: var(--fz-subheading);
+    }
+    
+    .Article__link {}
+    
+    .Article__body {
+      p {}
+
+      ul {}
+    }
+  }
+}
