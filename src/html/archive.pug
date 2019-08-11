@@ -18,7 +18,9 @@ block main
 
           dl.Article__tags
             dt.Article__tagHead このリンクのカテゴリー
-            each tag, i in post.tags
-              dd.Article__tagDate= tag
+            dd.Article__tagData
+              each tag, i in post.tags
+                .Article__tagItem= tag
 
-    a.Main__link(href='./') ホームへ戻る
+    .Article__back
+      a(href='./') ホームへ戻る
