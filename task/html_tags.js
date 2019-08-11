@@ -10,7 +10,7 @@ const md = require('gulp-markdown')
 
 const path = require('../path.json')
 
-// ブログインデックス作成（index.md -> index.html）
+// カテゴリートップ作成（カテゴリー.md -> category_name.html）
 const build_tags_html = () => {
   return gulp.src(path.src.tag, {allowEmpty:true})
     .pipe(plumber())

@@ -10,7 +10,7 @@ const md = require('gulp-markdown')
 
 const path = require('../path.json')
 
-// ブログインデックス作成（index.md -> index.html）
+// インデックス作成（index.md -> index.html）
 const build_home_html = () => {
   return gulp.src(path.src.home, {allowEmpty:true})
     .pipe(plumber())
