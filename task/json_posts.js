@@ -18,6 +18,7 @@ const build_posts_json = () => {
     .pipe(listStream.obj((err, data) => {
       // console.log(JSON.parse(JSON.stringify(data.map(value => value))))
       if (err) throw err
+      if (!fs.existsSync(path.src.json)) fs.mkdirSync(path.src.json)
       fs.writeFileSync(
         `${path.src.json}posts.json`,
         jsonPretty({

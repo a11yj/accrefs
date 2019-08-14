@@ -18,6 +18,7 @@ const build_tags_json = () => {
     .pipe(frontMatter())
     .pipe(listStream.obj((err, data) => {
       if (err) throw err
+      if (!fs.existsSync(path.src.json)) fs.mkdirSync(path.src.json)
       fs.writeFileSync(`${path.src.json}tags.json`, jsonPretty({
         /**
          * frontMatter で取り出したYAMLブロックの配列の title キーが、order.json の値に合致したものの順で配列を返す
