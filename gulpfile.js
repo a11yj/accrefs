@@ -42,7 +42,7 @@ const watch = done => {
 }
 
 
-// // Gulpタスク ====================
+// Gulpタスク ====================
 gulp.task('default', gulp.series(
   build_json_posts,
   build_json_tags,
@@ -54,6 +54,14 @@ gulp.task('default', gulp.series(
   build_image,
   watch,
   server
+), (err, data) => {
+  if (err) throw err
+  console.log(data)
+})
+
+gulp.task('build-json', gulp.series(
+  build_json_posts,
+  build_json_tags
 ), (err, data) => {
   if (err) throw err
   console.log(data)
