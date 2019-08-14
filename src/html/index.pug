@@ -8,6 +8,8 @@ block main
 
     .Card
       each tag, i in tags
+        -
+          if (!tag) return
         .Card__item
           h4.Card__heading
             a.Card__link(href=`./${tag.name}.html`)= tag.title

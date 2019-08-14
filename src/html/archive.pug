@@ -10,6 +10,8 @@ block main
 
     .Article
       each post, i in posts
+        - 
+          if (!post) return
         .Article__item
           h4.Article__heading
             a.Article__link(href=post.link)= post.title
