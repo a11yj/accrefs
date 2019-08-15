@@ -43,8 +43,8 @@
     "pug-cli": "^1.0.0-alpha6"
   },
   "scripts": {
-    "prestart": "gulp build-json",
-    "start": "gulp"
+    "start": "gulp build-json && gulp dev",
+    "build": "gulp build-json && gulp build-accrefs"
   },
   "browserslist": [
     "last 2 versions",

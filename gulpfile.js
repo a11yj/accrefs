@@ -44,8 +44,14 @@ const watch = done => {
 
 // Gulpタスク ====================
 gulp.task('default', gulp.series(
-  build_json_posts,
-  build_json_tags,
+  watch,
+  server
+), (err, data) => {
+  if (err) throw err
+  console.log(data)
+})
+
+gulp.task('dev', gulp.series(
   build_html_home,
   build_html_tags,
   build_html_archive,
@@ -62,6 +68,18 @@ gulp.task('default', gulp.series(
 gulp.task('build-json', gulp.series(
   build_json_posts,
   build_json_tags
+), (err, data) => {
+  if (err) throw err
+  console.log(data)
+})
+
+gulp.task('build-accrefs', gulp.series(
+  build_html_home,
+  build_html_tags,
+  build_html_archive,
+  build_feed,
+  build_style,
+  build_image
 ), (err, data) => {
   if (err) throw err
   console.log(data)
