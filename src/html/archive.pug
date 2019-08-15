@@ -1,0 +1,28 @@
+//- archive.pug
+//- accrefs アーカイブ
+extends default
+
+block main
+  section.Main__section
+    h3.Main__heading アーカイブ
+
+    p.Main__desc 全てのリンクを一覧で掲載しています。
+
+    .Article
+      each post, i in posts
+        - 
+          if (!post) return
+        .Article__item
+          h4.Article__heading
+            a.Article__link(href=post.link)= post.title
+
+          .Article__body!= post.body
+
+          dl.Article__tags
+            dt.Article__tagHead このリンクのカテゴリー
+            dd.Article__tagData
+              each tag, i in post.tags
+                .Article__tagItem= tag
+
+    .Article__back
+      a(href='./') ホームへ戻る

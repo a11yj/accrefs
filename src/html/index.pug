@@ -1,0 +1,32 @@
+//- index.pug
+//- accrefs トップ
+extends default
+
+block main
+  section.Main__section
+    h3.Main__heading カテゴリー
+
+    .Card
+      each tag, i in tags
+        -
+          if (!tag) return
+        .Card__item
+          h4.Card__heading
+            a.Card__link(href=`./${tag.name}.html`)= tag.title
+          p.Card__desc= tag.desc
+    
+    .Main__more
+      a(href='./archive.html') アーカイブ一覧
+
+  section.Main__section
+    h3.Main__heading このウェブサイトの編集に参加する
+
+    p.Main__desc どなたでも大歓迎です！　下記のいずれかからコンタクトを取ってください
+
+    ul.ContributeList
+      li.ContributeList__item
+        a.ContributeList__link(href='https://github.com/oti/accrefs/') GitHubからプルリクエストを送る
+      li.ContributeList__item
+        a.ContributeList__link(href='') Googleフォームで送信する
+      li.ContributeList__item
+        a.ContributeList__link(href='') A11YJのSlackで発言する

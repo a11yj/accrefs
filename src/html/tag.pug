@@ -1,0 +1,21 @@
+//- tag.pug
+//- accrefs カテゴリートップ
+extends default
+
+block main
+  section.Main__section
+    h3.Main__heading= title
+
+    p.Main__desc= desc
+
+    .Article
+      //- このページのカテゴリ名と同じタグをもつ post のみに絞って each する
+      each post, i in posts.reduce((memo, post) => post.tags.includes(title) ? memo.concat(post) : memo, [])
+        .Article__item
+          h4.Article__heading
+            a.Article__link(href=post.link)= post.title
+
+          .Article__body!= post.body
+
+    .Article__back
+      a(href='./') ホームへ戻る

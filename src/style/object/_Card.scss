@@ -1,0 +1,33 @@
+.Card {
+  @at-root {
+    & {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -1rem;
+      margin-left: -1rem;
+    }
+    
+    .Card__item {
+      position: relative;
+      box-sizing: border-box;
+      margin-top: 1rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
+      padding: 1.5rem;
+      border: 0.5rem solid var(--color-primary-sub);
+      border-radius: 0.2rem;
+      max-width: calc(100% / 4 - 1rem);
+    }
+    
+    .Card__heading {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: var(--fz-subheading);
+    }
+    
+    .Card__desc {
+      margin-top: var(--space-sm);
+      margin-bottom: 0;
+    }
+  }
+}

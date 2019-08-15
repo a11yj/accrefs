@@ -1,0 +1,37 @@
+.Header {
+  @at-root {
+    & {}
+    
+    .Header__inner {
+      margin: auto;
+      padding-left: var(--space-sm);
+      padding-right: var(--space-sm);
+      max-width: 128rem;
+    }
+    
+    .Header__hgroup {
+      padding-top: var(--space-md);
+      padding-bottom: var(--space-sm);
+      text-align: center;
+    }
+    
+    .Header__heading {
+      margin: 0;
+      font-size: var(--fz-title);
+      font-family: serif;
+      line-height: 1;
+    }
+    
+    .Header__subheading {
+      margin-top: var(--space-sm);
+      margin-bottom: 0;
+      font-size: var(--fz-subheading);
+    }
+
+    .Header__link {
+      &:link {
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "accrefs": {
+    "title": "accrefs",
+    "desc": "Webアクセシビリティ関連の資料まとめ",
+    "url": "https://oti.github.com/accrefs/",
+    "protocol": "https://",
+    "host": "oti.github.com",
+    "root_path": "/accrefs/"
+  }
+}

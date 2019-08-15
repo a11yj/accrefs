@@ -1,0 +1,23 @@
+doctype html
+html(lang='ja')
+  head
+    meta(charset='UTF-8')
+    meta(content='viewport-fit=cover, width=device-width, initial-scale=1' name='viewport')
+    link(rel='stylesheet' href='./asset/style/style.css')
+    title= (type !== 'index') ? `${accrefs.title} - ${title}` : accrefs.title
+
+  body(class= page_type)
+    header.Header(role='banner')
+      .Header__inner
+        hgroup.Header__hgroup
+          h1.Header__heading
+            a.Header__link(href=(type !== 'index') ? './' : false)= accrefs.title
+          h2.Header__subheading= accrefs.desc
+
+    main.Main(role='main')
+      .Main__inner
+        block main
+
+    footer.Footer(role='contentinfo')
+      .Footer__inner
+        p.Footer__credit このウェブサイトはA11YJ Slackメンバーと有志の協力によって制作されました
