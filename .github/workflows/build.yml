@@ -1,0 +1,23 @@
+name: Build and Deploy GH pages
+
+on:
+  push:
+    branches:
+    - master     # Push events on master branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 12.7.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.7.0
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: docs
+        BUILD_SCRIPT: npm ci && npm run build
