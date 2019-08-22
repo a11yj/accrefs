@@ -4,6 +4,7 @@ const fs = require('fs')
 const gulp = require('gulp')
 const browserSync = require('browser-sync')
 const plumber = require('gulp-plumber')
+const md = require('gulp-markdown')
 const frontMatter = require('gulp-front-matter')
 const listStream = require('list-stream')
 const jsonPretty = require('json-pretty')
@@ -15,6 +16,7 @@ const build_posts_json = () => {
   return gulp.src(path.src.post)
     .pipe(plumber())
     .pipe(frontMatter())
+    .pipe(md())
     .pipe(listStream.obj((err, data) => {
       // console.log(JSON.parse(JSON.stringify(data.map(value => value))))
       if (err) throw err

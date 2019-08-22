@@ -4,6 +4,7 @@ const fs = require('fs')
 const gulp = require('gulp')
 const browserSync = require('browser-sync')
 const plumber = require('gulp-plumber')
+const md = require('gulp-markdown')
 const frontMatter = require('gulp-front-matter')
 const listStream = require('list-stream')
 const jsonPretty = require('json-pretty')
@@ -16,6 +17,7 @@ const build_tags_json = () => {
   return gulp.src(path.src.tag)
     .pipe(plumber())
     .pipe(frontMatter())
+    .pipe(md())
     .pipe(listStream.obj((err, data) => {
       if (err) throw err
       if (!fs.existsSync(path.src.json)) fs.mkdirSync(path.src.json)
