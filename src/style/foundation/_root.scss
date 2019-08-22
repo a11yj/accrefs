@@ -1,6 +1,6 @@
 :root {
   font-size: 10px;
-  --fz-title: 10rem;
+  --fz-title: 8rem;
   --fz-heading: 2.4rem;
   --fz-subheading: 2rem;
   --fz-general: 1.6rem;
@@ -15,4 +15,14 @@
   --color-primary: #727272;
   // --color-primary-sub: #cbd8e6;
   --color-primary-sub: #d8d8d8;
+  --card-item-width: 100%;
+
+  @media screen and (max-width: 374px) {
+    --fz-title: 7rem;
+  }
+
+  @media screen and (min-width: 769px) {
+    --fz-title: 10rem;
+    --card-item-width: calc(100% / 3 - 2rem)
+  }
 }
