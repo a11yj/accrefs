@@ -9,18 +9,8 @@ const build_html_tags = require('./task/html_tags')
 const build_html_archive = require('./task/html_archive')
 const build_style = require('./task/style')
 const build_image = require('./task/image')
-
-// // 記事オブジェクト作成タスク ====================
 const build_json_posts = require('./task/json_posts')
 const build_json_tags = require('./task/json_tags')
-
-
-// // HTML作成タスク ====================
-
-// // ブログインデックス作成（index.md -> index.html）
-// const html_pages = require('./task/html/pages')
-
-// // RSS作成（feed.md -> feed）
 const build_feed = require('./task/feed')
 
 // watch
