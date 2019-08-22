@@ -1,5 +1,6 @@
 'use strict'
 
+const fs = require('fs')
 const gulp = require('gulp')
 const browserSync = require('browser-sync')
 const plumber = require('gulp-plumber')
@@ -17,14 +18,24 @@ const build_tags_html = () => {
     .pipe(plumber())
     .pipe(frontMatter())
     .pipe(md())
-    .pipe(layout(function(file) {
-      const posts = require(`../${path.src.json}posts.json`)
-      const tags = require(`../${path.src.json}tags.json`)
+    .pipe(layout(file => {
+      console.log(file.toString())
       /**
-       * ファイル名をタグの name に差し替える
+       * ファイル名をYAMLブロックのnameに差し替える
        */
       file.basename = file.frontMatter.name
-      return Object.assign(file.frontMatter, config, {path: path}, posts, tags)
+      
+      const injectJsons = async () => {
+        const posts = await loadJson('posts')
+        const tags = await loadJson('tags')
+        return Object.assign(file.frontMatter, config, {path: path}, posts, tags)
+      }
+
+      const loadJson = async filename => {
+        return fs.readFile(`../${path.src.json}${filename}.json`)
+      }
+
+      return injectJsons
     }))
     .pipe(prettify({indent_char: ' ', indent_size: 2}))
     .pipe(gulp.dest(path.dist.html))
