@@ -16,7 +16,7 @@
       padding: 1.5rem;
       border: 0.5rem solid var(--color-primary-sub);
       border-radius: 0.2rem;
-      max-width: calc(100% / 4 - 1rem);
+      width: var(--card-item-width);
     }
     
     .Card__heading {
