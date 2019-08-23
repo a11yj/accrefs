@@ -1,6 +1,5 @@
 'use strict'
 
-const fs = require('fs')
 const gulp = require('gulp')
 const browserSync = require('browser-sync')
 const plumber = require('gulp-plumber')
@@ -12,30 +11,30 @@ const md = require('gulp-markdown')
 const config = require('../config.json')
 const path = require('../path.json')
 
+const getJson = require('./utilities/getJson')
+
 // カテゴリートップ作成（カテゴリー.md -> category_name.html）
 const build_tags_html = () => {
   return gulp.src(path.src.tag, {allowEmpty:true})
     .pipe(plumber())
     .pipe(frontMatter())
     .pipe(md())
-    .pipe(layout(file => {
-      console.log(file.toString())
+    .pipe(layout(data => {
       /**
        * ファイル名をYAMLブロックのnameに差し替える
        */
-      file.basename = file.frontMatter.name
-      
-      const injectJsons = async () => {
-        const posts = await loadJson('posts')
-        const tags = await loadJson('tags')
-        return Object.assign(file.frontMatter, config, {path: path}, posts, tags)
+      data.basename = data.frontMatter.name
+
+      /**
+       * posts.json と tags.json を data に差し込む
+       */
+      const getInjectedData = () => {
+        const posts = getJson('posts')
+        const tags = getJson('tags')
+        return Object.assign(data.frontMatter, config, {path: path}, posts, tags)
       }
 
-      const loadJson = async filename => {
-        return fs.readFile(`../${path.src.json}${filename}.json`)
-      }
-
-      return injectJsons
+      return getInjectedData()
     }))
     .pipe(prettify({indent_char: ' ', indent_size: 2}))
     .pipe(gulp.dest(path.dist.html))
