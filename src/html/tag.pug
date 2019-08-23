@@ -13,7 +13,10 @@ block main
       each post, i in posts.reduce((memo, post) => post.tags.includes(title) ? memo.concat(post) : memo, [])
         .Article__item
           h4.Article__heading
-            a.Article__link(href=post.link)= post.title
+            if (post.link)
+              a.Article__link(href=post.link)= post.title
+            else
+              =post.title
 
           .Article__body!= post.body
 
