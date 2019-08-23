@@ -11,16 +11,25 @@ const md = require('gulp-markdown')
 const config = require('../config.json')
 const path = require('../path.json')
 
+const getJson = require('./utilities/getJson')
+
 // インデックス作成（index.md -> index.html）
 const build_home_html = () => {
   return gulp.src(path.src.home, {allowEmpty:true})
     .pipe(plumber())
     .pipe(frontMatter())
     .pipe(md())
-    .pipe(layout(function(file) {
-      const posts = require(`../${path.src.json}posts.json`)
-      const tags = require(`../${path.src.json}tags.json`)
-      return Object.assign(file.frontMatter, config, {path: path}, posts, tags)
+    .pipe(layout(data => {
+      /**
+       * posts.json と tags.json を data に差し込む
+       */
+      const getInjectedData = () => {
+        const posts = getJson('posts')
+        const tags = getJson('tags')
+        return Object.assign(data.frontMatter, config, {path: path}, posts, tags)
+      }
+
+      return getInjectedData()
     }))
     .pipe(prettify({indent_char: ' ', indent_size: 2}))
     .pipe(gulp.dest(path.dist.html))

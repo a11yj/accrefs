@@ -9,7 +9,10 @@ const layout = require('gulp-layout')
 const md = require('gulp-markdown')
 const rename = require('gulp-rename')
 
+const config = require('../config.json')
 const path = require('../path.json')
+
+const getJson = require('./utilities/getJson')
 
 // RSS作成（feed.md -> feed.xml）
 const build_feed_xml = () => {
@@ -17,16 +20,17 @@ const build_feed_xml = () => {
     .pipe(plumber())
     .pipe(frontMatter())
     .pipe(md())
-    .pipe(layout(function(file) {
-      const posts = require(`../${path.src.json}posts.json`)
-      const tags = require(`../${path.src.json}tags.json`)
-      const frontMatter = file.frontMatter
-      return {
-        frontMatter,
-        ...path,
-        ...posts,
-        ...tags,
+    .pipe(layout(data => {
+      /**
+       * posts.json と tags.json を data に差し込む
+       */
+      const getInjectedData = () => {
+        const posts = getJson('posts')
+        const tags = getJson('tags')
+        return Object.assign(data.frontMatter, config, {path: path}, posts, tags)
       }
+
+      return getInjectedData()
     }))
     .pipe(prettify({indent_char: ' ', indent_size: 2}))
     .pipe(rename({extname: '.xml'}))
