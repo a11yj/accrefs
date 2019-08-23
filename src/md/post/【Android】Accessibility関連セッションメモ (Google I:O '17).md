@@ -1,6 +1,6 @@
 ---
 type: 'post'
-title: '【Android】Accessibility関連セッションメモ (Google I/O '17)'
+title: "【Android】Accessibility関連セッションメモ (Google I/O '17)"
 tags:
   - 'ネイティブアプリ'
 link: 'https://qiita.com/rkowase/items/af6e9cfa721795aaa1b0'
