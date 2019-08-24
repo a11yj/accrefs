@@ -1,6 +1,6 @@
 ---
 type: 'post'
-title: 'れでわかる！Webアクセシビリティって？JIS X 8341-3って？'
+title: 'これでわかる！Webアクセシビリティって？JIS X 8341-3って？'
 tags:
   - 'Webアクセシビリティとは？的なも'
 link: https://www.slideshare.net/waic_jp/webjis-x-83413-112097697'
