@@ -1,6 +1,6 @@
 ---
 type: 'post'
-title: 'Accessible Rich Internet Applications (WAI-ARIA) 1.1 日本語訳'
+title: 'Accessible Rich Internet Applications (WAI-ARIA) 1.1'
 tags:
   - '公式仕様および和訳'
   - 'WAI-ARIA'
