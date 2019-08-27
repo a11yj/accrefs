@@ -1,12 +1,12 @@
 ---
 type: 'post'
-title: 'WCAG 2.0 解説書 日本語訳'
+title: 'WCAG 2.0 解説書'
 tags:
   - '公式仕様および和訳'
 link: 'https://waic.jp/docs/UNDERSTANDING-WCAG20/Overview.html'
 ---
-<p>WCAG 2.0の理解と実装を助けるためにW3Cが公開している文書であるUnderstanding WCAG 2.0の日本語訳。</p>
-<p>抽象度の高い<a href="https://waic.jp/docs/WCAG20/Overview.html">WCAG 2.0</a>にたいして、</p>
+<p>W3Cが公開しているUnderstanding WCAG 2.0を、WAIC翻訳作業部会が訳したもの。</p>
+<p>抽象度の高い<a href="https://waic.jp/docs/WCAG20/Overview.html">WCAG 2.0</a>に対し、理解を助けるためにW3Cが公開している。以下のようなことが説明されている。</p>
 
 <ul>
 	<li>WCAG 2.0の達成基準がどのような意図で書かれているのか</li>
@@ -16,4 +16,4 @@ link: 'https://waic.jp/docs/UNDERSTANDING-WCAG20/Overview.html'
 	<li>まずい対応の事例（よくある失敗例）</li>
 </ul>
 
-<p>などを説明する文書。いわばWCAG 2.0の副読本。</p>
+<p>いわばWCAG 2.0の副読本。</p>
