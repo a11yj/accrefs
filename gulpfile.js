@@ -1,76 +1,25 @@
-'use strict'
-
 const gulp = require('gulp')
+const sass = require('gulp-sass')
+const globImporter = require('node-sass-glob-importer')
+const postcss = require('gulp-postcss')
+const autoprefixer = require('autoprefixer')
+const cleanCSS = require('gulp-clean-css')
 
-const path = require('./path.json')
-const server = require('./task/server')
-const build_html_home = require('./task/html_home')
-const build_html_tags = require('./task/html_tags')
-const build_html_archive = require('./task/html_archive')
-const build_style = require('./task/style')
-const build_image = require('./task/image')
-const build_json_posts = require('./task/json_posts')
-const build_json_tags = require('./task/json_tags')
-const build_feed = require('./task/feed')
+const styles = () => {
+  return gulp
+    .src(['src/assets/style/style.scss'], { sourcemaps: true })
+    .pipe(sass({ importer: [globImporter()] }).on('error', sass.logError))
+    .pipe(postcss([autoprefixer({ cascade: false })]))
+    .pipe(cleanCSS({ level: 2 }))
+    .pipe(gulp.dest('src/assets/style', { sourcemaps: '.' }))
+}
 
-// watch
-const watch = done => {
-  gulp.watch(
-    [path.src.html, path.src.md],
-    gulp.series(
-      build_json_posts,
-      build_json_tags,
-      build_html_home,
-      build_html_tags,
-      build_html_archive,
-      build_feed
-    )
-  )
-  gulp.watch(path.src.style, gulp.parallel(build_style))
-  gulp.watch(path.src.image, gulp.parallel(build_image))
+const watch = (done) => {
+  gulp.watch('src/assets/style/**.scss', styles)
   done()
 }
 
+const start = gulp.series(styles, watch)
 
-// Gulpタスク ====================
-gulp.task('default', gulp.series(
-  watch,
-  server
-), (err, data) => {
-  if (err) throw err
-  console.log(data)
-})
-
-gulp.task('dev', gulp.series(
-  build_html_home,
-  build_html_tags,
-  build_html_archive,
-  build_feed,
-  build_style,
-  build_image,
-  watch,
-  server
-), (err, data) => {
-  if (err) throw err
-  console.log(data)
-})
-
-gulp.task('build-json', gulp.series(
-  build_json_posts,
-  build_json_tags
-), (err, data) => {
-  if (err) throw err
-  console.log(data)
-})
-
-gulp.task('build-accrefs', gulp.series(
-  build_html_home,
-  build_html_tags,
-  build_html_archive,
-  build_feed,
-  build_style,
-  build_image
-), (err, data) => {
-  if (err) throw err
-  console.log(data)
-})
+exports.build = styles
+exports.default = start
