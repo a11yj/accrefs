@@ -104,6 +104,10 @@ video {
   text-decoration: none;
 }
 
+.SiteHeader__titleLink[href]:active {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
 .SiteHeader__description {
   margin-top: calc(1.7rem / 2);
   font-size: calc(8 / 9 * 1rem);
