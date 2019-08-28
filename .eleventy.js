@@ -4,6 +4,7 @@ module.exports = (eleventyConfig) => {
   })
 
   eleventyConfig.addPassthroughCopy('src/assets')
+  eleventyConfig.addPassthroughCopy('src/apple-touch-icon.png')
 
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false })
 
