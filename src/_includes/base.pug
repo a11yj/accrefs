@@ -11,10 +11,10 @@ html(lang=site.lang)
       else
         =`${isTag ? tag.title : title} - ${site.title}`
     meta(name="description" content=site.description)
-    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:card" content="summary")
     meta(property="og:title" content=isTag ? tag.title : (title || site.title))
     meta(property="og:type" content="website")
-    meta(property="og:image" content=`${site.origin}${url('/assets/ogp.png')}`)
+    meta(property="og:image" content=`${site.origin}${url('/assets/apple-touch-icon.png')}`)
     meta(property="og:url" content=`${site.origin}${url(page.url)}`)
     meta(property="og:description" content=site.description)
     meta(property="og:site_name" content=site.title)
