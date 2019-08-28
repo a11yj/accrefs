@@ -4,31 +4,29 @@ block main
   h1.VisuallyHidden=`${site.title} ホーム`
 
   .Stack.-large
-    section#tags(aria-labelledby="tags-heading")
+    section#tags.Stack.-large(aria-labelledby="tags-heading")
+      h2#tags-heading.Heading タグ
+
       .Stack.-large
-        h2#tags-heading.Heading タグ
-
-        .Stack.-large
         each tag in tags
-            article.Stack.-small(id=`tags:${tag.slug}`)
-              h3.ItemTitle
-                a.WithIcon.-tag(href=url(`/tags/${tag.slug}/`))=tag.title
-              if tag.content
-                p=tag.content
+          article.Stack.-small(id=`tags:${tag.slug}`)
+            h3.ItemTitle
+              a.WithIcon.-tag(href=url(`/tags/${tag.slug}/`))=tag.title
+            if tag.content
+              p=tag.content
 
-        div
-          a.WithIcon.-reference(href=url('/references/')) すべての参考資料
+      div
+        a.WithIcon.-reference(href=url('/references/')) すべての参考資料
 
     .Divider
 
-    section#contribution(aria-labelledby="contribution-heading")
-      .Stack
-        h2#contribution-heading.Heading ウェブサイトに貢献
+    section#contribution.Stack(aria-labelledby="contribution-heading")
+      h2#contribution-heading.Heading ウェブサイトに貢献
 
-        p このウェブサイトではあなたからの情報提供をお待ちしています。参考資料の追加・修正のリクエストは次のいずれかの方法で行えます。
+      p このウェブサイトではあなたからの情報提供をお待ちしています。参考資料の追加・修正のリクエストは次のいずれかの方法で行えます。
 
-        ul
-          li
-            a(href='https://github.com/a11yj/accrefs') GitHubからプルリクエストを送る
-          li Googleフォームから送信する（準備中）
-          li A11YJのSlackで発言する（準備中）
+      ul
+        li
+          a(href='https://github.com/a11yj/accrefs') GitHubからプルリクエストを送る
+        li Googleフォームから送信する（準備中）
+        li A11YJのSlackで発言する（準備中）
