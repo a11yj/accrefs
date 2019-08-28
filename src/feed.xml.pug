@@ -6,17 +6,18 @@ rss(version='2.0',
   channel
     title=site.title
     link=`${site.origin}/`
-    description=('<![CDATA[Webアクセシビリティ関連の資料まとめ]]>')
+    description=`<![CDATA[${site.description}]]>`
     language ja-JP
-    pubdate=(new Date())
-    lastbuilddate=(new Date())
+    - const date = new Date()
+    pubdate=(date)
+    lastbuilddate=(date)
     docs http://blogs.law.harvard.edu/tech/rss
     generator Node.js v12.7.0
     managingeditor @otiext
     webmaster @magi1125
     atom:link(href=`${site.origin}/feed.xml`, rel='self', type='application/rss+xml')/
 
-    each reference in collections.references
+    each reference in collections.references.slice().reverse()
       item
         title=reference.data.title
         link=reference.data.link

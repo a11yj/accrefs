@@ -1,0 +1,185 @@
+html {
+  font-family: "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+  font-size: calc(0.25vw + 1em);
+  line-height: 1.7;
+  color: hsl(0, 0%, 0%, 0.87);
+  overflow-wrap: break-word;
+  text-underline-position: under;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a[href] {
+  color: inherit;
+}
+
+a:active[href] {
+  background-color: hsla(0, 0%, 0%, 0.1);
+}
+
+a:visited[href] {
+  color: hsl(0, 0%, 40%);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.Stack > * + * {
+  margin-top: 1.7rem;
+}
+
+.Stack.-large > * + * {
+  margin-top: calc(1.7rem * 2.5);
+}
+
+.Stack.-small > * + * {
+  margin-top: calc(1.7rem / 1.5);
+}
+
+.Center {
+  max-width: 40rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.Center.-andText {
+  text-align: center;
+}
+
+.VisuallyHidden {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(50%) !important;
+  clip: rect(0, 0, 0, 0) !important; /* deprecated */
+}
+
+.SiteHeader {
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
+  color: hsla(0, 0%, 100%, 0.87);
+  background-color: hsl(200, 19%, 18%);
+}
+
+.SiteHeader__title {
+  margin-top: 0;
+  font-size: calc(8 / 4 * 1rem);
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+.SiteHeader__titleLink[href],
+.SiteHeader__titleLink[href]:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.SiteHeader__description {
+  margin-top: calc(1.7rem / 2);
+  font-size: calc(8 / 9 * 1rem);
+}
+
+.Main {
+  padding-top: calc(1.7rem * 2.5);
+  padding-bottom: calc(1.7rem * 2.5);
+}
+
+.Heading {
+  line-height: calc(1.7 * 0.8);
+}
+
+h1.Heading {
+  font-size: calc(8 / 4 * 1rem);
+}
+
+h2.Heading {
+  font-size: calc(8 / 5 * 1rem);
+}
+
+.WithIcon {
+  display: inline-flex;
+  padding-left: 2.25em;
+  background-repeat: no-repeat;
+  background-size: 1.7em 1.7em;
+}
+
+.WithIcon.-reference {
+  background-image: url("/assets/icons.svg#reference");
+}
+
+.WithIcon.-tag {
+  background-image: url("/assets/icons.svg#tag");
+}
+
+.WithIcon.-back {
+  background-image: url("/assets/icons.svg#back");
+}
+
+.WithIcon.-small {
+  padding-left: 1.25em;
+  background-position: left calc((1.7rem - 1rem) / 2);
+  background-size: 1em 1em;
+}
+
+.Heading > .WithIcon {
+  padding-left: 2em;
+  background-size: calc(1.7em * 0.8) calc(1.7em * 0.8);
+}
+
+@media (min-width: 60em) {
+  .Heading > .WithIcon {
+    margin-left: -2em;
+  }
+}
+
+.ItemTitle {
+  font-size: calc(8 / 6 * 1rem);
+}
+
+@media (min-width: 60em) {
+  .ItemTitle > .WithIcon {
+    margin-left: -2em;
+  }
+}
+
+.Divider {
+  height: 1px;
+  background-color: hsla(0, 0%, 0%, 0.1);
+}
+
+.SiteFooter {
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
+  font-size: calc(8 / 9 * 1rem);
+  background-color: hsla(0, 0%, 94%);
+}

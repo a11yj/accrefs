@@ -5,7 +5,7 @@
   "singleQuote": true,
   "overrides": [
     {
-      "files": ["*.css", "*.scss"],
+      "files": ["*.css"],
       "options": {
         "singleQuote": false
       }

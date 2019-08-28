@@ -2,23 +2,17 @@
 
 extends /base.pug
 
-block title
-  title=`${site.title} - ${tag.title}`
-
 block main
-  section.Main__section
-    h3.Main__heading= tag.title
+  .Stack.-large
+    .Stack.-small
+      h1.Heading
+        span.WithIcon.-tag=tag.title
+      p=tag.content
 
-    p.Main__desc= tag.content
-
-    .Article
+    .Stack.-large
       if collections[tag.title]
-        each reference in collections[tag.title]
-          .Article__item
-            h4.Article__heading
-              a.Article__link(href=reference.data.link)=reference.data.title
-
-            .Article__body!=reference.templateContent
-
-    .Article__back
-      a(href='/') ホームへ戻る
+        each reference, index in collections[tag.title].slice().reverse()
+          article.Stack.-small(id=reference.fileSlug)
+            h2.ItemTitle
+              a.WithIcon.-reference(href=reference.data.link)=reference.data.title
+            !=reference.templateContent

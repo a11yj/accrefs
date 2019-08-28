@@ -1,28 +1,34 @@
 extends /base.pug
 
 block main
-  section.Main__section
-    h3.Main__heading カテゴリー
+  h1.VisuallyHidden=`${site.title} ホーム`
 
-    .Card
-      each tag, i in tags
-        .Card__item
-          h4.Card__heading
-            a.Card__link(href=url(`/tags/${tag.slug}/`))= tag.title
-          p.Card__desc= tag.content
+  .Stack.-large
+    section#tags(aria-labelledby="tags-heading")
+      .Stack.-large
+        h2#tags-heading.Heading タグ
 
-    .Main__more
-      a(href='/references/') アーカイブ一覧
+        .Stack.-large
+          each tag, index in tags
+            article.Stack.-small(id=`tags:${tag.slug}`)
+              h3.ItemTitle
+                a.WithIcon.-tag(href=url(`/tags/${tag.slug}/`))=tag.title
+              if tag.content
+                p=tag.content
 
-  section.Main__section
-    h3.Main__heading このウェブサイトの編集に参加する
+        div
+          a.WithIcon.-reference(href=url('/references/')) すべての参考資料
 
-    p.Main__desc どなたでも大歓迎です！　下記のいずれかからコンタクトを取ってください
+    .Divider
 
-    ul.ContributeList
-      li.ContributeList__item
-        a.ContributeList__link(href='https://github.com/a11yj/accrefs/') GitHubからプルリクエストを送る
-      li.ContributeList__item
-        a.ContributeList__link Googleフォームで送信する（準備中）
-      li.ContributeList__item
-        a.ContributeList__link A11YJのSlackで発言する（準備中）
+    section#contribution(aria-labelledby="contribution-heading")
+      .Stack
+        h2#contribution-heading.Heading ウェブサイトに貢献
+
+        p このウェブサイトではあなたからの情報提供をお待ちしています。参考資料の追加や修正のリクエストは次のいずれかの方法で行えます。
+
+        ul
+          li
+            a(href='https://github.com/a11yj/accrefs/') GitHubからプルリクエストを送る
+          li Googleフォームから送信する（準備中）
+          li A11YJのSlackで発言する（準備中）

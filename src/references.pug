@@ -1,24 +1,18 @@
 extends /base.pug
 
 block main
-  section.Main__section
-    h3.Main__heading アーカイブ
+  .Stack.-large
+    h1.Heading=title
 
-    p.Main__desc 全てのリンクを一覧で掲載しています。
-
-    .Article
-      each reference in collections.references
-        .Article__item
-          h4.Article__heading
-            a.Article__link(href=reference.data.link)= reference.data.title
-
-          .Article__body!= reference.templateContent
-
-          dl.Article__tags
-            dt.Article__tagHead このリンクのカテゴリー
-            dd.Article__tagData
-              each tag, i in reference.data.tags
-                .Article__tagItem= tag
-
-    .Article__back
-      a(href='/') ホームへ戻る
+    .Stack.-large
+      each reference, index in collections.references.slice().reverse()
+        article.Stack.-small(id=reference.fileSlug)
+          h2.ItemTitle
+            a.WithIcon.-reference(href=reference.data.link)=reference.data.title
+          !=reference.templateContent
+          p
+            span.WithIcon.-tag
+              each tag, index in reference.data.tags
+                if index
+                  | ・
+                a(href=url(`/tags/${tags.find(t => t.title === tag).slug}/`))=tag

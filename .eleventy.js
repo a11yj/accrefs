@@ -3,7 +3,7 @@ module.exports = (eleventyConfig) => {
     return collection.getFilteredByGlob('src/references/*.md')
   })
 
-  eleventyConfig.addPassthroughCopy('src/assets/style/style.css')
+  eleventyConfig.addPassthroughCopy('src/assets')
 
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false })
 

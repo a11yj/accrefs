@@ -1,5 +1,7 @@
 {
-  "origin": "https://accrefs.jp",
   "title": "accrefs",
-  "description": "Webアクセシビリティ関連の資料まとめ"
+  "description": "Webアクセシビリティの参考資料まとめ",
+  "origin": "https://accrefs.jp",
+  "lang": "ja",
+  "region": "JP"
 }
