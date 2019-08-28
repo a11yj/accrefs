@@ -14,15 +14,15 @@ html(lang=site.lang)
     meta(name="twitter:card" content="summary")
     meta(property="og:title" content=isTag ? tag.title : (title || site.title))
     meta(property="og:type" content="website")
-    meta(property="og:image" content=`${site.origin}${url('/apple-touch-icon.png')}`)
-    meta(property="og:url" content=`${site.origin}${url(page.url)}`)
+    meta(property="og:image" content=`${site.origin}/apple-touch-icon.png`)
+    meta(property="og:url" content=`${site.origin}${page.url}`)
     meta(property="og:description" content=site.description)
     meta(property="og:site_name" content=site.title)
     meta(property="og:locale" content=`${site.lang}_${site.region}`)
-    link(rel="canonical" href=`${site.origin}${url(page.url)}`)
+    link(rel="canonical" href=`${site.origin}${page.url}`)
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=optional")
-    link(rel="stylesheet" href=url('/assets/main.css'))
-    link(rel="apple-touch-icon" href=url('/apple-touch-icon.png'))
+    link(rel="stylesheet" href="/assets/main.css")
+    link(rel="apple-touch-icon" href="/apple-touch-icon.png")
 
   body
     header.SiteHeader
@@ -42,7 +42,7 @@ html(lang=site.lang)
 
             footer(aria-label="ページ")
               p
-                a.WithIcon.-back.-small(href=url('/')) ホーム
+                a.WithIcon.-back.-small(href="/") ホーム
 
     footer.SiteFooter(aria-label="サイト")
       p.Center.-andText #[a(href="https://a11yj.herokuapp.com/") A11YJ Slack]メンバーと有志の協力によって制作・運営されています。

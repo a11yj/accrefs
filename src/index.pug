@@ -11,12 +11,12 @@ block main
         each tag in tags
           article.Stack.-small(id=`tags:${tag.slug}`)
             h3.ItemTitle
-              a.WithIcon.-tag(href=url(`/tags/${tag.slug}/`))=tag.title
+              a.WithIcon.-tag(href=`/tags/${tag.slug}/`)=tag.title
             if tag.content
               p=tag.content
 
       p
-        a.WithIcon.-reference(href=url('/references/')) すべての参考資料
+        a.WithIcon.-reference(href="/references/") すべての参考資料
 
     .Divider
 
@@ -27,6 +27,6 @@ block main
 
       ul
         li
-          a(href='https://github.com/a11yj/accrefs') GitHubからプルリクエストを送る
+          a(href="https://github.com/a11yj/accrefs") GitHubからプルリクエストを送る
         li Googleフォームから送信する（準備中）
         li A11YJのSlackで発言する（準備中）
