@@ -173,7 +173,7 @@ h2.Heading {
 
 @media (min-width: 60em) {
   .ItemTitle > .WithIcon {
-    margin-left: -2em;
+    margin-left: -2.25em;
   }
 }
 
