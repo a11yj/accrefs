@@ -27,9 +27,10 @@ html(lang=site.lang)
   body
     header.SiteHeader
       .Center.-andText
-        p.SiteHeader__title
-          a.SiteHeader__titleLink(href=!isHome && '/')=site.title
-        p.SiteHeader__description=site.description
+        .Stack.-small
+          p.SiteHeader__title
+            a.SiteHeader__titleLink(href=!isHome && '/')=site.title
+          p.SiteHeader__description=site.description
 
     .Center
       .Main

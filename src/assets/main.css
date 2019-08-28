@@ -93,7 +93,6 @@ video {
 }
 
 .SiteHeader__title {
-  margin-top: 0;
   font-size: calc(8 / 4 * 1rem);
   line-height: 1.1;
   font-weight: bold;
@@ -110,7 +109,6 @@ video {
 }
 
 .SiteHeader__description {
-  margin-top: calc(1.7rem / 2);
   font-size: calc(8 / 9 * 1rem);
 }
 
