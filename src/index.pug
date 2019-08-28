@@ -9,7 +9,7 @@ block main
         h2#tags-heading.Heading タグ
 
         .Stack.-large
-          each tag, index in tags
+        each tag in tags
             article.Stack.-small(id=`tags:${tag.slug}`)
               h3.ItemTitle
                 a.WithIcon.-tag(href=url(`/tags/${tag.slug}/`))=tag.title

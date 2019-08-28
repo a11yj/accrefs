@@ -11,7 +11,7 @@ block main
 
     .Stack.-large
       if collections[tag.title]
-        each reference, index in collections[tag.title].slice().reverse()
+        each reference in collections[tag.title].slice().reverse()
           article.Stack.-small(id=reference.fileSlug)
             h2.ItemTitle
               a.WithIcon.-reference(href=reference.data.link)=reference.data.title
