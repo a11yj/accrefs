@@ -7,7 +7,8 @@ block main
     .Stack.-small
       h1.Heading
         span.WithIcon.-tag.-hang.-tighter=tag.title
-      p=tag.content
+      if tag.content
+        p=tag.content
 
     if collections[tag.title]
       each reference in collections[tag.title].slice().reverse()
