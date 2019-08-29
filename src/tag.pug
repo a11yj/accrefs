@@ -1,0 +1,24 @@
+//- https://github.com/11ty/eleventy/issues/286
+
+extends /base.pug
+
+block title
+  title=`${site.title} - ${tag.title}`
+
+block main
+  section.Main__section
+    h3.Main__heading= tag.title
+
+    p.Main__desc= tag.content
+
+    .Article
+      if collections[tag.title]
+        each reference in collections[tag.title]
+          .Article__item
+            h4.Article__heading
+              a.Article__link(href=reference.data.link)=reference.data.title
+
+            .Article__body!=reference.templateContent
+
+    .Article__back
+      a(href='/') ホームへ戻る

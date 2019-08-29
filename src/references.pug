@@ -1,0 +1,24 @@
+extends /base.pug
+
+block main
+  section.Main__section
+    h3.Main__heading アーカイブ
+
+    p.Main__desc 全てのリンクを一覧で掲載しています。
+
+    .Article
+      each reference in collections.references
+        .Article__item
+          h4.Article__heading
+            a.Article__link(href=reference.data.link)= reference.data.title
+
+          .Article__body!= reference.templateContent
+
+          dl.Article__tags
+            dt.Article__tagHead このリンクのカテゴリー
+            dd.Article__tagData
+              each tag, i in reference.data.tags
+                .Article__tagItem= tag
+
+    .Article__back
+      a(href='/') ホームへ戻る
