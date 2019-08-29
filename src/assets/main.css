@@ -155,7 +155,7 @@ video {
 
 .WithIcon.-small {
   padding-left: 1.25em;
-  background-position: left calc((1.7rem - 1rem) / 2);
+  background-position: left calc((1.7em - 1em) / 2);
   background-size: 1em 1em;
 }
 
