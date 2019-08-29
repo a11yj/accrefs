@@ -2,13 +2,13 @@ html {
   font-family: "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
   font-size: calc(0.25vw + 1em);
   line-height: 1.7;
-  color: hsl(0, 0%, 0%, 0.87);
   overflow-wrap: break-word;
   text-underline-position: under;
 }
 
 body {
   margin: 0;
+  color: hsl(0, 0%, 0%, 0.87);
   background-color: hsla(0, 0%, 94%);
 }
 
@@ -117,18 +117,6 @@ video {
   background-color: hsl(0, 0%, 99%);
 }
 
-.Heading {
-  line-height: calc(1.7 * 0.8);
-}
-
-h1.Heading {
-  font-size: calc(8 / 4 * 1rem);
-}
-
-h2.Heading {
-  font-size: calc(8 / 5 * 1rem);
-}
-
 .WithIcon {
   display: inline-flex;
   padding-left: 2.25em;
@@ -148,31 +136,43 @@ h2.Heading {
   background-image: url("/assets/icons.svg#back");
 }
 
+@media (min-width: 60em) {
+  .WithIcon.-hang {
+    margin-left: -2.25em;
+  }
+}
+
+.WithIcon.-tighter {
+  padding-left: 2em;
+  background-size: calc(1.7em * 0.8) calc(1.7em * 0.8);
+}
+
+@media (min-width: 60em) {
+  .WithIcon.-tighter.-hang {
+    margin-left: -2em;
+  }
+}
+
 .WithIcon.-small {
   padding-left: 1.25em;
   background-position: left calc((1.7rem - 1rem) / 2);
   background-size: 1em 1em;
 }
 
-.Heading > .WithIcon {
-  padding-left: 2em;
-  background-size: calc(1.7em * 0.8) calc(1.7em * 0.8);
+.Heading {
+  line-height: calc(1.7 * 0.8);
 }
 
-@media (min-width: 60em) {
-  .Heading > .WithIcon {
-    margin-left: -2em;
-  }
+h1.Heading {
+  font-size: calc(8 / 4 * 1rem);
+}
+
+h2.Heading {
+  font-size: calc(8 / 5 * 1rem);
 }
 
 .ItemTitle {
   font-size: calc(8 / 6 * 1rem);
-}
-
-@media (min-width: 60em) {
-  .ItemTitle > .WithIcon {
-    margin-left: -2.25em;
-  }
 }
 
 .Divider {

@@ -11,7 +11,7 @@ block main
         each tag in tags
           article.Stack.-small(id=`tags:${tag.slug}`)
             h3.ItemTitle
-              a.WithIcon.-tag(href=`/tags/${tag.slug}/`)=tag.title
+              a.WithIcon.-tag.-hang(href=`/tags/${tag.slug}/`)=tag.title
             if tag.content
               p=tag.content
 
