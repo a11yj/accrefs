@@ -7,13 +7,12 @@ block main
     section#tags.Stack.-large(aria-labelledby="tags-heading")
       h2#tags-heading.Heading タグ
 
-      .Stack.-large
-        each tag in tags
-          article.Stack.-small(id=`tags:${tag.slug}`)
-            h3.ItemTitle
-              a.WithIcon.-tag.-hang(href=`/tags/${tag.slug}/`)=tag.title
-            if tag.content
-              p=tag.content
+      each tag in tags
+        article.Stack.-small(id=`tags:${tag.slug}`)
+          h3.ItemTitle
+            a.WithIcon.-tag.-hang(href=`/tags/${tag.slug}/`)=tag.title
+          if tag.content
+            p=tag.content
 
       p
         a.WithIcon.-reference(href="/references/") すべての参考資料

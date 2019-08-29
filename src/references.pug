@@ -4,17 +4,16 @@ block main
   .Stack.-large
     h1.Heading=title
 
-    .Stack.-large
-      each reference in collections.references.slice().reverse()
-        article.Stack.-small(id=reference.fileSlug)
-          h2.ItemTitle
-            a.WithIcon.-reference.-hang(href=reference.data.link)=reference.data.title
-          !=reference.templateContent
-          footer
-            p
-              span.VisuallyHidden タグ：
-              span.WithIcon.-tag
-                each tag, index in reference.data.tags
-                  if index
-                    | ・
-                  a(href=`/tags/${tags.find(t => t.title === tag).slug}/`)=tag
+    each reference in collections.references.slice().reverse()
+      article.Stack.-small(id=reference.fileSlug)
+        h2.ItemTitle
+          a.WithIcon.-reference.-hang(href=reference.data.link)=reference.data.title
+        !=reference.templateContent
+        footer
+          p
+            span.VisuallyHidden タグ：
+            span.WithIcon.-tag
+              each tag, index in reference.data.tags
+                if index
+                  | ・
+                a(href=`/tags/${tags.find(t => t.title === tag).slug}/`)=tag
