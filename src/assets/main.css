@@ -31,15 +31,15 @@ p {
   margin-bottom: 0;
 }
 
-a[href] {
+a:any-link {
   color: inherit;
 }
 
-a:active[href] {
+a:any-link:active {
   background-color: hsla(0, 0%, 0%, 0.1);
 }
 
-a:visited[href] {
+a:visited {
   color: hsl(0, 0%, 40%);
 }
 
@@ -98,13 +98,12 @@ video {
   font-weight: bold;
 }
 
-.SiteHeader__titleLink[href],
-.SiteHeader__titleLink[href]:visited {
+.SiteHeader__titleLink:any-link {
   color: inherit;
   text-decoration: none;
 }
 
-.SiteHeader__titleLink[href]:active {
+.SiteHeader__titleLink:any-link:active {
   background-color: hsla(0, 0%, 100%, 0.1);
 }
 
