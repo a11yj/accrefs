@@ -9,7 +9,7 @@ html {
 
 body {
   margin: 0;
-  background-color: hsl(0, 0%, 99%);
+  background-color: hsla(0, 0%, 94%);
 }
 
 h1,
@@ -111,6 +111,12 @@ video {
   font-size: calc(8 / 9 * 1rem);
 }
 
+.Main {
+  padding-top: calc(1.7rem * 2.5);
+  padding-bottom: calc(1.7rem * 2.5);
+  background-color: hsl(0, 0%, 99%);
+}
+
 .Heading {
   line-height: calc(1.7 * 0.8);
 }
@@ -178,5 +184,4 @@ h2.Heading {
   padding-top: 1.7rem;
   padding-bottom: 1.7rem;
   font-size: calc(8 / 9 * 1rem);
-  background-color: hsla(0, 0%, 94%);
 }
