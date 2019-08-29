@@ -25,14 +25,14 @@ html(lang=site.lang)
     link(rel="apple-touch-icon" href="/apple-touch-icon.png")
 
   body
-    header.SiteHeader
-      .Center.-andText
-        .Stack.-small
-          p.SiteHeader__title
-            a.SiteHeader__titleLink(href=!isHome && '/')=site.title
-          p.SiteHeader__description=site.description
+    .Stack.-large
+      header.SiteHeader
+        .Center.-andText
+          .Stack.-small
+            p.SiteHeader__title
+              a.SiteHeader__titleLink(href=!isHome && '/')=site.title
+            p.SiteHeader__description=site.description
 
-    .Main
       .Center
         .Stack.-large
           main(role="main")
@@ -45,5 +45,5 @@ html(lang=site.lang)
               p
                 a.WithIcon.-back.-small(href="/") ホーム
 
-    footer.SiteFooter(aria-label="サイト")
-      p.Center.-andText #[a(href="https://a11yj.herokuapp.com/") A11YJ Slack]メンバーと有志の協力によって制作・運営されています。
+      footer.SiteFooter(aria-label="サイト")
+        p.Center.-andText #[a(href="https://a11yj.herokuapp.com/") A11YJ Slack]メンバーと有志の協力によって制作・運営されています。

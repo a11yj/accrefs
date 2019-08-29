@@ -111,11 +111,6 @@ video {
   font-size: calc(8 / 9 * 1rem);
 }
 
-.Main {
-  padding-top: calc(1.7rem * 2.5);
-  padding-bottom: calc(1.7rem * 2.5);
-}
-
 .Heading {
   line-height: calc(1.7 * 0.8);
 }
