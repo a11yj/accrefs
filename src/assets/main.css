@@ -1,7 +1,22 @@
+:root {
+  --ratio: 1.7;
+  --font-size-base: 1rem;
+  --font-size-xxlarge: calc(8 / 4 * var(--font-size-base));
+  --font-size-xlarge: calc(8 / 5 * var(--font-size-base));
+  --font-size-large: calc(8 / 6 * var(--font-size-base));
+  --font-size-small: calc(8 / 9 * var(--font-size-base));
+  --line-height-base: var(--ratio);
+  --line-height-small: calc(var(--line-height-base) * 0.8);
+  --spacer-base: calc(var(--ratio) * var(--font-size-base));
+  --spacer-large: calc(var(--spacer-base) * var(--ratio) * var(--ratio));
+  --spacer-small: calc(var(--spacer-base) / var(--ratio));
+  --max-width-content: 40rem;
+}
+
 html {
   font-family: "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
   font-size: calc(0.25vw + 1em);
-  line-height: 1.7;
+  line-height: var(--line-height-base);
   overflow-wrap: break-word;
   text-underline-position: under;
 }
@@ -50,25 +65,25 @@ video {
 }
 
 .Stack > * + * {
-  margin-top: 1.7rem;
+  margin-top: var(--spacer-base);
 }
 
 .Stack.-large > * + * {
-  margin-top: calc(1.7rem * 2.5);
+  margin-top: var(--spacer-large);
 }
 
 .Stack.-small > * + * {
-  margin-top: calc(1.7rem / 1.5);
+  margin-top: var(--spacer-small);
 }
 
 .Center {
-  max-width: 40rem;
+  max-width: var(--max-width-content);
   margin-right: auto;
   margin-left: auto;
-  padding-right: 1rem;
-  padding-right: calc(env(safe-area-inset-right) + 1rem);
-  padding-left: 1rem;
-  padding-left: calc(env(safe-area-inset-left) + 1rem);
+  padding-right: var(--spacer-small);
+  padding-right: calc(env(safe-area-inset-right) + var(--spacer-small));
+  padding-left: var(--spacer-small);
+  padding-left: calc(env(safe-area-inset-left) + var(--spacer-small));
 }
 
 .Center.-andText {
@@ -88,14 +103,14 @@ video {
 }
 
 .SiteHeader {
-  padding-top: 1.7rem;
-  padding-bottom: 1.7rem;
+  padding-top: var(--spacer-base);
+  padding-bottom: var(--spacer-base);
   color: hsla(0, 0%, 100%, 0.87);
   background-color: hsl(200, 19%, 18%);
 }
 
 .SiteHeader__title {
-  font-size: calc(8 / 4 * 1rem);
+  font-size: var(--font-size-xxlarge);
   line-height: 1.1;
   font-weight: bold;
 }
@@ -110,12 +125,12 @@ video {
 }
 
 .SiteHeader__description {
-  font-size: calc(8 / 9 * 1rem);
+  font-size: var(--font-size-small);
 }
 
 .Main {
-  padding-top: calc(1.7rem * 2.5);
-  padding-bottom: calc(1.7rem * 2.5);
+  padding-top: var(--spacer-large);
+  padding-bottom: var(--spacer-large);
   background-color: hsl(0, 0%, 99%);
 }
 
@@ -123,7 +138,8 @@ video {
   display: inline-flex;
   padding-left: 2.25em;
   background-repeat: no-repeat;
-  background-size: 1.7em 1.7em;
+  background-size: calc(var(--line-height-base) * 1em)
+    calc(var(--line-height-base) * 1em);
 }
 
 .WithIcon.-reference {
@@ -146,7 +162,8 @@ video {
 
 .WithIcon.-tighter {
   padding-left: 2em;
-  background-size: calc(1.7em * 0.8) calc(1.7em * 0.8);
+  background-size: calc(var(--line-height-small) * 1em)
+    calc(var(--line-height-small) * 1em);
 }
 
 @media (min-width: 60em) {
@@ -157,24 +174,24 @@ video {
 
 .WithIcon.-small {
   padding-left: 1.25em;
-  background-position: left calc((1.7em - 1em) / 2);
+  background-position: left calc((var(--line-height-base) * 1em - 1em) / 2);
   background-size: 1em 1em;
 }
 
 .Heading {
-  line-height: calc(1.7 * 0.8);
+  line-height: var(--line-height-small);
 }
 
 h1.Heading {
-  font-size: calc(8 / 4 * 1rem);
+  font-size: var(--font-size-xxlarge);
 }
 
 h2.Heading {
-  font-size: calc(8 / 5 * 1rem);
+  font-size: var(--font-size-xlarge);
 }
 
 .ItemTitle {
-  font-size: calc(8 / 6 * 1rem);
+  font-size: var(--font-size-large);
 }
 
 .Divider {
@@ -183,7 +200,7 @@ h2.Heading {
 }
 
 .SiteFooter {
-  padding-top: 1.7rem;
-  padding-bottom: 1.7rem;
-  font-size: calc(8 / 9 * 1rem);
+  padding-top: var(--spacer-base);
+  padding-bottom: var(--spacer-base);
+  font-size: var(--font-size-small);
 }
