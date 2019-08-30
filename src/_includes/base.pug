@@ -1,4 +1,14 @@
-- const { url, slug } = _universalFilters
+-
+  const { url, slug } = _universalFilters
+
+  let ogTitle
+  if (isHome) {
+    ogTitle = site.title
+  } else if (isTag) {
+    ogTitle = tag.title
+  } else {
+    ogTitle = title
+  }
 
 doctype html
 html(lang=site.lang)
@@ -12,7 +22,7 @@ html(lang=site.lang)
         =`${isTag ? tag.title : title} - ${site.title}`
     meta(name="description" content=site.description)
     meta(name="twitter:card" content="summary")
-    meta(property="og:title" content=isTag ? tag.title : title)
+    meta(property="og:title" content=ogTitle)
     meta(property="og:type" content="website")
     meta(property="og:image" content=`${site.origin}/apple-touch-icon.png`)
     meta(property="og:url" content=`${site.origin}${page.url}`)
