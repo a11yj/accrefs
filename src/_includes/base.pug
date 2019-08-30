@@ -5,14 +5,10 @@ html(lang=site.lang)
   head(prefix="og: http://ogp.me/ns#")
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover")
-    title
-      if isHome
-        =site.title
-      else
-        =`${isTag ? tag.title : title} - ${site.title}`
+    title=`${isTag ? tag.title : title} - ${site.title}`
     meta(name="description" content=site.description)
     meta(name="twitter:card" content="summary")
-    meta(property="og:title" content=isTag ? tag.title : (title || site.title))
+    meta(property="og:title" content=isTag ? tag.title : title)
     meta(property="og:type" content="website")
     meta(property="og:image" content=`${site.origin}/apple-touch-icon.png`)
     meta(property="og:url" content=`${site.origin}${page.url}`)
