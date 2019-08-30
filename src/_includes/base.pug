@@ -5,10 +5,11 @@ html(lang=site.lang)
   head(prefix="og: http://ogp.me/ns#")
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover")
-    if isHome
-      title=`${site.title} - ${title}`
-    else
-      title=`${isTag ? tag.title : title} - ${site.title}`
+    title
+      if isHome
+        =`${site.title} - ${title}`
+      else
+        =`${isTag ? tag.title : title} - ${site.title}`
     meta(name="description" content=site.description)
     meta(name="twitter:card" content="summary")
     meta(property="og:title" content=isTag ? tag.title : title)
