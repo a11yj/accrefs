@@ -1,28 +1,31 @@
 extends /base.pug
 
 block main
-  section.Main__section
-    h3.Main__heading カテゴリー
+  h1.VisuallyHidden=`${site.title} ホーム`
 
-    .Card
-      each tag, i in tags
-        .Card__item
-          h4.Card__heading
-            a.Card__link(href=url(`/tags/${tag.slug}/`))= tag.title
-          p.Card__desc= tag.content
+  .Stack.-large
+    section#tags.Stack.-large(aria-labelledby="tags-heading")
+      h2#tags-heading.Heading タグ
 
-    .Main__more
-      a(href='/references/') アーカイブ一覧
+      each tag in tags
+        article.Stack.-small(id=`tags:${tag.slug}`)
+          h3.ItemTitle
+            a.WithIcon.-tag.-hang(href=`/tags/${tag.slug}/`)=tag.title
+          if tag.content
+            p=tag.content
 
-  section.Main__section
-    h3.Main__heading このウェブサイトの編集に参加する
+      p
+        a.WithIcon.-reference(href="/references/") すべての参考資料
 
-    p.Main__desc どなたでも大歓迎です！　下記のいずれかからコンタクトを取ってください
+    .Divider
 
-    ul.ContributeList
-      li.ContributeList__item
-        a.ContributeList__link(href='https://github.com/a11yj/accrefs/') GitHubからプルリクエストを送る
-      li.ContributeList__item
-        a.ContributeList__link Googleフォームで送信する（準備中）
-      li.ContributeList__item
-        a.ContributeList__link A11YJのSlackで発言する（準備中）
+    section#contribution.Stack(aria-labelledby="contribution-heading")
+      h2#contribution-heading.Heading ウェブサイトに貢献
+
+      p このウェブサイトではあなたからの情報提供をお待ちしています。参考資料の追加・修正のリクエストは次のいずれかの方法で行えます。
+
+      ul
+        li
+          a(href="https://github.com/a11yj/accrefs") GitHubからプルリクエストを送る
+        li Googleフォームから送信する（準備中）
+        li A11YJのSlackで発言する（準備中）

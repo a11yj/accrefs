@@ -1,0 +1,206 @@
+:root {
+  --ratio: 1.7;
+  --font-size-base: 1rem;
+  --font-size-xxlarge: calc(8 / 4 * var(--font-size-base));
+  --font-size-xlarge: calc(8 / 5 * var(--font-size-base));
+  --font-size-large: calc(8 / 6 * var(--font-size-base));
+  --font-size-small: calc(8 / 9 * var(--font-size-base));
+  --line-height-base: var(--ratio);
+  --line-height-small: calc(var(--line-height-base) * 0.8);
+  --spacer-base: calc(var(--ratio) * var(--font-size-base));
+  --spacer-large: calc(var(--spacer-base) * var(--ratio) * var(--ratio));
+  --spacer-small: calc(var(--spacer-base) / var(--ratio));
+  --max-width-content: 40rem;
+}
+
+html {
+  font-family: "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+  font-size: calc(0.25vw + 1em);
+  line-height: var(--line-height-base);
+  overflow-wrap: break-word;
+  text-underline-position: under;
+}
+
+body {
+  margin: 0;
+  color: hsl(0, 0%, 0%, 0.87);
+  background-color: hsla(0, 0%, 94%);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a:any-link {
+  color: inherit;
+}
+
+a:any-link:active {
+  background-color: hsla(0, 0%, 0%, 0.1);
+}
+
+a:visited {
+  color: hsl(0, 0%, 40%);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.Stack > * + * {
+  margin-top: var(--spacer-base);
+}
+
+.Stack.-large > * + * {
+  margin-top: var(--spacer-large);
+}
+
+.Stack.-small > * + * {
+  margin-top: var(--spacer-small);
+}
+
+.Center {
+  max-width: var(--max-width-content);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--spacer-small);
+  padding-right: calc(env(safe-area-inset-right) + var(--spacer-small));
+  padding-left: var(--spacer-small);
+  padding-left: calc(env(safe-area-inset-left) + var(--spacer-small));
+}
+
+.Center.-andText {
+  text-align: center;
+}
+
+.VisuallyHidden {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(50%) !important;
+  clip: rect(0, 0, 0, 0) !important; /* deprecated */
+}
+
+.SiteHeader {
+  padding-top: var(--spacer-base);
+  padding-bottom: var(--spacer-base);
+  color: hsla(0, 0%, 100%, 0.87);
+  background-color: hsl(200, 19%, 18%);
+}
+
+.SiteHeader__title {
+  font-size: var(--font-size-xxlarge);
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+.SiteHeader__titleLink:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.SiteHeader__titleLink:any-link:active {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.SiteHeader__description {
+  font-size: var(--font-size-small);
+}
+
+.Main {
+  padding-top: var(--spacer-large);
+  padding-bottom: var(--spacer-large);
+  background-color: hsl(0, 0%, 99%);
+}
+
+.WithIcon {
+  display: inline-flex;
+  padding-left: 2.25em;
+  background-repeat: no-repeat;
+  background-size: calc(var(--line-height-base) * 1em)
+    calc(var(--line-height-base) * 1em);
+}
+
+.WithIcon.-reference {
+  background-image: url("/assets/icons.svg#reference");
+}
+
+.WithIcon.-tag {
+  background-image: url("/assets/icons.svg#tag");
+}
+
+.WithIcon.-back {
+  background-image: url("/assets/icons.svg#back");
+}
+
+@media (min-width: 60em) {
+  .WithIcon.-hang {
+    margin-left: -2.25em;
+  }
+}
+
+.WithIcon.-tighter {
+  padding-left: 2em;
+  background-size: calc(var(--line-height-small) * 1em)
+    calc(var(--line-height-small) * 1em);
+}
+
+@media (min-width: 60em) {
+  .WithIcon.-tighter.-hang {
+    margin-left: -2em;
+  }
+}
+
+.WithIcon.-small {
+  padding-left: 1.25em;
+  background-position: left calc((var(--line-height-base) * 1em - 1em) / 2);
+  background-size: 1em 1em;
+}
+
+.Heading {
+  line-height: var(--line-height-small);
+}
+
+h1.Heading {
+  font-size: var(--font-size-xxlarge);
+}
+
+h2.Heading {
+  font-size: var(--font-size-xlarge);
+}
+
+.ItemTitle {
+  font-size: var(--font-size-large);
+}
+
+.Divider {
+  height: 1px;
+  background-color: hsla(0, 0%, 0%, 0.1);
+}
+
+.SiteFooter {
+  padding-top: var(--spacer-base);
+  padding-bottom: var(--spacer-base);
+  font-size: var(--font-size-small);
+}

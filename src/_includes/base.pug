@@ -1,31 +1,54 @@
 - const { url, slug } = _universalFilters
-- const isHome = page.url === '/'
 
 doctype html
-html(lang='ja')
-  head
-    meta(charset='UTF-8')
-    meta(content='viewport-fit=cover, width=device-width, initial-scale=1' name='viewport')
-    link(rel='stylesheet' href='/assets/style/style.css')
-    block title
-      title
-        if isHome
-          =site.title
-        else
-          =`${site.title} - ${title}`
+html(lang=site.lang)
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover")
+    title
+      if isHome
+        =site.title
+      else
+        =`${isTag ? tag.title : title} - ${site.title}`
+    meta(name="description" content=site.description)
+    meta(name="twitter:card" content="summary")
+    meta(property="og:title" content=isTag ? tag.title : (title || site.title))
+    meta(property="og:type" content="website")
+    meta(property="og:image" content=`${site.origin}/apple-touch-icon.png`)
+    meta(property="og:url" content=`${site.origin}${page.url}`)
+    meta(property="og:description" content=site.description)
+    meta(property="og:site_name" content=site.title)
+    meta(property="og:locale" content=`${site.lang}_${site.region}`)
+    link(rel="canonical" href=`${site.origin}${page.url}`)
+    link(rel="alternate" href="/feed.xml" type="application/rss+xml")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=optional")
+    link(rel="stylesheet" href="/assets/main.css")
+    link(rel="apple-touch-icon" href="/apple-touch-icon.png")
 
-  body(class= page_type)
-    header.Header(role='banner')
-      .Header__inner
-        hgroup.Header__hgroup
-          h1.Header__heading
-            a.Header__link(href=!isHome && '/')= site.title
-          h2.Header__subheading= site.description
+  body
+    header.SiteHeader
+      .Center.-andText
+        .Stack.-small
+          p.SiteHeader__title
+            a.SiteHeader__titleLink(href=!isHome && '/')=site.title
+          p.SiteHeader__description=site.description
 
-    main.Main(role='main')
-      .Main__inner
-        block main
+    .Main
+      .Center
+        .Stack.-large
+          main(role="main")
+            block main
 
-    footer.Footer(role='contentinfo')
-      .Footer__inner
-        p.Footer__credit このウェブサイトはA11YJ Slackメンバーと有志の協力によって制作されました
+          if !isHome
+            .Divider
+
+            footer(aria-label="ページ")
+              p
+                a.WithIcon.-back.-small(href="/") ホーム
+
+    footer.SiteFooter(aria-label="サイト")
+      .Center.-andText
+        .Stack.-small
+          p #[a(href="https://a11yj.herokuapp.com/") A11YJ Slack]メンバーと有志の協力によって制作・運営されています。
+          p
+            a(href="/feed.xml" type="application/rss+xml") RSS

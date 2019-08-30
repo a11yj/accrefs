@@ -3,7 +3,8 @@ module.exports = (eleventyConfig) => {
     return collection.getFilteredByGlob('src/references/*.md')
   })
 
-  eleventyConfig.addPassthroughCopy('src/assets/style/style.css')
+  eleventyConfig.addPassthroughCopy('src/assets')
+  eleventyConfig.addPassthroughCopy('src/apple-touch-icon.png')
 
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false })
 
