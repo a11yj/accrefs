@@ -20,7 +20,7 @@ block main
           each reference in collections[tag.title].slice().reverse()
             article.Stack.-small(id=`references:${reference.fileSlug}`)
               h3.ItemTitle
-                a.WithIcon.-reference.-hang(href=reference.data.link || null)=reference.data.title
+                a.WithIcon.-reference.-hang(href=reference.data.link)=reference.data.title
               !=reference.templateContent
       else
         p 参考資料がまだ登録されていません。
