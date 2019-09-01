@@ -22,7 +22,7 @@ HTMLはPugを利用しています：
 | ファイル | ページ |
 |:---|:---|
 | `src/_includes/base.pug` | 共通テンプレート |
-| `src/index.pug` | トップ |
+| `src/index.pug` | ホーム |
 | `src/tag.pug` | タグ詳細 |
 | `src/references.pug` | 参考資料一覧 |
 | `src/feed.xml.pug` | RSS |
