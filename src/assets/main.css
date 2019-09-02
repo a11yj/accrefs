@@ -91,6 +91,24 @@ video {
   text-align: center;
 }
 
+.Cluster {
+  overflow: hidden;
+}
+
+.Cluster > * {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: calc(var(--spacer-small) / 2 * -1);
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.Cluster > * > * {
+  margin: calc(var(--spacer-small) / 2);
+}
+
 .VisuallyHidden {
   position: absolute !important;
   overflow: hidden !important;
