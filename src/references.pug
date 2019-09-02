@@ -15,5 +15,5 @@ block main
             span.WithIcon.-tag
               each tag, index in reference.data.tags
                 if index
-                  | ・
+                  | ／
                 a(href=`/tags/${tags.find(t => t.title === tag).slug}/`)=tag
