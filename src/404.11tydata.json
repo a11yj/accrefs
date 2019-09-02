@@ -1,4 +1,5 @@
 {
   "permalink": "=`${page.fileSlug}.html`",
-  "title": "このページは存在しません"
+  "title": "このページは存在しません",
+  "isNotFound": true
 }
