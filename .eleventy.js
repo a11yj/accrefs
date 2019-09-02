@@ -1,6 +1,8 @@
 module.exports = (eleventyConfig) => {
   eleventyConfig.addCollection('references', (collection) => {
-    return collection.getFilteredByGlob('src/references/*.md')
+    return collection.getFilteredByGlob('src/references/*.md').sort((a, b) => {
+      return a.inputPath > b.inputPath
+    })
   })
 
   eleventyConfig.addPassthroughCopy('src/assets')

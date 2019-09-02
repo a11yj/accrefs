@@ -32,6 +32,7 @@ h2,
 h3 {
   margin-top: 0;
   margin-bottom: 0;
+  font-feature-settings: "palt";
 }
 
 ol,
@@ -105,6 +106,7 @@ video {
 .SiteHeader {
   padding-top: var(--spacer-base);
   padding-bottom: var(--spacer-base);
+  font-size: var(--font-size-small);
   color: hsla(0, 0%, 100%, 0.87);
   background-color: hsl(200, 19%, 18%);
 }
@@ -122,10 +124,6 @@ video {
 
 .SiteHeader__titleLink:any-link:active {
   background-color: hsla(0, 0%, 100%, 0.1);
-}
-
-.SiteHeader__description {
-  font-size: var(--font-size-small);
 }
 
 .Main {
