@@ -41,7 +41,7 @@ html(lang=site.lang)
         .Stack.-small
           p.SiteHeader__title
             a.SiteHeader__titleLink(href=!isHome && '/')=site.title
-          p.SiteHeader__description=site.description
+          p=site.description
 
     .Main
       .Center
@@ -62,3 +62,5 @@ html(lang=site.lang)
           p #[a(href="https://a11yj.herokuapp.com/") A11YJ Slack]メンバーと有志の協力によって制作・運営されています。
           p
             a(href="/feed.xml" type="application/rss+xml") RSS
+            | ・
+            a(href="https://github.com/a11yj/accrefs") GitHub
