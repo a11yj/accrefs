@@ -133,7 +133,7 @@ video {
 }
 
 .WithIcon {
-  display: inline-flex;
+  display: inline-block;
   padding-left: 2.25em;
   background-repeat: no-repeat;
   background-size: calc(var(--line-height-base) * 1em)
