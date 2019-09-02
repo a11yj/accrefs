@@ -27,7 +27,7 @@ Patches Welcome!
 
 CC BY A11YJ Slack Team
 
-accrefsは[CC BY 4.0](LICENSE)で提供されています。
+accrefsは[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.ja)で提供されています。
 
 無断引用大歓迎！　発見次第即乾杯！！
 
