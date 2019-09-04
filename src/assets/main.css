@@ -8,6 +8,9 @@
   --line-height-base: var(--ratio);
   --line-height-small: calc(var(--line-height-base) * 0.8);
   --spacer-base: calc(var(--ratio) * var(--font-size-base));
+  --spacer-xlarge: calc(
+    var(--spacer-base) * var(--ratio) * var(--ratio) * var(--ratio)
+  );
   --spacer-large: calc(var(--spacer-base) * var(--ratio) * var(--ratio));
   --spacer-small: calc(var(--spacer-base) / var(--ratio));
   --max-width-content: 40rem;
@@ -67,6 +70,10 @@ video {
 
 .Stack > * + * {
   margin-top: var(--spacer-base);
+}
+
+.Stack.-xlarge > * + * {
+  margin-top: var(--spacer-xlarge);
 }
 
 .Stack.-large > * + * {
