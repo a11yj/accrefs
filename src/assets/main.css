@@ -59,7 +59,7 @@ a:any-link:active {
 }
 
 a:visited {
-  color: hsl(0, 0%, 34%);
+  color: hsl(0, 0%, 31%);
 }
 
 img,
@@ -226,8 +226,4 @@ h2.Heading {
   padding-top: var(--spacer-base);
   padding-bottom: var(--spacer-base);
   font-size: var(--font-size-small);
-}
-
-.SiteFooter a:visited {
-  color: hsl(0, 0%, 31%);
 }
