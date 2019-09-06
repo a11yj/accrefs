@@ -9,22 +9,23 @@ block main
 
       p または、もしかするとURLの入力に間違いがあるかもしれないので、単純なスペルミスなどをしていないか確認してみてください。
 
-    section#sitemap.Stack(aria-labelledby="sitemap-heading")
-      h2#sitemap-heading.Heading サイトマップ
+    .Stack.-xlarge
+      section#sitemap.Stack(aria-labelledby="sitemap-heading")
+        h2#sitemap-heading.Heading サイトマップ
 
-      ul
-        li
-          a(href="/") ホーム
-          ul
-            li
-              a(href="/#tags") タグ
-            li
-              a(href="/#contribution") ウェブサイトに貢献
-        li
-          | タグ
-          ul
-            each tag in tags
+        ul
+          li
+            a(href="/") ホーム
+            ul
               li
-                a(href=`/tags/${tag.slug}/`)=tag.title
-        li
-          a(href="/references/") 参考資料
+                a(href="/#tags") タグ
+              li
+                a(href="/#contribution") ウェブサイトに貢献
+          li
+            | タグ
+            ul
+              each tag in tags
+                li
+                  a(href=`/tags/${tag.slug}/`)=tag.title
+          li
+            a(href="/references/") 参考資料
