@@ -5,8 +5,11 @@ block main
     h1.Heading=title
 
     each reference in collections.references.slice().reverse()
-      article.Stack.-small(id=reference.fileSlug)
-        h2.ItemTitle
+      article.Stack.-small(
+        id=reference.fileSlug
+        aria-labelledby=`${reference.fileSlug}-heading`
+      )
+        h2.ItemTitle(id=`${reference.fileSlug}-heading`)
           a.WithIcon.-reference.-hang(href=reference.data.link)=reference.data.title
         !=reference.templateContent
         footer
