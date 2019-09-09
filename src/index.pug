@@ -8,8 +8,11 @@ block main
       h2#tags-heading.Heading タグ
 
       each tag in tags
-        article.Stack.-small(id=`tags:${tag.slug}`)
-          h3.ItemTitle
+        article.Stack.-small(
+          id=`tags:${tag.slug}`
+          aria-labelledby=`tags:${tag.slug}-heading`
+        )
+          h3.ItemTitle(id=`tags:${tag.slug}-heading`)
             a.WithIcon.-tag.-hang(href=`/tags/${tag.slug}/`)=tag.title
           if tag.content
             p=tag.content
