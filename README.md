@@ -41,4 +41,4 @@ accrefsは[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.ja)�
 
 accrefsはA11YJ Slack Teamメンバーと有志の協力によって制作されました。この場を借りて深くお礼を申し上げます。
 
-38mot / 8842musign / caztcha / bakera / jidaikobo-shibata / magi1125 / masuP9 / momdo / oti / uknmr / yamanoku / yuheiy / YusukeHirao （アルファベット順・敬称略）
+38mot / 8842musign / bakera / caztcha / jidaikobo-shibata / magi1125 / masuP9 / momdo / oti / uknmr / yamanoku / yuheiy / YusukeHirao （アルファベット順・敬称略）
