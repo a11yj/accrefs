@@ -25,11 +25,13 @@ html(lang=site.lang)
     meta(property="og:title" content=ogTitle)
     meta(property="og:type" content="website")
     meta(property="og:image" content=`${site.origin}/apple-touch-icon.png`)
-    meta(property="og:url" content=`${site.origin}${page.url}`)
+    if !isNotFound
+      meta(property="og:url" content=`${site.origin}${page.url}`)
     meta(property="og:description" content=isTag && tag.content || site.description)
     meta(property="og:site_name" content=site.title)
     meta(property="og:locale" content=`${site.lang}_${site.region}`)
-    link(rel="canonical" href=`${site.origin}${page.url}`)
+    if !isNotFound
+      link(rel="canonical" href=`${site.origin}${page.url}`)
     link(rel="alternate" href="/feed.xml" type="application/rss+xml")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=optional")
     link(rel="stylesheet" href="/assets/main.css")
@@ -60,7 +62,9 @@ html(lang=site.lang)
       .Center.-andText
         .Stack.-small
           p #[a(href="https://a11yj.herokuapp.com/") A11YJ Slack]メンバーと有志の協力によって制作・運営されています。
-          p
-            a(href="/feed.xml" type="application/rss+xml") RSS
-            | ・
-            a(href="https://github.com/a11yj/accrefs") GitHub
+          .Cluster
+            ul
+              li
+                a(href="/feed.xml" type="application/rss+xml") RSS
+              li
+                a(href="https://github.com/a11yj/accrefs") GitHub

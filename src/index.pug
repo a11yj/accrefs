@@ -3,21 +3,22 @@ extends /base.pug
 block main
   h1.VisuallyHidden=`${site.title} ホーム`
 
-  .Stack.-large
+  .Stack.-xlarge
     section#tags.Stack.-large(aria-labelledby="tags-heading")
       h2#tags-heading.Heading タグ
 
       each tag in tags
-        article.Stack.-small(id=`tags:${tag.slug}`)
-          h3.ItemTitle
+        article.Stack.-small(
+          id=`tags:${tag.slug}`
+          aria-labelledby=`tags:${tag.slug}-heading`
+        )
+          h3.ItemTitle(id=`tags:${tag.slug}-heading`)
             a.WithIcon.-tag.-hang(href=`/tags/${tag.slug}/`)=tag.title
           if tag.content
             p=tag.content
 
       p
         a.WithIcon.-reference(href="/references/") すべての参考資料
-
-    .Divider
 
     section#contribution.Stack(aria-labelledby="contribution-heading")
       h2#contribution-heading.Heading ウェブサイトに貢献

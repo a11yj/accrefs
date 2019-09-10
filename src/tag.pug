@@ -18,8 +18,11 @@ block main
       if collections[tag.title]
         .Stack.-large
           each reference in collections[tag.title].slice().reverse()
-            article.Stack.-small(id=`references:${reference.fileSlug}`)
-              h3.ItemTitle
+            article.Stack.-small(
+              id=`references:${reference.fileSlug}`
+              aria-labelledby=`references:${reference.fileSlug}-heading`
+            )
+              h3.ItemTitle(id=`references:${reference.fileSlug}-heading`)
                 a.WithIcon.-reference.-hang(href=reference.data.link)=reference.data.title
               !=reference.templateContent
       else
