@@ -20,7 +20,7 @@ accrefsは、参考資料の掲載について誰からの提案でも受け付�
 リクエスト方法は下記のいずれかから可能です。
 
 - [Googleフォーム](https://forms.gle/b4Nu24JNhnc4Z8qM9)：Googleフォームでは追加リクエストのみ受け付けています。
-- [リポジトリのイシュー](https://github.com/a11yj/accrefs/issues/new/choose) ：追加リクエスト用のテンプレートを用意しています。
+- [リポジトリのイシュー](https://github.com/a11yj/accrefs/issues/new/choose)：追加リクエスト用のテンプレートを用意しています。
 - [A11YJ Slackチーム](https://a11yj.herokuapp.com/)：チームに参加後、`#a11y_matome_site`チャンネルで旨を発言してください。
 
 遠慮なくリクエストしてください！
@@ -41,9 +41,7 @@ Patches Welcome!
 
 ## ライセンス
 
-CC BY A11YJ Slack Team
-
-accrefsは[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.ja)で提供されています。
+[accrefs](https://accrefs.jp/) by [A11YJ Slack Team](https://a11yj.slack.com) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.ja).
 
 無断引用大歓迎！　発見次第即乾杯！！
 
