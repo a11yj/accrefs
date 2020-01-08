@@ -75,25 +75,17 @@ YAMLブロックには上から「タイトル」「タグ」「リンク先URL�
 
 データを編集するためには、次のフィールドに従って記述してください。
 
-```json
-[
-  {
-    "title": "何から手を着けていいのか分からないときは",
-    "slug": "getting_started",
-    "content": "『デザイニングWebアクセシビリティ』が手元にないという方は、今すぐ用意しましょう（？）"
-  },
-  {
-    "title": "Webアクセシビリティとは？的なもの",
-    "slug": "introduction_to_web_accessibility",
-    "content": "Webにおけるアクセシビリティを知りましょう。"
-  },
-  {
-    "title": "企業がWebアクセシビリティに取り組む価値",
-    "slug": "company_effort",
-    "content": ""
-  },
-  ...
-]
+```yaml
+- title: 何から手を着けていいのか分からないときは
+  slug: getting_started
+  content: 『デザイニングWebアクセシビリティ』が手元にないという方は、今すぐ用意しましょう（？）
+- title: Webアクセシビリティとは？的なもの
+  slug: introduction_to_web_accessibility
+  content: Webにおけるアクセシビリティを知りましょう。
+- title: 企業がWebアクセシビリティに取り組む価値
+  slug: company_effort
+  content: 企業が取り組む意味はどこにあるのか、なぜいま始める必要があるのかといった観点を解説しています。
+- ...
 ```
 
 ウェブサイトには配列の要素が並んでいる順番で表示されます。
