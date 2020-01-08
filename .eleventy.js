@@ -1,9 +1,10 @@
+const Sortable = require('@11ty/eleventy/src/Util/Sortable')
 const yaml = require('js-yaml')
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addCollection('references', (collection) => {
     return collection.getFilteredByGlob('src/references/*.md').sort((a, b) => {
-      return a.inputPath > b.inputPath
+      return Sortable.sortFunctionAlphabeticAscending(a.inputPath, b.inputPath)
     })
   })
 
