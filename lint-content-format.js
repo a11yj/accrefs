@@ -1,10 +1,11 @@
 const fs = require('fs').promises
+const yaml = require('js-yaml')
 const fg = require('fast-glob')
 const matter = require('gray-matter')
 
 const readTags = async () => {
-  const content = await fs.readFile('src/_data/tags.json')
-  return JSON.parse(content)
+  const content = await fs.readFile('src/_data/tags.yml', 'utf8')
+  return yaml.safeLoad(content)
 }
 
 const getDuplicatedTagIndex = (tags, key, value, currentTagIndex) => {
