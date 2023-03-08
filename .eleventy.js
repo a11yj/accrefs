@@ -12,7 +12,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('src/apple-touch-icon.png')
 
   eleventyConfig.addDataExtension('yml', (contents) => {
-    return yaml.safeLoad(contents)
+    return yaml.load(contents)
   })
 
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false })

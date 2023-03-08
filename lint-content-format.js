@@ -5,7 +5,7 @@ const matter = require('gray-matter')
 
 const readTags = async () => {
   const content = await fs.readFile('src/_data/tags.yml', 'utf8')
-  return yaml.safeLoad(content)
+  return yaml.load(content)
 }
 
 const getDuplicatedTagIndex = (tags, key, value, currentTagIndex) => {
