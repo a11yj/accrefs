@@ -1,11 +1,11 @@
 {
   "name": "accrefs",
   "version": "1.0.0",
-  "description": "Web Accessiblity References",
+  "description": "Web Accessibility References",
   "keywords": [
     "accrefs",
-    "a11y",
-    "accessiblity"
+    "accessibility",
+    "a11y"
   ],
   "homepage": "https://github.com/oti/accrefs#readme",
   "repository": {
