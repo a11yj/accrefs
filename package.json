@@ -30,6 +30,7 @@
     "start": "eleventy --serve --quiet",
     "prebuild": "npm run lint && npm run clean",
     "build": "eleventy",
-    "lint": "node lint-content-format.js"
+    "lint": "node lint-content-format.js",
+    "create-draft": "node create-draft-md.js"
   }
 }
