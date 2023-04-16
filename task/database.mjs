@@ -4,7 +4,7 @@ import { CONSTANTS } from "../site.config.mjs";
 export const database = async (matter) => {
   const references = matter
     .filter((item) => item.data.published)
-    .map(({ content, data, id}) => ({
+    .map(({ content, data, id }) => ({
       data,
       id,
       marked: marked.parse(content),
