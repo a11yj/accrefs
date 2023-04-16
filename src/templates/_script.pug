@@ -1,5 +1,5 @@
 script.
-  document.documentElement.classList.remove('-no-js');
+  document.documentElement.classList.remove("-no-js");
   document.addEventListener("DOMContentLoaded", () => {
     const $Search = document.querySelector("#Search");
     if ($Search) {
@@ -11,9 +11,7 @@ script.
         content: ref.children[2] ? ref.children[1].innerText.toLowerCase() : null,
       }));
 
-      const getMatchedIds = (query) => models.filter(({ title, link, content }) =>
-        RegExp(query).test(title) || RegExp(query).test(link) || RegExp(query).test(content)
-      ).map(({ id }) => id)
+      const getMatchedIds = (query) => models.filter(({ title, link, content }) => RegExp(query).test(title) || RegExp(query).test(link) || RegExp(query).test(content)).map(({ id }) => id);
 
       const handleInputSearch = (query) => {
         if (query === "") {
@@ -23,7 +21,7 @@ script.
           const ids = getMatchedIds(query);
           refs.forEach((ref) => {
             if (ids.includes(ref.id)) {
-              ref.removeAttribute("hidden")
+              ref.removeAttribute("hidden");
             }
           });
         }
