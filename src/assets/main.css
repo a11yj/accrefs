@@ -110,6 +110,10 @@ video {
   justify-content: flex-start;
 }
 
+.Cluster.-justify-end > * {
+  justify-content: flex-end;
+}
+
 .Center {
   max-width: var(--max-width-content);
   margin-right: auto;
@@ -157,6 +161,34 @@ video {
 
 .SiteHeader__titleLink:any-link:active {
   background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.Mode {
+  padding: calc(var(--spacer-base) / 3);
+  font-size: var(--font-size-small);
+}
+
+.-no-js .Mode {
+  display: none;
+}
+
+.Mode summary {
+  text-align: right;
+}
+
+.Mode form {
+  display: flex;
+  padding: calc(var(--spacer-base) / 4);
+  line-height: var(--line-height-small);
+}
+
+.Mode label {
+  display: flex;
+  align-items: baseline;
+}
+
+.Mode span {
+  white-space: nowrap;
 }
 
 .Main {
