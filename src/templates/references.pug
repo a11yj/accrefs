@@ -4,6 +4,9 @@ block main
   .Stack.-large
     h1.Heading=ogTitle
 
+    search
+      input#Search(type="text", name="search", value="")
+
     each reference in references.slice().reverse()
       article.Stack.-small(
         id=`reference:${reference.id}`
