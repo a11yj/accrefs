@@ -10,9 +10,13 @@ const error = (error) => {
 export const assets = async () =>
   (await fg("src/(assets/**/*|apple-touch-icon.png|favicon.ico)")).map(
     async (source) => {
-      await fs.mkdir(path.parse(source).dir.replace("src", "dist"), {
-        recursive: true,
-      }).catch(error);
-      return await fs.copyFile(source, source.replace("src", "dist")).catch(error);
+      await fs
+        .mkdir(path.parse(source).dir.replace("src", "dist"), {
+          recursive: true,
+        })
+        .catch(error);
+      return await fs
+        .copyFile(source, source.replace("src", "dist"))
+        .catch(error);
     }
   );
