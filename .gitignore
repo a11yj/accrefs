@@ -1,6 +1,3 @@
 .DS_Store
-.sass-cache
-npm-debug.log
 node_modules
 dist
-src/assets/style/style.css*
