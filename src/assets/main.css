@@ -14,6 +14,15 @@
   --spacer-large: calc(var(--spacer-base) * var(--ratio) * var(--ratio));
   --spacer-small: calc(var(--spacer-base) / var(--ratio));
   --max-width-content: 40rem;
+  --color-body: hsla(0, 0%, 0%, 0.87);
+  --color-body-bg: hsl(0, 0%, 94%);
+  --color-header-text: hsla(0, 0%, 100%, 0.87);
+  --color-header-active-bg: hsla(0, 0%, 100%, 0.1);
+  --color-header-bg: hsl(200, 19%, 18%);
+  --color-visited: hsl(0, 0%, 31%);
+  --color-active-bg: hsla(0, 0%, 0%, 0.1);
+  --color-main-bg: hsl(0, 0%, 99%);
+  --color-divider: hsla(0, 0%, 0%, 0.1);
 }
 
 html {
@@ -26,8 +35,8 @@ html {
 
 body {
   margin: 0;
-  color: hsla(0, 0%, 0%, 0.87);
-  background-color: hsl(0, 0%, 94%);
+  color: var(--color-body);
+  background-color: var(--color-body-bg);
 }
 
 h1,
@@ -55,11 +64,11 @@ a:any-link {
 }
 
 a:visited {
-  color: hsl(0, 0%, 31%);
+  color: var(--color-visited);
 }
 
 a:any-link:active {
-  background-color: hsla(0, 0%, 0%, 0.1);
+  background-color: var(--color-active-bg);
 }
 
 img,
@@ -144,8 +153,8 @@ video {
   padding-top: var(--spacer-base);
   padding-bottom: var(--spacer-base);
   font-size: var(--font-size-small);
-  color: hsla(0, 0%, 100%, 0.87);
-  background-color: hsl(200, 19%, 18%);
+  color: var(--color-header-text);
+  background-color: var(--color-header-bg);
 }
 
 .SiteHeader__title {
@@ -160,7 +169,7 @@ video {
 }
 
 .SiteHeader__titleLink:any-link:active {
-  background-color: hsla(0, 0%, 100%, 0.1);
+  background-color: var(--color-header-active-bg);
 }
 
 .Mode {
@@ -194,7 +203,7 @@ video {
 .Main {
   padding-top: var(--spacer-large);
   padding-bottom: var(--spacer-large);
-  background-color: hsl(0, 0%, 99%);
+  background-color: var(--color-main-bg);
 }
 
 .WithIcon {
@@ -269,7 +278,7 @@ h2.Heading {
 .Divider {
   width: 100%;
   height: 1px;
-  background-color: hsla(0, 0%, 0%, 0.1);
+  background-color: var(--color-divider);
 }
 
 .SiteFooter {
