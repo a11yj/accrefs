@@ -82,7 +82,7 @@ export const html = async (database) => {
 
   const createFeed = async () => {
     const filename = `dist/feed`;
-    const pugCompiler = await pug.compile(`extends ../src/templates/feed.xml`, {
+    const pugCompiler = await pug.compile(`extends ../src/templates/feed`, {
       filename,
       pretty: true,
     });

@@ -54,7 +54,7 @@ HTML は Pug を利用しています：
 | `src/templates/home.pug`       | ホーム                    |
 | `src/templates/tag.pug`        | タグ別ページ              |
 | `src/templates/references.pug` | すべての参考資料          |
-| `src/templates/feed.xml.pug`   | RSS                       |
+| `src/templates/feed.pug`       | RSS                       |
 
 ### CSS を編集する
 
