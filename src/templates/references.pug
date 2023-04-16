@@ -6,10 +6,10 @@ block main
 
     each reference in references.slice().reverse()
       article.Stack.-small(
-        id=reference.id
-        aria-labelledby=`${reference.id}-heading`
+        id=`reference:${reference.id}`
+        aria-labelledby=`reference:${reference.id}-heading`
       )
-        h2.ItemTitle(id=`${reference.id}-heading`)
+        h2.ItemTitle(id=`reference:${reference.id}-heading`)
           a.WithIcon.-reference.-hang(href=reference.data.link)=reference.data.title
         !=reference.marked
         footer
