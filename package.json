@@ -35,8 +35,8 @@
     "gray-matter": "^4.0.3",
     "husky": "^8.0.3",
     "marked": "^4.3.0",
-    "markuplint": "^3.7.0",
+    "markuplint": "^3.8.0",
     "pug": "^3.0.2",
-    "stylelint": "^15.4.0"
+    "stylelint": "^15.5.0"
   }
 }
