@@ -22,6 +22,7 @@
   --color-visited: hsl(0, 0%, 31%);
   --color-active-bg: hsla(0, 0%, 0%, 0.1);
   --color-main-bg: hsl(0, 0%, 99%);
+  --color-search-bg: hsl(0, 0%, 100%);
   --color-divider: hsla(0, 0%, 0%, 0.1);
 }
 
@@ -267,8 +268,11 @@ h2.Heading {
 }
 
 .Search input {
+  border: 1px solid var(--color-header-bg);
+  border-radius: 2px;
   font-size: var(--font-size-base);
   line-height: inherit;
+  background-color: var(--color-search-bg);
 }
 
 .-no-js .Search {
