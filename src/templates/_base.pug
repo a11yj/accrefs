@@ -38,20 +38,23 @@ html.-no-js(lang="ja", prefix="og: http://ogp.me/ns#")
     meta(charset="UTF-8")
     meta(content="viewport-fit=cover, width=device-width", name="viewport")
     title= metaTitle
-    meta(name="description" content=description)
-    meta(name="twitter:card" content="summary")
-    meta(property="og:title" content=ogTitle)
-    meta(property="og:type" content="website")
-    meta(property="og:image" content=`${SITE_ORIGIN}/apple-touch-icon.png`)
-    meta(property="og:url" content=canonical)
-    meta(property="og:description" content=description)
-    meta(property="og:site_name" content=SITE_NAME)
-    meta(property="og:locale" content="ja_JP")
-    link(rel="canonical" href=canonical)
-    link(rel="alternate" href="/feed.xml" type="application/rss+xml")
-    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=optional")
-    link(rel="stylesheet" href="/assets/main.css")
-    link(rel="apple-touch-icon" href="/apple-touch-icon.png")
+    meta(name="description", content=description)
+    meta(name="twitter:card", content="summary")
+    meta(property="og:title", content=ogTitle)
+    meta(property="og:type", content="website")
+    meta(property="og:image", content=`${SITE_ORIGIN}/apple-touch-icon.png`)
+    meta(property="og:url", content=canonical)
+    meta(property="og:description", content=description)
+    meta(property="og:site_name", content=SITE_NAME)
+    meta(property="og:locale", content="ja_JP")
+    link(rel="canonical", href=canonical)
+    link(rel="alternate", href="/feed.xml", type="application/rss+xml")
+    link(
+      rel="stylesheet",
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=optional"
+    )
+    link(rel="stylesheet", href="/assets/main.css")
+    link(rel="apple-touch-icon", href="/apple-touch-icon.png")
     include _script
 
   body
@@ -59,8 +62,8 @@ html.-no-js(lang="ja", prefix="og: http://ogp.me/ns#")
       .Center.-andText
         .Stack.-small
           p.SiteHeader__title
-            a.SiteHeader__titleLink(href=!isHome && '/')=SITE_NAME
-          p=SITE_DESC
+            a.SiteHeader__titleLink(href=!isHome && "/")= SITE_NAME
+          p= SITE_DESC
 
     .Main
       .Center
@@ -83,6 +86,6 @@ html.-no-js(lang="ja", prefix="og: http://ogp.me/ns#")
           .Cluster
             ul
               li
-                a(href="/feed.xml" type="application/rss+xml") RSS
+                a(href="/feed.xml", type="application/rss+xml") RSS
               li
                 a(href="https://github.com/a11yj/accrefs") GitHub

@@ -26,6 +26,6 @@ block main
             ul
               each tag in TAGS
                 li
-                  a(href=`/tags/${tag.slug}/`)=tag.title
+                  a(href=`/tags/${tag.slug}/`)= tag.title
           li
             a(href="/references/") すべての参考資料
