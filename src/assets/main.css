@@ -26,6 +26,34 @@
   --color-divider: hsla(0, 0%, 0%, 0.1);
 }
 
+.-dark {
+  --color-body: hsla(0, 0%, 100%, 0.87);
+  --color-body-bg: hsl(200, 16%, 10%);
+  --color-header-text: hsla(0, 0%, 100%, 0.8);
+  --color-header-active-bg: hsla(0, 0%, 100%, 0.1);
+  --color-header-bg: hsl(200, 19%, 5%);
+  --color-visited: hsla(0, 0%, 100%, 0.7);
+  --color-active-bg: hsla(0, 0%, 100%, 0.15);
+  --color-main-bg: hsl(204, 20%, 20%);
+  --color-search-bg: hsla(0, 0%, 100%, 0.8);
+  --color-divider: hsla(0, 0%, 100%, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  .-system {
+    --color-body: hsla(0, 0%, 100%, 0.87);
+    --color-body-bg: hsl(200, 16%, 10%);
+    --color-header-text: hsla(0, 0%, 100%, 0.8);
+    --color-header-active-bg: hsla(0, 0%, 100%, 0.1);
+    --color-header-bg: hsl(200, 19%, 5%);
+    --color-visited: hsla(0, 0%, 100%, 0.7);
+    --color-active-bg: hsla(0, 0%, 100%, 0.15);
+    --color-main-bg: hsl(204, 20%, 20%);
+    --color-search-bg: hsla(0, 0%, 100%, 0.8);
+    --color-divider: hsla(0, 0%, 100%, 0.15);
+  }
+}
+
 html {
   font-family: "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
   font-size: calc(0.25vw + 1em);
