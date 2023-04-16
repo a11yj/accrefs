@@ -227,7 +227,7 @@ video {
   background-image: url("/assets/icons.svg#back");
 }
 
-@media (min-width: 60em) {
+@media (min-width: 56em) {
   .WithIcon.-hang {
     margin-left: -2.25em;
   }
@@ -239,7 +239,7 @@ video {
     calc(var(--line-height-small) * 1em);
 }
 
-@media (min-width: 60em) {
+@media (min-width: 56em) {
   .WithIcon.-tighter.-hang {
     margin-left: -2em;
   }
