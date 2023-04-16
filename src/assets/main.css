@@ -226,6 +226,7 @@ h2.Heading {
 }
 
 .Search input {
+  font-size: var(--font-size-base);
   line-height: inherit;
 }
 
