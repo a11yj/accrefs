@@ -2,10 +2,14 @@ extends _base
 
 block main
   .Stack.-large
-    h1.Heading= ogTitle
+    .Cluster.-space-between
+      div
+        h1.Heading= ogTitle
 
-    search
-      input#Search
+        .Search.Cluster.-justify-start
+          search
+            label(for="Search") 絞り込み
+            input#Search
 
     each reference in references.slice().reverse()
       article.Stack.-small(
