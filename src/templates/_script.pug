@@ -1,3 +1,41 @@
 script.
   document.documentElement.classList.remove('-no-js');
-  //- document.addEventListener("DOMContentLoaded", () => {});
+  document.addEventListener("DOMContentLoaded", () => {
+    const $Search = document.querySelector("#Search");
+    if ($Search) {
+      const refs = Array.from(document.querySelectorAll("article[id^=reference]"));
+      const models = refs.map((ref) => ({
+        id: ref.id,
+        title: ref.querySelector(".-reference").innerText.toLowerCase(),
+        link: ref.querySelector(".-reference").href.toLowerCase(),
+        content: ref.children[2] ? ref.children[1].innerText.toLowerCase() : null,
+        tags: Array.from(ref.querySelectorAll(".-tag a")).flatMap(v => [v.innerText.toLowerCase(), v.href.toLowerCase()]),
+      }));
+
+      const getMatchRefIDs = (query) => {
+        return models.filter(({ id, title, link, content, tags }) =>
+          RegExp(query).test(id) ||
+          RegExp(query).test(link) ||
+          RegExp(query).test(content) ||
+          tags.filter((v) => RegExp(query).test(v)).length > 0
+        ).map(({ id }) => id)
+      }
+
+      const handleInputSearch = (query) => {
+        if (query === "") {
+          refs.forEach((ref) => ref.removeAttribute("hidden"));
+        } else {
+          refs.forEach((ref) => ref.setAttribute("hidden", ""));
+          const ids = getMatchRefIDs(query);
+          refs.forEach((ref) => {
+            if (ids.includes(ref.id)) {
+              ref.removeAttribute("hidden")
+            }
+          });
+        }
+
+      };
+
+      $Search.addEventListener("input", ({ target }) => handleInputSearch(target.value.toLowerCase()), false);
+    }
+  });
