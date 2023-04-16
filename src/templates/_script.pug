@@ -9,15 +9,11 @@ script.
         title: ref.querySelector(".-reference").innerText.toLowerCase(),
         link: ref.querySelector(".-reference").href.toLowerCase(),
         content: ref.children[2] ? ref.children[1].innerText.toLowerCase() : null,
-        tags: Array.from(ref.querySelectorAll(".-tag a")).flatMap(v => [v.innerText.toLowerCase(), v.href.toLowerCase()]),
       }));
 
       const getMatchRefIDs = (query) => {
-        return models.filter(({ id, title, link, content, tags }) =>
-          RegExp(query).test(id) ||
-          RegExp(query).test(link) ||
-          RegExp(query).test(content) ||
-          tags.filter((v) => RegExp(query).test(v)).length > 0
+        return models.filter(({ title, link, content }) =>
+          RegExp(query).test(title) || RegExp(query).test(link) || RegExp(query).test(content)
         ).map(({ id }) => id)
       }
 
