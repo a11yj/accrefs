@@ -19,4 +19,5 @@ block main
               each tag, index in reference.data.tags
                 if index
                   | ,
+                  |
                 a(href=`/tags/${TAGS.find(t => t.title === tag).slug}/`)=tag
