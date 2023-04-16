@@ -1,0 +1,22 @@
+extends _base
+
+block main
+  .Stack.-large
+    h1.Heading=ogTitle
+
+    each reference in references.slice().reverse()
+      article.Stack.-small(
+        id=reference.id
+        aria-labelledby=`${reference.id}-heading`
+      )
+        h2.ItemTitle(id=`${reference.id}-heading`)
+          a.WithIcon.-reference.-hang(href=reference.data.link)=reference.data.title
+        !=reference.marked
+        footer
+          p
+            span.Invisible タグ：
+            span.WithIcon.-tag
+              each tag, index in reference.data.tags
+                if index
+                  | ,
+                a(href=`/tags/${TAGS.find(t => t.title === tag).slug}/`)=tag

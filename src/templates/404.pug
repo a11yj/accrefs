@@ -1,0 +1,31 @@
+extends _base
+
+block main
+  .Stack.-large
+    .Stack
+      h1.Heading このページは存在しません
+
+      p お探しのページは、URLが変更されたか削除されてしまったかもしれません。
+
+      p または、もしかするとURLの入力に間違いがあるかもしれないので、単純なスペルミスなどをしていないか確認してみてください。
+
+    .Stack.-xlarge
+      section#sitemap.Stack(aria-labelledby="sitemap-heading")
+        h2#sitemap-heading.Heading サイトマップ
+
+        ul
+          li
+            a(href="/") ホーム
+            ul
+              li
+                a(href="/#tags") タグ
+              li
+                a(href="/#contribution") ウェブサイトに貢献
+          li
+            | タグ
+            ul
+              each tag in TAGS
+                li
+                  a(href=`/tags/${tag.slug}/`)=tag.title
+          li
+            a(href="/references/") すべての参考資料

@@ -1,0 +1,37 @@
+extends _base
+
+block main
+  h1.Invisible=`${SITE_NAME} ホーム`
+
+  .Stack.-xlarge
+    section#tags.Stack.-large(aria-labelledby="tags-heading")
+      h2#tags-heading.Heading タグ
+
+      each tag in TAGS
+        article.Stack.-small(
+          id=`tags:${tag.slug}`
+          aria-labelledby=`tags:${tag.slug}-heading`
+        )
+          h3.ItemTitle(id=`tags:${tag.slug}-heading`)
+            a.WithIcon.-tag.-hang(href=`/tags/${tag.slug}/`)=tag.title
+          if tag.content
+            p=tag.content
+
+      p
+        a.WithIcon.-reference(href="/references/") すべての参考資料
+
+    section#contribution.Stack(aria-labelledby="contribution-heading")
+      h2#contribution-heading.Heading ウェブサイトに貢献
+
+      p このウェブサイトではあなたからの情報提供をお待ちしています。参考資料の追加・修正のリクエストは次のいずれかの方法で行えます。
+
+      ul
+        li
+          a(href="https://forms.gle/b4Nu24JNhnc4Z8qM9") Googleフォーム
+          span ：Googleフォームでは追加リクエストのみ受け付けています。
+        li
+          a(href="https://github.com/a11yj/accrefs/issues") リポジトリのイシュー
+          span ：追加リクエスト用のテンプレートを用意しています。
+        li
+          a(href="https://a11yj.github.io") A11YJ Slackチーム
+          span ：チームに参加後、#a11y_matome_siteチャンネルで旨を発言してください。

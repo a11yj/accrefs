@@ -1,0 +1,27 @@
+doctype xml
+rss(version='2.0',
+    xmlns:atom='http://www.w3.org/2005/Atom',
+    xmlns:content='http://purl.org/rss/1.0/modules/content/',
+    xmlns:creativeCommons='http://blogs.law.harvard.edu/tech/creativeCommonsRssModule')
+  channel
+    title=SITE_NAME
+    link=SITE_ORIGIN
+    description=`<![CDATA[${SITE_DESC}]]>`
+    language ja
+    - const date = new Date()
+    pubdate=(date)
+    lastbuilddate=(date)
+    docs http://blogs.law.harvard.edu/tech/rss
+    generator Node.js v18.5.0
+    managingeditor @otiext
+    webmaster @magi1125
+    atom:link(href=`${SITE_ORIGIN}/feed.xml`, rel='self', type='application/rss+xml')/
+
+    each reference in references.slice().reverse()
+      item
+        title=reference.data.title
+        link=reference.data.link
+        each tag in reference.data.tags
+          category=tag
+        if reference.marked
+          content:encoded=`<![CDATA[${reference.marked}]]>`

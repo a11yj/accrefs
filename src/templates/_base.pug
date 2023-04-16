@@ -1,0 +1,89 @@
+-
+  const isReferences = type === 'references'
+  const isHome = type === 'home'
+  const isNotFound = type === '404'
+  const isTag = type === 'tag'
+  const metaTitle = isReferences
+    ? `すべての参考資料 - ${SITE_NAME}`
+    : isNotFound
+    ? `このページは存在しません - ${SITE_NAME}`
+    : isTag
+    ? `${tag.title} - ${SITE_NAME}`
+    : SITE_NAME
+  const ogTitle = isReferences
+    ? `すべての参考資料`
+    : isNotFound
+    ? `このページは存在しません`
+    : isTag
+    ? `${tag.title}`
+    : SITE_NAME
+  const description = isReferences
+    ? "accrefs が紹介している参考資料の一覧"
+    : isNotFound
+    ? "404 Not Found"
+    : isTag
+    ? tag.content
+    : SITE_DESC
+  const canonical = isReferences
+    ? `${SITE_ORIGIN}/references/`
+    : isNotFound
+    ? `${SITE_ORIGIN}/404.html`
+    : isTag
+    ? `${SITE_ORIGIN}/tags/${tag.slug}.html`
+    : SITE_ORIGIN
+
+doctype html
+html.-no-js(lang="ja", prefix="og: http://ogp.me/ns#")
+  head
+    meta(charset="UTF-8")
+    meta(content="viewport-fit=cover, width=device-width", name="viewport")
+    title= metaTitle
+    meta(name="description" content=description)
+    meta(name="twitter:card" content="summary")
+    meta(property="og:title" content=ogTitle)
+    meta(property="og:type" content="website")
+    meta(property="og:image" content=`${SITE_ORIGIN}/apple-touch-icon.png`)
+    meta(property="og:url" content=canonical)
+    meta(property="og:description" content=description)
+    meta(property="og:site_name" content=SITE_NAME)
+    meta(property="og:locale" content="ja_JP")
+    link(rel="canonical" href=canonical)
+    link(rel="alternate" href="/feed.xml" type="application/rss+xml")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=optional")
+    link(rel="stylesheet" href="/assets/main.css")
+    link(rel="apple-touch-icon" href="/apple-touch-icon.png")
+    if isReferences
+      include _script
+
+  body
+    header.SiteHeader
+      .Center.-andText
+        .Stack.-small
+          p.SiteHeader__title
+            a.SiteHeader__titleLink(href=!isHome && '/')=SITE_NAME
+          p=SITE_DESC
+
+    .Main
+      .Center
+        .Stack.-large
+          main
+            block main
+
+          if !isHome
+            svg.Space.-lg(viewBox="0 0 1 1", aria-hidden="true")
+              rect(width="100%", height="1", fill="hsla(0, 0%, 0%, 0.1)")
+
+            footer(aria-label="ページ")
+              p
+                a.WithIcon.-back.-small(href="/") ホーム
+
+    footer.SiteFooter(aria-label="サイト")
+      .Center.-andText
+        .Stack.-small
+          p #[a(href="https://a11yj.github.io") A11YJ Slack]メンバーと有志の協力によって制作・運営されています。
+          .Cluster
+            ul
+              li
+                a(href="/feed.xml" type="application/rss+xml") RSS
+              li
+                a(href="https://github.com/a11yj/accrefs") GitHub
