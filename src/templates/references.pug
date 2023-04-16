@@ -2,14 +2,21 @@ extends _base
 
 block main
   .Stack.-large
-    h1.Heading= ogTitle
+    .Cluster.-space-between
+      div
+        h1.Heading= ogTitle
+
+        .Search.Cluster.-justify-start
+          search
+            label(for="Search") 絞り込み
+            input#Search
 
     each reference in references.slice().reverse()
       article.Stack.-small(
-        id=reference.id,
-        aria-labelledby=`${reference.id}-heading`
+        id=`reference:${reference.id}`,
+        aria-labelledby=`reference:${reference.id}-heading`
       )
-        h2.ItemTitle(id=`${reference.id}-heading`)
+        h2.ItemTitle(id=`reference:${reference.id}-heading`)
           a.WithIcon.-reference.-hang(href=reference.data.link)= reference.data.title
         != reference.marked
         footer

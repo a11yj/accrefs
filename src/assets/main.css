@@ -102,6 +102,14 @@ video {
   margin-top: var(--spacer-small);
 }
 
+.Cluster.-space-between > * {
+  justify-content: space-between;
+}
+
+.Cluster.-justify-start > * {
+  justify-content: flex-start;
+}
+
 .Center {
   max-width: var(--max-width-content);
   margin-right: auto;
@@ -215,6 +223,14 @@ h2.Heading {
 
 .ItemTitle {
   font-size: var(--font-size-large);
+}
+
+.Search input {
+  line-height: inherit;
+}
+
+.-no-js .Search {
+  display: none;
 }
 
 .Divider {
