@@ -13,6 +13,16 @@ script.
 
       const getMatchedIds = (query) => models.filter(({ title, link, content }) => RegExp(query).test(title) || RegExp(query).test(link) || RegExp(query).test(content)).map(({ id }) => id);
 
+      const toggle = (query) => {
+        refs.forEach((ref) => ref.setAttribute("hidden", ""));
+        const ids = getMatchedIds(query);
+        refs.forEach((ref) => {
+          if (ids.includes(ref.id)) {
+            ref.removeAttribute("hidden");
+          }
+        });
+      }
+
       const handleInputSearch = (query) => {
         if (query === "") {
           refs.forEach((ref) => ref.removeAttribute("hidden"));
