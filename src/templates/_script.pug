@@ -28,6 +28,6 @@ script.
 
     const handleReset = () => reset();
 
-    $Search.addEventListener("input", ({ target }) => handleInput(target.value), false);
+    $Search.addEventListener("input", (e) => handleInput(e.target.value), false);
     $Search.addEventListener("reset", () => handleReset(), false);
   });
