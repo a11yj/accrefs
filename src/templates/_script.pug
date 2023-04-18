@@ -23,9 +23,8 @@ script.
         });
       }
 
-      const reset = () => {
-        refs.forEach((ref) => ref.removeAttribute("hidden"));
-      }
+      const reset = () => refs.forEach((ref) => ref.removeAttribute("hidden"));
+
 
       const handleInputSearch = (query) => {
         if (query === "") {
@@ -42,5 +41,7 @@ script.
       };
 
       $Search.addEventListener("input", ({ target }) => handleInputSearch(target.value.toLowerCase()), false);
+      const handleReset = () => reset();
+      $Search.addEventListener("reset", () => handleReset(), false);
     }
   });
