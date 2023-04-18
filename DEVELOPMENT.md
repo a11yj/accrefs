@@ -1,6 +1,6 @@
 # DEVELOPMENT
 
-Node.js v18.5.0 が必要です。
+Node.js v18.15.0 が必要です。
 
 ```bash
 git clone git@github.com:a11yj/accrefs.git

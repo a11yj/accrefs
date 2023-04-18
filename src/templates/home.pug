@@ -5,7 +5,12 @@ block main
 
   .Stack.-xlarge
     section#tags.Stack.-large(aria-labelledby="tags-heading")
-      h2#tags-heading.Heading タグ
+      .Cluster.-space-between
+        div
+          h2#tags-heading.Heading タグ
+
+          p
+            a.WithIcon.-reference(href="/references/") すべての参考資料
 
       each tag in TAGS
         article.Stack.-small(

@@ -5,6 +5,7 @@
   --font-size-xlarge: calc(8 / 5 * var(--font-size-base));
   --font-size-large: calc(8 / 6 * var(--font-size-base));
   --font-size-small: calc(8 / 9 * var(--font-size-base));
+  --font-size-micro: calc(8 / 12 * var(--font-size-base));
   --line-height-base: var(--ratio);
   --line-height-small: calc(var(--line-height-base) * 0.8);
   --spacer-base: calc(var(--ratio) * var(--font-size-base));
@@ -295,12 +296,17 @@ h2.Heading {
   font-size: var(--font-size-large);
 }
 
-.Search input {
+.Search__input {
+  width: 6em;
+  height: 1.2rem;
   border: 1px solid var(--color-header-bg);
   border-radius: 2px;
   font-size: var(--font-size-base);
-  line-height: inherit;
   background-color: var(--color-search-bg);
+}
+
+.Search__button {
+  margin-right: var(--font-size-micro);
 }
 
 .-no-js .Search {
