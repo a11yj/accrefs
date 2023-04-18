@@ -6,10 +6,11 @@ block main
       div
         h1.Heading= ogTitle
 
-        .Search.Cluster.-justify-start
-          search
-            label(for="Search") 絞り込み
-            input#Search
+        search.Search.Cluster.-justify-start
+          form#Search
+            label(for="_input") 絞り込み
+            input.Search__input#_input
+            input.Search__button(type="reset")
 
     each reference in references.slice().reverse()
       article.Stack.-small(
