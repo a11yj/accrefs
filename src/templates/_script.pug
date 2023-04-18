@@ -23,7 +23,7 @@ script.
 
     const handleInput = (query) => {
       if (debounceTimer) clearTimeout(debounceTimer);
-      debounceTimer = query === "" ? setTimeout(() => handleReset(), 1000 / 30) : setTimeout(() => search(query), 1000 / 30);
+      debounceTimer = query === "" ? setTimeout(() => reset(), 1000 / 30) : setTimeout(() => search(query), 1000 / 30);
     };
 
     const handleReset = () => reset();
