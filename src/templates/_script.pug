@@ -2,34 +2,32 @@ script.
   document.documentElement.classList.remove("-no-js");
   document.addEventListener("DOMContentLoaded", () => {
     const $Search = document.querySelector("#Search");
-    if ($Search) {
-      let debounceTimer = null;
-      const refs = Array.from(document.querySelectorAll("article[id^=reference]"));
-      const models = refs.map((ref) => ({
-        id: ref.id,
-        title: ref.querySelector(".-reference").innerText.toLowerCase(),
-        link: ref.querySelector(".-reference").href.toLowerCase(),
-        content: ref.children[2] ? ref.children[1].innerText.toLowerCase() : null,
-      }));
+    if (!$Search) return;
+    let debounceTimer = 0;
+    const refs = Array.from(document.querySelectorAll("article[id^=reference]"));
+    const models = refs.map((ref) => ({
+      id: ref.id,
+      title: ref.querySelector(".-reference").innerText.toLowerCase(),
+      link: ref.querySelector(".-reference").href.toLowerCase(),
+      content: ref.children[2] ? ref.children[1].innerText.toLowerCase() : null,
+    }));
 
-      const getMatchedIds = (query) => models.filter(({ title, link, content }) => RegExp(query).test(title) || RegExp(query).test(link) || RegExp(query).test(content)).map(({ id }) => id);
+    const getMatchedIds = (lc_query) => models.filter(({ title, link, content }) => RegExp(lc_query).test(title) || RegExp(lc_query).test(link) || RegExp(lc_query).test(content)).map(({ id }) => id);
 
-      const search = (query) => {
-        const ids = getMatchedIds(query);
-        refs.forEach((ref) => (ids.includes(ref.id) ? ref.removeAttribute("hidden") : ref.setAttribute("hidden", "")));
-      };
+    const search = (query) => {
+      const ids = getMatchedIds(query.toLowerCase());
+      refs.forEach((ref) => (ids.includes(ref.id) ? ref.removeAttribute("hidden") : ref.setAttribute("hidden", "")));
+    };
 
-      const reset = () => refs.forEach((ref) => ref.removeAttribute("hidden"));
+    const reset = () => refs.forEach((ref) => ref.removeAttribute("hidden"));
 
-      const handleInput = (query) => {
-        if (typeof debounceTimer === "number") clearTimeout(debounceTimer);
+    const handleInput = (query) => {
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = query === "" ? setTimeout(() => handleReset(), 1000 / 30) : setTimeout(() => search(query), 1000 / 30);
+    };
 
-        debounceTimer = query === "" ? setTimeout(() => handleReset(), 1000 / 30) : setTimeout(() => search(query), 1000 / 30);
-      };
+    const handleReset = () => reset();
 
-      const handleReset = () => reset();
-
-      $Search.addEventListener("input", ({ target }) => handleInput(target.value.toLowerCase()), false);
-      $Search.addEventListener("reset", () => handleReset(), false);
-    }
+    $Search.addEventListener("input", ({ target }) => handleInput(target.value), false);
+    $Search.addEventListener("reset", () => handleReset(), false);
   });
