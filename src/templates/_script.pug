@@ -23,6 +23,10 @@ script.
         });
       }
 
+      const reset = () => {
+        refs.forEach((ref) => ref.removeAttribute("hidden"));
+      }
+
       const handleInputSearch = (query) => {
         if (query === "") {
           refs.forEach((ref) => ref.removeAttribute("hidden"));
