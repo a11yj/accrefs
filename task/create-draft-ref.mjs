@@ -14,7 +14,6 @@ tags:
   - 'タグ3'
 link: 'https://example.com/hoge/fuga'
 # year: 2023
-published: true
 ---
 
 説明文
