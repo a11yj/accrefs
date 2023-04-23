@@ -95,7 +95,6 @@ const validateReferences = (references, tags) => {
       title: "",
       tags: "",
       link: "",
-      published: false,
       ...reference.data,
     }).forEach(([key, value]) => {
       if (key === "title" || key === "link") {
@@ -171,10 +170,10 @@ const validateReferences = (references, tags) => {
       //   return;
       // }
 
-      if (key === "published") {
-        if (typeof value !== "boolean") {
+      if (key === "ignore") {
+        if (!value) {
           throw new TypeError(
-            `\`${reference.filepath}\`の\`${key}\`は真偽値にしてください。`
+            `\`${reference.filepath}\`に\`${key}\`を設定する場合、値は\`true\`にしてください。\`false\`にしたい場合は\`${key}\`は取り除いてください。`
           );
         }
         return;
