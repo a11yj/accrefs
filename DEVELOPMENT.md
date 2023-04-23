@@ -76,7 +76,6 @@ title: "アクセシビリティとは" # リンク先の名前
 tags:
   - "Webアクセシビリティとは？的なもの" # 対応するタグの日本語表記
 link: "https://waic.jp/knowledge/accessibility/" # リンク先URL
-published: true # 公開可否フラグ
 ---
 
 ウェブアクセシビリティ基盤委員会（通称：WAIC）の放つ、公式感漂う SEO 的に強そうなドキュメント。Web アクセシビリティ確保と JIS の関係性について解説しています。
