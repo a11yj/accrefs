@@ -95,6 +95,7 @@ const validateReferences = (references, tags) => {
       title: "",
       tags: "",
       link: "",
+      year: "",
       ...reference.data,
     }).forEach(([key, value]) => {
       if (key === "title" || key === "link") {
@@ -156,19 +157,19 @@ const validateReferences = (references, tags) => {
         return;
       }
 
-      // if (key === "year") {
-      //   if (typeof value !== "number") {
-      //     throw new TypeError(
-      //       `\`${reference.filepath}\`の\`${key}\`は数値にしてください。`
-      //     );
-      //   }
-      //   if (/\d{4}/.test(value)) {
-      //     throw new TypeError(
-      //       `\`${reference.filepath}\`の\`${key}\`は4桁にしてください。`
-      //     );
-      //   }
-      //   return;
-      // }
+      if (key === "year") {
+        if (typeof value !== "number") {
+          throw new TypeError(
+            `\`${reference.filepath}\`の\`${key}\`は数値にしてください。`
+          );
+        }
+        if (/\d{4}/.test(value)) {
+          throw new TypeError(
+            `\`${reference.filepath}\`の\`${key}\`は4桁にしてください。`
+          );
+        }
+        return;
+      }
 
       if (key === "ignore") {
         if (!value) {
