@@ -1,22 +1,25 @@
 import fs from "fs/promises";
 import fg from "fast-glob";
 import path from "path";
+import { ASSETS } from "../site.config.mjs";
 
 const error = (error) => {
-  console.log(error);
+  console.error(error);
   throw error;
 };
 
 export const assets = async () =>
-  (await fg("src/(assets/**/*|apple-touch-icon.png|favicon.ico)")).map(
-    async (source) => {
+  (await fg(ASSETS)).map(
+    async (filepath) =>
       await fs
-        .mkdir(path.parse(source).dir.replace("src", "dist"), {
+        .mkdir(path.parse(filepath).dir.replace("src", "dist"), {
           recursive: true,
         })
-        .catch(error);
-      return await fs
-        .copyFile(source, source.replace("src", "dist"))
-        .catch(error);
-    }
+        .catch(error)
+        .then(
+          async () =>
+            await fs
+              .copyFile(filepath, filepath.replace("src", "dist"))
+              .catch(error)
+        )
   );
