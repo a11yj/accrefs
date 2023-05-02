@@ -12,8 +12,8 @@ tags:
   - 'タグ1'
   - 'タグ2'
   - 'タグ3'
+year: 2023
 link: 'https://example.com/hoge/fuga'
-# year: 2023
 ---
 
 説明文
