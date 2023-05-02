@@ -6,7 +6,7 @@ const makeDir = async (dir) =>
   await fs.mkdir(dir, { recursive: true }).catch(error);
 
 const error = (error) => {
-  console.log(error);
+  console.error(error);
   throw error;
 };
 
@@ -23,7 +23,7 @@ export const html = async (database) => {
     const pugCompiler = await pug.compile(`extends ../src/templates/home`, {
       filename,
     });
-    await fs
+    return await fs
       .writeFile(
         `${filename}.html`,
         pugCompiler({
@@ -42,7 +42,7 @@ export const html = async (database) => {
         filename,
       }
     );
-    await fs
+    return await fs
       .writeFile(
         `${filename}.html`,
         pugCompiler({
@@ -86,7 +86,7 @@ export const html = async (database) => {
       filename,
       pretty: true,
     });
-    await fs
+    return await fs
       .writeFile(
         `${filename}.xml`,
         pugCompiler({
@@ -101,7 +101,7 @@ export const html = async (database) => {
     const pugCompiler = await pug.compile(`extends ../src/templates/404`, {
       filename,
     });
-    await fs
+    return await fs
       .writeFile(
         `${filename}.html`,
         pugCompiler({
