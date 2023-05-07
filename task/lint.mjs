@@ -95,7 +95,6 @@ const validateReferences = (references, tags) => {
       title: "",
       tags: "",
       link: "",
-      year: "",
       ...reference.data,
     }).forEach(([key, value]) => {
       if (key === "title" || key === "link") {
