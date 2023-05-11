@@ -162,7 +162,7 @@ const validateReferences = (references, tags) => {
             `\`${reference.filepath}\`の\`${key}\`は数値にしてください。`
           );
         }
-        if (/\d{4}/.test(value)) {
+        if (!/\d{4}/.test(value)) {
           throw new TypeError(
             `\`${reference.filepath}\`の\`${key}\`は4桁にしてください。`
           );
