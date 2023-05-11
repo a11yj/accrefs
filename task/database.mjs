@@ -11,5 +11,12 @@ export const database = (matter) => ({
         }
       : []
   ),
+  years: [
+    ...new Set(
+      matter.flatMap((item) =>
+        !item.data.ignore && item.data.year ? item.data.year : []
+      )
+    ),
+  ],
   ...CONSTANTS,
 });

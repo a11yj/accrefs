@@ -16,6 +16,7 @@ export const html = async (database) => {
     ...database.tags.map(
       async ({ slug }) => await makeDir(`dist/tags/${slug}`)
     ),
+    ...database.years.map(async (year) => await makeDir(`dist/years/${year}`)),
   ]);
 
   const createHome = async () => {
@@ -81,6 +82,33 @@ export const html = async (database) => {
     });
   };
 
+  const createYear = async () => {
+    return database.years.map(async (year) => {
+      // year にマッチするリンクだけ抽出する
+      const collection = database.references.filter(
+        (ref) => ref.data.year === year
+      );
+      const filename = `dist/years/${year}/index`;
+      const pugCompiler = await pug.compile(
+        `extends ../../../src/templates/year`,
+        {
+          filename,
+        }
+      );
+      return await fs
+        .writeFile(
+          `${filename}.html`,
+          pugCompiler({
+            type: "year",
+            year,
+            collection,
+            ...database,
+          })
+        )
+        .catch(error);
+    });
+  };
+
   const createFeed = async () => {
     const filename = `dist/feed`;
     const pugCompiler = await pug.compile(`extends ../src/templates/feed`, {
@@ -119,5 +147,6 @@ export const html = async (database) => {
     await createHome(),
     await createRefs(),
     ...(await createTag()),
+    ...(await createYear()),
   ]);
 };

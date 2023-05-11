@@ -3,12 +3,9 @@ extends _base
 block main
   .Stack.-large
     div
-      p.Invisible タグ
       .Stack.-small
-        h1.Heading
-          span.WithIcon.-tag.-hang.-tighter= tag.title
-        if tag.content
-          p= tag.content
+        h1.Heading= ogTitle
+        p #{ year }年に公開、またはその年の出来事に言及している参考資料一覧です。
 
     section#references(aria-labelledby="references-heading")
       h2#references-heading.Invisible 参考資料
