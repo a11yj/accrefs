@@ -11,5 +11,10 @@ export const database = (matter) => ({
         }
       : []
   ),
+  years: [
+    ...new Set(
+      matter.filter((item) => !item.data.ignore).map((ref) => ref.data.year)
+    ),
+  ],
   ...CONSTANTS,
 });
