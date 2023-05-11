@@ -28,9 +28,11 @@ block main
     section#years.Stack
       .Cluster.-justify-start.WithIcon.-year.-hang
         ul
-          each year in years
+          each year, index in years
             li
               a(href=`/years/${year}/`)= year
+              if index !== years.length - 1
+                | ,
 
     section#contribution.Stack(aria-labelledby="contribution-heading")
       h2#contribution-heading.Heading ウェブサイトに貢献
