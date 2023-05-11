@@ -3,12 +3,15 @@
   const isHome = type === 'home'
   const isNotFound = type === '404'
   const isTag = type === 'tag'
+  const isYear = type === 'year'
   const metaTitle = isReferences
     ? `すべての参考資料 - ${SITE_NAME}`
     : isNotFound
     ? `このページは存在しません - ${SITE_NAME}`
     : isTag
     ? `${tag.title} - ${SITE_NAME}`
+    : isYear
+    ? `${year} - ${SITE_NAME}`
     : SITE_NAME
   const ogTitle = isReferences
     ? `すべての参考資料`
@@ -16,6 +19,8 @@
     ? `このページは存在しません`
     : isTag
     ? `${tag.title}`
+    : isYear
+    ? `${year}年`
     : SITE_NAME
   const description = isReferences
     ? "accrefs が紹介している参考資料の一覧"
@@ -30,6 +35,8 @@
     ? `${SITE_ORIGIN}/404.html`
     : isTag
     ? `${SITE_ORIGIN}/tags/${tag.slug}.html`
+    : isYear
+    ? `${SITE_ORIGIN}/years/${year}.html`
     : SITE_ORIGIN
 
 doctype html
