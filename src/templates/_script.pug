@@ -4,15 +4,16 @@ script.
     const $Search = document.querySelector("#Search");
     if (!$Search) return;
     let debounceTimer = 0;
-    const refs = Array.from(document.querySelectorAll("article[id^=reference]"));
+    const refs = [...document.querySelectorAll("article[id^=reference]")];
     const models = refs.map((ref) => ({
       id: ref.id,
       title: ref.querySelector(".-reference").innerText.toLowerCase(),
       link: ref.querySelector(".-reference").href.toLowerCase(),
+      year: ref.dataset.year,
       content: ref.children[2] ? ref.children[1].innerText.toLowerCase() : null,
     }));
 
-    const getMatchedIds = (lc_query) => models.filter(({ title, link, content }) => RegExp(lc_query).test(title) || RegExp(lc_query).test(link) || RegExp(lc_query).test(content)).map(({ id }) => id);
+    const getMatchedIds = (lc_query) => models.filter(({ title, link, year, content }) => RegExp(lc_query).test(title) || RegExp(lc_query).test(link) || RegExp(lc_query).test(year) || RegExp(lc_query).test(content)).map(({ id }) => id);
 
     const search = (query) => {
       const ids = getMatchedIds(query.toLowerCase());
