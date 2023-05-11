@@ -1,6 +1,5 @@
 import fs from "fs/promises";
 import pug from "pug";
-import { TAGS } from "../site.config.mjs";
 
 const makeDir = async (dir) =>
   await fs.mkdir(dir, { recursive: true }).catch(error);
@@ -14,7 +13,9 @@ export const html = async (database) => {
   // 必要なディレクトリをあらかじめ作る
   await Promise.all([
     await makeDir("dist/references"),
-    ...TAGS.map(async ({ slug }) => await makeDir(`dist/tags/${slug}`)),
+    ...database.tags.map(
+      async ({ slug }) => await makeDir(`dist/tags/${slug}`)
+    ),
   ]);
 
   const createHome = async () => {
@@ -54,7 +55,7 @@ export const html = async (database) => {
   };
 
   const createTag = async () => {
-    return TAGS.map(async (tag) => {
+    return database.tags.map(async (tag) => {
       // タグにマッチするリンクだけ抽出する
       const collection = database.references.filter((ref) =>
         ref.data.tags.includes(tag.title)
