@@ -24,7 +24,7 @@ block main
           li
             | タグ
             ul
-              each tag in TAGS
+              each tag in tags
                 li
                   a(href=`/tags/${tag.slug}/`)= tag.title
           li
