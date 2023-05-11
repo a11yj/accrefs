@@ -27,15 +27,15 @@ SSG ライブラリは使用せず、Node.js でファイルを生成してい�
 
 `task/` 配下のファイルは以下の通りです。
 
-| タスクファイル       | 役割                                                                                                         |
-| :------------------- | :----------------------------------------------------------------------------------------------------------- |
-| assets.mjs           | `src/assets/` 配下のファイルを `dist/assets/` にコピーします。                                               |
-| matters.mjs          | gray-matter を利用して `src/references/` 配下の md ファイルをパースして返します。                            |
-| database.mjs         | matters.mjs の戻り値を受け取って参考資料のメタ情報を整形し、site.config.mjs を混ぜて実質的な DB を返します。 |
-| html.mjs             | database.mjs の戻り値を受け取って HTML を生成します。                                                        |
-| build.mjs            | assets, matters, database, html をシリアルに実行するインデックスファイルです。                               |
-| create-draft-ref.mjs | 参考資料の雛形になる md ファイルを生成します。ファイル名は自動採番です。                                     |
-| lint.mjs             | 参考資料やタグのフォーマットが正しいかチェックします。                                                       |
+| タスクファイル | 役割                                                                                                         |
+| :------------- | :----------------------------------------------------------------------------------------------------------- |
+| assets.mjs     | `src/assets/` 配下のファイルを `dist/assets/` にコピーします。                                               |
+| matters.mjs    | gray-matter を利用して `src/references/` 配下の md ファイルをパースして返します。                            |
+| database.mjs   | matters.mjs の戻り値を受け取って参考資料のメタ情報を整形し、site.config.mjs を混ぜて実質的な DB を返します。 |
+| html.mjs       | database.mjs の戻り値を受け取って HTML を生成します。                                                        |
+| build.mjs      | assets, matters, database, html をシリアルに実行するインデックスファイルです。                               |
+| draft.mjs      | 参考資料の雛形になる md ファイルを生成します。ファイル名は自動採番です。                                     |
+| lint.mjs       | 参考資料やタグのフォーマットが正しいかチェックします。                                                       |
 
 1. md ファイルをパースする（matters.mjs）
 2. 整形しつつ必要データと混ぜる（database.mjs）
@@ -76,7 +76,6 @@ title: "アクセシビリティとは" # リンク先の名前
 tags:
   - "Webアクセシビリティとは？的なもの" # 対応するタグの日本語表記
 link: "https://waic.jp/knowledge/accessibility/" # リンク先URL
-published: true # 公開可否フラグ
 ---
 
 ウェブアクセシビリティ基盤委員会（通称：WAIC）の放つ、公式感漂う SEO 的に強そうなドキュメント。Web アクセシビリティ確保と JIS の関係性について解説しています。

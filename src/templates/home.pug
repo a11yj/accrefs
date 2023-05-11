@@ -12,7 +12,7 @@ block main
           p
             a.WithIcon.-reference(href="/references/") すべての参考資料
 
-      each tag in TAGS
+      each tag in tags
         article.Stack.-small(
           id=`tags:${tag.slug}`,
           aria-labelledby=`tags:${tag.slug}-heading`
@@ -23,7 +23,16 @@ block main
             p= tag.content
 
       p
-        a.WithIcon.-reference(href="/references/") すべての参考資料
+        a.WithIcon.-reference.-hang(href="/references/") すべての参考資料
+
+    section#years.Stack
+      .Cluster.-justify-start.WithIcon.-year.-hang
+        ul
+          each year, index in years
+            li
+              a(href=`/years/${year}/`)= year
+              if index !== years.length - 1
+                | ,
 
     section#contribution.Stack(aria-labelledby="contribution-heading")
       h2#contribution-heading.Heading ウェブサイトに貢献

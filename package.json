@@ -18,7 +18,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "node task/build.mjs",
-    "create-draft-ref": "node task/create-draft-ref.mjs",
+    "draft": "node task/draft.mjs",
     "lint": "node task/lint.mjs",
     "markuplint": "markuplint 'dist/**/*.html'",
     "postbuild": "npx prettier --write dist && npm run test",

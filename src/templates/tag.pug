@@ -18,7 +18,8 @@ block main
           each reference in collection.slice().reverse()
             article.Stack.-small(
               id=`references:${reference.id}`,
-              aria-labelledby=`references:${reference.id}-heading`
+              aria-labelledby=`references:${reference.id}-heading`,
+              data-year=`${reference.data.year}`
             )
               h3.ItemTitle(id=`references:${reference.id}-heading`)
                 a.WithIcon.-reference.-hang(href=reference.data.link)= reference.data.title

@@ -1,0 +1,25 @@
+extends _base
+
+block main
+  .Stack.-large
+    div
+      .Stack.-small
+        h1.Heading= ogTitle
+        p #{ year }年に公開、またはその年の出来事に言及している参考資料一覧です。
+
+    section#references(aria-labelledby="references-heading")
+      h2#references-heading.Invisible 参考資料
+
+      if collection.length > 0
+        .Stack.-large
+          each reference in collection.slice().reverse()
+            article.Stack.-small(
+              id=`references:${reference.id}`,
+              aria-labelledby=`references:${reference.id}-heading`,
+              data-year=`${reference.data.year}`
+            )
+              h3.ItemTitle(id=`references:${reference.id}-heading`)
+                a.WithIcon.-reference.-hang(href=reference.data.link)= reference.data.title
+              != reference.marked
+      else
+        p 参考資料がまだ登録されていません。

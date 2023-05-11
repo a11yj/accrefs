@@ -237,9 +237,11 @@ export const TAGS = [
   },
 ];
 
+export const ASSETS = "src/(assets/**/*|apple-touch-icon.png|favicon.ico)";
+
 export const CONSTANTS = {
   SITE_DESC: "Webアクセシビリティの参考資料まとめ",
   SITE_NAME: "accrefs",
   SITE_ORIGIN: "https://accrefs.jp",
-  TAGS,
+  tags: TAGS,
 };

@@ -1,17 +1,22 @@
 import { marked } from "marked";
 import { CONSTANTS } from "../site.config.mjs";
 
-export const database = async (matter) => {
-  const references = matter
-    .filter((item) => item.data.published)
-    .map(({ content, data, id }) => ({
-      data,
-      id,
-      marked: marked.parse(content),
-    }));
-
-  return Promise.resolve({
-    references,
-    ...CONSTANTS,
-  });
-};
+export const database = (matter) => ({
+  references: matter.flatMap(({ content, data, id }) =>
+    !data.ignore
+      ? {
+          data,
+          id,
+          marked: marked.parse(content),
+        }
+      : []
+  ),
+  years: [
+    ...new Set(
+      matter.flatMap((item) =>
+        !item.data.ignore && item.data.year ? item.data.year : []
+      )
+    ),
+  ],
+  ...CONSTANTS,
+});

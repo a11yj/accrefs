@@ -256,6 +256,10 @@ video {
   background-image: url("/assets/icons.svg#back");
 }
 
+.WithIcon.-year {
+  background-image: url("/assets/icons.svg#year");
+}
+
 @media (min-width: 56em) {
   .WithIcon.-hang {
     margin-left: -2.25em;
