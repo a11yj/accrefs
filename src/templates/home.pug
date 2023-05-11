@@ -25,6 +25,13 @@ block main
       p
         a.WithIcon.-reference.-hang(href="/references/") すべての参考資料
 
+    section#years.Stack
+      .Cluster.-justify-start
+        ul
+          each year in years
+            li
+              a(href=`/years/${year}/`)= year
+
     section#contribution.Stack(aria-labelledby="contribution-heading")
       h2#contribution-heading.Heading ウェブサイトに貢献
 
