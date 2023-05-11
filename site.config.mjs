@@ -243,5 +243,5 @@ export const CONSTANTS = {
   SITE_DESC: "Webアクセシビリティの参考資料まとめ",
   SITE_NAME: "accrefs",
   SITE_ORIGIN: "https://accrefs.jp",
-  TAGS,
+  tags: TAGS,
 };
