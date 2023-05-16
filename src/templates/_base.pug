@@ -72,6 +72,23 @@ html.-no-js(lang="ja", prefix="og: http://ogp.me/ns#")
             a.SiteHeader__titleLink(href=!isHome && "/")= SITE_NAME
           p= SITE_DESC
 
+    .Center
+      .Cluster.-justify-end
+        div
+          details.Mode
+            summary カラーモード
+            .Cluster.-justify-end
+              form#Mode
+                label
+                  input(name="mode", type="radio", value="-system")
+                  span OS
+                label
+                  input(name="mode", type="radio", value="-light")
+                  span ライト
+                label
+                  input(name="mode", type="radio", value="-dark")
+                  span ダーク
+
     .Main
       .Center
         .Stack.-large

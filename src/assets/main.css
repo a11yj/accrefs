@@ -15,6 +15,44 @@
   --spacer-large: calc(var(--spacer-base) * var(--ratio) * var(--ratio));
   --spacer-small: calc(var(--spacer-base) / var(--ratio));
   --max-width-content: 40rem;
+  --color-body: hsla(0, 0%, 0%, 0.87);
+  --color-body-bg: hsl(0, 0%, 94%);
+  --color-header-text: hsla(0, 0%, 100%, 0.87);
+  --color-header-active-bg: hsla(0, 0%, 100%, 0.1);
+  --color-header-bg: hsl(200, 19%, 18%);
+  --color-visited: hsl(0, 0%, 31%);
+  --color-active-bg: hsla(0, 0%, 0%, 0.1);
+  --color-main-bg: hsl(0, 0%, 99%);
+  --color-search-bg: hsl(0, 0%, 100%);
+  --color-divider: hsla(0, 0%, 0%, 0.1);
+}
+
+.-dark {
+  --color-body: hsla(0, 0%, 100%, 0.87);
+  --color-body-bg: hsl(204, 20%, 17%);
+  --color-header-text: hsla(0, 0%, 100%, 0.8);
+  --color-header-active-bg: hsla(0, 0%, 100%, 0.1);
+  --color-header-bg: hsl(204, 20%, 5%);
+  --color-visited: hsla(0, 0%, 100%, 0.7);
+  --color-active-bg: hsla(0, 0%, 100%, 0.15);
+  --color-main-bg: hsl(204, 20%, 20%);
+  --color-search-bg: hsla(0, 0%, 100%, 0.8);
+  --color-divider: hsla(0, 0%, 100%, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  .-system {
+    --color-body: hsla(0, 0%, 100%, 0.87);
+    --color-body-bg: hsl(204, 20%, 17%);
+    --color-header-text: hsla(0, 0%, 100%, 0.8);
+    --color-header-active-bg: hsla(0, 0%, 100%, 0.1);
+    --color-header-bg: hsl(204, 20%, 5%);
+    --color-visited: hsla(0, 0%, 100%, 0.7);
+    --color-active-bg: hsla(0, 0%, 100%, 0.15);
+    --color-main-bg: hsl(204, 20%, 20%);
+    --color-search-bg: hsla(0, 0%, 100%, 0.8);
+    --color-divider: hsla(0, 0%, 100%, 0.15);
+  }
 }
 
 html {
@@ -27,8 +65,8 @@ html {
 
 body {
   margin: 0;
-  color: hsla(0, 0%, 0%, 0.87);
-  background-color: hsl(0, 0%, 94%);
+  color: var(--color-body);
+  background-color: var(--color-body-bg);
 }
 
 h1,
@@ -56,11 +94,11 @@ a:any-link {
 }
 
 a:visited {
-  color: hsl(0, 0%, 31%);
+  color: var(--color-visited);
 }
 
 a:any-link:active {
-  background-color: hsla(0, 0%, 0%, 0.1);
+  background-color: var(--color-active-bg);
 }
 
 img,
@@ -111,6 +149,10 @@ video {
   justify-content: flex-start;
 }
 
+.Cluster.-justify-end > * {
+  justify-content: flex-end;
+}
+
 .Center {
   max-width: var(--max-width-content);
   margin-right: auto;
@@ -141,8 +183,8 @@ video {
   padding-top: var(--spacer-base);
   padding-bottom: var(--spacer-base);
   font-size: var(--font-size-small);
-  color: hsla(0, 0%, 100%, 0.87);
-  background-color: hsl(200, 19%, 18%);
+  color: var(--color-header-text);
+  background-color: var(--color-header-bg);
 }
 
 .SiteHeader__title {
@@ -157,13 +199,41 @@ video {
 }
 
 .SiteHeader__titleLink:any-link:active {
-  background-color: hsla(0, 0%, 100%, 0.1);
+  background-color: var(--color-header-active-bg);
+}
+
+.Mode {
+  padding: calc(var(--spacer-base) / 3);
+  font-size: var(--font-size-small);
+}
+
+.-no-js .Mode {
+  display: none;
+}
+
+.Mode summary {
+  text-align: right;
+}
+
+.Mode form {
+  display: flex;
+  padding: calc(var(--spacer-base) / 4);
+  line-height: var(--line-height-small);
+}
+
+.Mode label {
+  display: flex;
+  align-items: baseline;
+}
+
+.Mode span {
+  white-space: nowrap;
 }
 
 .Main {
   padding-top: var(--spacer-large);
   padding-bottom: var(--spacer-large);
-  background-color: hsl(0, 0%, 99%);
+  background-color: var(--color-main-bg);
 }
 
 .WithIcon {
@@ -190,7 +260,7 @@ video {
   background-image: url("/assets/icons.svg#year");
 }
 
-@media (min-width: 60em) {
+@media (min-width: 56em) {
   .WithIcon.-hang {
     margin-left: -2.25em;
   }
@@ -202,7 +272,7 @@ video {
     calc(var(--line-height-small) * 1em);
 }
 
-@media (min-width: 60em) {
+@media (min-width: 56em) {
   .WithIcon.-tighter.-hang {
     margin-left: -2em;
   }
@@ -233,7 +303,10 @@ h2.Heading {
 .Search__input {
   width: 6em;
   height: 1.2rem;
+  border: 1px solid var(--color-header-bg);
+  border-radius: 2px;
   font-size: var(--font-size-base);
+  background-color: var(--color-search-bg);
 }
 
 .Search__button {
@@ -247,7 +320,7 @@ h2.Heading {
 .Divider {
   width: 100%;
   height: 1px;
-  background-color: hsla(0, 0%, 0%, 0.1);
+  background-color: var(--color-divider);
 }
 
 .SiteFooter {
