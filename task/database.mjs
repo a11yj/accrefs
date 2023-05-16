@@ -17,6 +17,8 @@ export const database = (matter) => ({
         !item.data.ignore && item.data.year ? item.data.year : []
       )
     ),
-  ],
+  ]
+    .sort()
+    .reverse(),
   ...CONSTANTS,
 });
