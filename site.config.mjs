@@ -235,6 +235,56 @@ export const TAGS = [
     content:
       "アクセシビリティについて扱いがあったイベントがまとめられているウェブサイトの紹介。",
   },
+  {
+    title: "ショーケース",
+    slug: "showcase",
+    content: "",
+  },
+  {
+    title: "手動テスト",
+    slug: "manual_test",
+    content: "",
+  },
+  {
+    title: "法令・条例",
+    slug: "laws_and_ordinance",
+    content: "",
+  },
+  {
+    title: "ゲーム",
+    slug: "game",
+    content: "",
+  },
+  {
+    title: "書籍",
+    slug: "book",
+    content: "",
+  },
+  {
+    title: "デザインシステム",
+    slug: "design_system",
+    content: "",
+  },
+  {
+    title: "構造化データ",
+    slug: "microdata",
+    content: "",
+  },
+  {
+    title: "方針・試験結果",
+    slug: "policy_and_test_results",
+    content: "",
+  },
+  {
+    title: "チェックリスト",
+    slug: "checklist",
+    content: "",
+  },
+  {
+    title: "企業の活動報告",
+    slug: "report",
+    content: "",
+  },
 ];
 
 export const ASSETS = "src/(assets/**/*|apple-touch-icon.png|favicon.ico)";
