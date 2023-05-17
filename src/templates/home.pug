@@ -19,8 +19,6 @@ block main
         )
           h3.ItemTitle(id=`tags:${tag.slug}-heading`)
             a.WithIcon.-tag.-hang(href=`/tags/${tag.slug}/`)= tag.title
-          if tag.content
-            p= tag.content
 
       p
         a.WithIcon.-reference.-hang(href="/references/") すべての参考資料
