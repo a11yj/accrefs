@@ -27,7 +27,7 @@
     : isNotFound
     ? "404 Not Found"
     : isTag
-    ? tag.content
+    ? `「${tag.title}」タグがついている参考資料の一覧`
     : SITE_DESC
   const canonical = isReferences
     ? `${SITE_ORIGIN}/references/`
