@@ -97,6 +97,19 @@ const validateReferences = (references, tags) => {
       link: "",
       ...reference.data,
     }).forEach(([key, value]) => {
+      if (key === "ignore") {
+        if (!value) {
+          throw new TypeError(
+            `\`${reference.filepath}\`に\`${key}\`を設定する場合、値は\`true\`にしてください。\`false\`にしたい場合は\`${key}\`は取り除いてください。`
+          );
+        }
+        return;
+      }
+
+      if (reference.data.ignore) {
+        return;
+      }
+
       if (key === "title" || key === "link") {
         if (typeof value !== "string") {
           throw new TypeError(
@@ -119,7 +132,7 @@ const validateReferences = (references, tags) => {
         );
         if (duplicatedReferenceIndex !== -1) {
           throw new TypeError(
-            `\`${reference.filepath}\`の\`${key}\`が\`${references[duplicatedReferenceIndex].filepath}と重複しています。`
+            `\`${reference.filepath}\`の\`${key}\`が\`${references[duplicatedReferenceIndex].filepath}\`と重複しています。`
           );
         }
 
@@ -165,15 +178,6 @@ const validateReferences = (references, tags) => {
         if (!/\d{4}/.test(value)) {
           throw new TypeError(
             `\`${reference.filepath}\`の\`${key}\`は4桁にしてください。`
-          );
-        }
-        return;
-      }
-
-      if (key === "ignore") {
-        if (!value) {
-          throw new TypeError(
-            `\`${reference.filepath}\`に\`${key}\`を設定する場合、値は\`true\`にしてください。\`false\`にしたい場合は\`${key}\`は取り除いてください。`
           );
         }
         return;
