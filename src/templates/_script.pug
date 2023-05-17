@@ -5,13 +5,13 @@ script.
     const $Mode = document.querySelector("#Mode");
     const modes = [...$Mode.querySelectorAll(`[name="mode"]`)].map((v) => v.value);
 
-    const  updateMode = (value) => {
+    const updateMode = (value) => {
       localStorage.setItem("prefer-accrefs-mode", value);
       $Html.classList.remove(...modes);
       $Html.classList.add(value);
     };
 
-    const  mountModeChanger = (value) => {
+    const mountModeChanger = (value) => {
       updateMode(value);
 
       $Mode.querySelector(`[value="${value}"]`).setAttribute("checked", "");
