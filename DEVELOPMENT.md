@@ -27,15 +27,17 @@ SSG ライブラリは使用せず、Node.js でファイルを生成してい�
 
 `task/` 配下のファイルは以下の通りです。
 
-| タスクファイル | 役割                                                                                                         |
-| :------------- | :----------------------------------------------------------------------------------------------------------- |
-| assets.mjs     | `src/assets/` 配下のファイルを `dist/assets/` にコピーします。                                               |
-| matters.mjs    | gray-matter を利用して `src/references/` 配下の md ファイルをパースして返します。                            |
-| database.mjs   | matters.mjs の戻り値を受け取って参考資料のメタ情報を整形し、site.config.mjs を混ぜて実質的な DB を返します。 |
-| html.mjs       | database.mjs の戻り値を受け取って HTML を生成します。                                                        |
-| build.mjs      | assets, matters, database, html をシリアルに実行するインデックスファイルです。                               |
-| draft.mjs      | 参考資料の雛形になる md ファイルを生成します。ファイル名は自動採番です。                                     |
-| lint.mjs       | 参考資料やタグのフォーマットが正しいかチェックします。                                                       |
+| タスクファイル | 役割                                                                                                                         |
+| :------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| assets.mjs     | `src/assets/` 配下のファイルを `dist/assets/` にコピーします。                                                               |
+| matters.mjs    | gray-matter を利用して `src/references/` 配下の md ファイルをパースして返します。                                            |
+| database.mjs   | matters.mjs の戻り値を受け取って参考資料のメタ情報を整形し、site.config.mjs を混ぜて実質的な DB を返します。                 |
+| html.mjs       | database.mjs の戻り値を受け取って HTML を生成します。                                                                        |
+| build.mjs      | assets, matters, database, html をシリアルに実行するインデックスファイルです。                                               |
+| draft.mjs      | 参考資料の雛形になる md ファイルを生成します。ファイル名は自動採番です。                                                     |
+| lint.mjs       | 参考資料やタグのフォーマットが正しいかチェックします。                                                                       |
+| csv2md.mjs     | 規定カラムの csv ファイルから md ファイルを自動生成します。大規模作業時に利用する想定で build.mjs には組み込まれていません。 |
+| md2csv.mjs     | `references/**.md` から規定カラムの csv ファイル自動生成します。デバッグ用です。                                             |
 
 1. md ファイルをパースする（matters.mjs）
 2. 整形しつつ必要データと混ぜる（database.mjs）
@@ -53,6 +55,7 @@ HTML は Pug を利用しています：
 | `src/templates/_script.pug`    | head 要素内の script 要素 |
 | `src/templates/home.pug`       | ホーム                    |
 | `src/templates/tag.pug`        | タグ別ページ              |
+| `src/templates/year.pug`       | 年別ページ                |
 | `src/templates/references.pug` | すべての参考資料          |
 | `src/templates/feed.pug`       | RSS                       |
 
@@ -72,16 +75,18 @@ HTML は Pug を利用しています：
 
 ```markdown
 ---
-title: "アクセシビリティとは" # リンク先の名前
+title: "リンク先の名前"
 tags:
-  - "Webアクセシビリティとは？的なもの" # 対応するタグの日本語表記
-link: "https://waic.jp/knowledge/accessibility/" # リンク先URL
+  - "タグ名1"
+  - "タグ名2"
+link: "https://sankousiryou.com/permalink"
+year: 2023
 ---
 
-ウェブアクセシビリティ基盤委員会（通称：WAIC）の放つ、公式感漂う SEO 的に強そうなドキュメント。Web アクセシビリティ確保と JIS の関係性について解説しています。
+リンク先の参考資料についての説明文。
 ```
 
-YAML ブロックには上から「タイトル」「タグ」「リンク先 URL」「公開可否フラグ」を記述し、YAML ブロックに続く本文はそのリンク先についての説明文になります。
+YAML ブロックには上から「タイトル」「タグ」「リンク先 URL」「年情報」を記述し、YAML ブロックに続く本文はそのリンク先についての説明文になります。
 
 本文中ではマークダウン記法・HTML 記法を利用できます。段落・箇条書き・リンク・テーブル・画像などが挿入できます。
 
@@ -98,19 +103,14 @@ YAML ブロックには上から「タイトル」「タグ」「リンク先 UR
   {
     title: "何から手を着けていいのか分からないときは",
     slug: "getting_started",
-    content:
-      "『デザイニングWebアクセシビリティ』が手元にないという方は、今すぐ用意しましょう（？）",
   },
   {
     title: "Webアクセシビリティとは？的なもの",
     slug: "introduction_to_web_accessibility",
-    content: "Webにおけるアクセシビリティを知りましょう。",
   },
   {
     title: "企業がWebアクセシビリティに取り組む価値",
     slug: "company_effort",
-    content:
-      "企業が取り組む意味はどこにあるのか、なぜいま始める必要があるのかといった観点を解説しています。",
   },
   ...
 ]
