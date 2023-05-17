@@ -1,26 +1,18 @@
 export const TAGS = [
   {
-    title: "何から手を着けていいのか分からないときは",
-    slug: "getting_started",
-  },
-  {
-    title: "Webアクセシビリティとは？的なもの",
+    title: "Webアクセシビリティとは",
     slug: "introduction_to_web_accessibility",
   },
   {
-    title: "企業がWebアクセシビリティに取り組む価値",
+    title: "企業がWebアクセシビリティに取り組む理由",
     slug: "company_effort",
   },
   {
-    title: "Web制作者がWebアクセシビリティに取り組む価値",
+    title: "個人がWebアクセシビリティに取り組む理由",
     slug: "personal_effort",
   },
   {
-    title: "企業ごとのやっていきの表明",
-    slug: "company_announcement",
-  },
-  {
-    title: "組織導入に奮闘している事例",
+    title: "組織導入事例",
     slug: "case_study",
   },
   {
@@ -28,7 +20,7 @@ export const TAGS = [
     slug: "overseas_trends",
   },
   {
-    title: "障害当事者の声とか使い方",
+    title: "障害当事者の利用状況や意見",
     slug: "users_voice",
   },
   {
@@ -44,7 +36,7 @@ export const TAGS = [
     slug: "cheet_sheet_of_guidelines",
   },
   {
-    title: "WAICのガイドライン系",
+    title: "WAICガイドラインの解説",
     slug: "waic_guidelines",
   },
   {
@@ -56,7 +48,7 @@ export const TAGS = [
     slug: "requirement_difinition",
   },
   {
-    title: "文字サイズ変更機能・読み上げ機能・配色変更機能・スキップリンク",
+    title: "Webサイト上の支援機能",
     slug: "assistance_by_website",
   },
   {
@@ -64,20 +56,16 @@ export const TAGS = [
     slug: "ia_writting",
   },
   {
-    title: "alt（代替テキスト）",
+    title: "代替テキスト・alt",
     slug: "alt",
   },
   {
     title: "ビジュアルデザイン",
-    slug: "vd",
+    slug: "visual_design",
   },
   {
-    title: "HTML＋CSS＋JS",
-    slug: "html_css_js",
-  },
-  {
-    title: "WAI-ARIA",
-    slug: "wai_aria",
+    title: "フロント実装（HTML、WAI-ARIA、CSS、JS）",
+    slug: "frontend",
   },
   {
     title: "SVG",
@@ -92,7 +80,7 @@ export const TAGS = [
     slug: "pdf",
   },
   {
-    title: "電子書籍（EPUB）",
+    title: "EPUB",
     slug: "epub",
   },
   {
@@ -100,11 +88,11 @@ export const TAGS = [
     slug: "video",
   },
   {
-    title: "AT（支援技術）の使い方などに関するリソース",
+    title: "支援技術（Assistive Technology）",
     slug: "at",
   },
   {
-    title: "AS（アクセシビリティサポーテッド情報）",
+    title: "アクセシビリティサポーテッド",
     slug: "as",
   },
   {
@@ -120,27 +108,15 @@ export const TAGS = [
     slug: "cms",
   },
   {
-    title: "運用プロセス",
-    slug: "operation",
-  },
-  {
     title: "会社・団体の独自ガイドライン",
     slug: "guidelines_in_company",
   },
   {
-    title: "チェックツール（コントラスト）",
-    slug: "color_check_tool",
+    title: "チェックツール",
+    slug: "check_tool",
   },
   {
-    title: "チェックツール（障害のシミュレーション）",
-    slug: "simulation_tool",
-  },
-  {
-    title: "チェックツール（HTML＋CSS）",
-    slug: "code_check_tool",
-  },
-  {
-    title: "チェック自動化（タスクランナー、CI、E2E）",
+    title: "自動化",
     slug: "automation_tool",
   },
   {
@@ -148,16 +124,12 @@ export const TAGS = [
     slug: "q_and_a",
   },
   {
-    title: "公式仕様および和訳",
+    title: "公式仕様",
     slug: "official_specs",
   },
   {
     title: "おもしろ動画・音楽",
     slug: "fun_art",
-  },
-  {
-    title: "アクセシビリティ関連イベントの一覧",
-    slug: "events",
   },
   {
     title: "ショーケース",
