@@ -64,7 +64,7 @@ export const TAGS = [
     slug: "visual_design",
   },
   {
-    title: "フロント実装（HTML、WAI-ARIA、CSS、JS）",
+    title: "フロント実装（HTML・CSS・JS・WAI-ARIA）",
     slug: "frontend",
   },
   {
