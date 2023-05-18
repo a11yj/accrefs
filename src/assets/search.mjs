@@ -8,6 +8,7 @@ export class Search {
       id: ref.id,
       title: ref.querySelector(".-reference").innerText.toLowerCase(),
       link: ref.querySelector(".-reference").href.toLowerCase(),
+      tags: ref.dataset.tags,
       year: ref.dataset.year,
       content: ref.children[2] ? ref.children[1].innerText.toLowerCase() : null,
     }));
@@ -23,9 +24,10 @@ export class Search {
   getMatchedIds = (query) =>
     this.models
       .filter(
-        ({ title, link, year, content }) =>
+        ({ title, link, tags, year, content }) =>
           RegExp(query).test(title) ||
           RegExp(query).test(link) ||
+          RegExp(query).test(tags) ||
           RegExp(query).test(year) ||
           RegExp(query).test(content)
       )
