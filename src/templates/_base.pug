@@ -42,6 +42,8 @@
 doctype html
 html.-no-js(lang="ja", prefix="og: http://ogp.me/ns#")
   head
+    script.
+      document.documentElement.classList.remove("-no-js");
     meta(charset="UTF-8")
     meta(content="viewport-fit=cover, width=device-width", name="viewport")
     title= metaTitle
