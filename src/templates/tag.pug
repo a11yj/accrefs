@@ -17,6 +17,7 @@ block main
             article.Stack.-small(
               id=`references:${reference.id}`,
               aria-labelledby=`references:${reference.id}-heading`,
+              data-tags=`${reference.data.tags.map((title) => `${title}:${tags.find(tag => tag.title === title).slug}`).join(',')}`
               data-year=`${reference.data.year}`
             )
               h3.ItemTitle(id=`references:${reference.id}-heading`)
