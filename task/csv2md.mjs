@@ -4,6 +4,7 @@ await fs.readFile("src/refs.csv", "utf8").then((csv) => {
   // 改行ごとにレコード化する
   return (
     csv
+      .replace(",placeholder", ",")
       .split(",\n")
       // ヘッダー行を除外する
       .filter((_, i) => i)
