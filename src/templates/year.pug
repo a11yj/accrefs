@@ -2,10 +2,18 @@ extends _base
 
 block main
   .Stack.-large
-    div
+    .Stack
       .Stack.-small
-        h1.Heading= ogTitle
-        p #{ year }年に公開、またはその年の出来事に言及している参考資料一覧です。
+        h1.Heading
+          span.WithIcon.-year.-hang.-tighter= ogTitle
+        p #{ year }年に公開、またはその年の出来事に言及している参考資料一覧。
+
+      div
+        search.Search.Cluster.-justify-start
+          form#Search
+            label(for="_input") 絞り込み
+            input#_input.Search__input
+            input.Search__button(type="reset")
 
     section#references(aria-labelledby="references-heading")
       h2#references-heading.Invisible 参考資料
