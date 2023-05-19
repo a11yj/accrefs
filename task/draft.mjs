@@ -7,16 +7,15 @@ const last = (await fg("src/references/*.md"))
   .reduce((a, b) => Math.max(a, b));
 const id = String(last + 1).padStart(5, "0");
 const body = `---
-title: 'タイトル'
+title: "タイトル"
+link: "https://example.com/hoge/fuga"
 tags:
-  - 'タグ1'
-  - 'タグ2'
-  - 'タグ3'
+  - "タグ1"
+  - "タグ2"
 year: 2023
-link: 'https://example.com/hoge/fuga'
 ---
 
-説明文
+資料の解説
 `;
 
 fs.writeFile(`src/references/${id}.md`, body).catch((error) => {
