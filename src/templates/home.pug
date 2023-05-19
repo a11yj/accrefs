@@ -5,20 +5,13 @@ block main
 
   .Stack.-xlarge
     section#tags.Stack.-large(aria-labelledby="tags-heading")
-      .Cluster.-space-between
-        div
-          h2#tags-heading.Heading タグ
+      h2#tags-heading.Heading
+        span.WithIcon.-tag.-hang.-tighter タグ
 
-          p
-            a.WithIcon.-reference(href="/references/") すべての参考資料
-
-      each tag in tags
-        article.Stack.-small(
-          id=`tags:${tag.slug}`,
-          aria-labelledby=`tags:${tag.slug}-heading`
-        )
-          h3.ItemTitle(id=`tags:${tag.slug}-heading`)
-            a.WithIcon.-tag.-hang(href=`/tags/${tag.slug}/`)= tag.title
+      ul.Stack.-small.Tags
+        each tag in tags
+          li(id=`tags:${tag.slug}-heading`)
+            a(href=`/tags/${tag.slug}/`)= tag.title
 
       p
         a.WithIcon.-reference.-hang(href="/references/") すべての参考資料

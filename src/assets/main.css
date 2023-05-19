@@ -252,6 +252,12 @@ video {
   background-color: var(--color-main-bg);
 }
 
+@media (min-width: 56em) {
+  .Tags {
+    padding-left: 0;
+  }
+}
+
 .WithIcon {
   display: inline-block;
   padding-left: 2.25em;
