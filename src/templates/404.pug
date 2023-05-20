@@ -28,4 +28,10 @@ block main
                 li
                   a(href=`/tags/${tag.slug}/`)= tag.title
           li
+            | 年別
+            ul
+              each year in years
+                li
+                  a(href=`/years/${year}/`)= year
+          li
             a(href="/references/") すべての参考資料
