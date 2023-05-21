@@ -1,7 +1,7 @@
-import fs from "fs/promises";
 import fg from "fast-glob";
 import matter from "gray-matter";
-import path from "path";
+import fs from "node:fs/promises";
+import path from "node:path";
 
 const refs = [
   [

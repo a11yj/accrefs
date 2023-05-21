@@ -1,6 +1,6 @@
-import fs from "fs/promises";
 import fg from "fast-glob";
-import path from "path";
+import fs from "node:fs/promises";
+import path from "node:path";
 
 const last = (await fg("src/references/*.md"))
   .map((filepath) => Number(path.parse(filepath).name))

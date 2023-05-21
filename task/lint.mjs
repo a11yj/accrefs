@@ -1,6 +1,6 @@
-import fs from "fs/promises";
 import fg from "fast-glob";
 import matter from "gray-matter";
+import fs from "node:fs/promises";
 import { TAGS } from "../site.config.mjs";
 
 const getDuplicatedTagIndex = (tags, key, value, currentTagIndex) => {

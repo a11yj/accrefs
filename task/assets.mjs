@@ -1,6 +1,6 @@
-import fs from "fs/promises";
+import fs from "node:fs/promises";
 import fg from "fast-glob";
-import path from "path";
+import path from "node:path";
 import { ASSETS } from "../site.config.mjs";
 
 const error = (error) => {

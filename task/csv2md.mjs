@@ -1,4 +1,4 @@
-import fs from "fs/promises";
+import fs from "node:fs/promises";
 
 await fs.readFile("src/refs.csv", "utf8").then((csv) => {
   // 改行ごとにレコード化する
