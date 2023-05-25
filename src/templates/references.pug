@@ -1,0 +1,33 @@
+extends _base
+
+block main
+  .Stack.-large
+    .Cluster.-space-between
+      div
+        h1.Heading= ogTitle
+
+        search.Search.Cluster.-justify-start
+          form#Search
+            label(for="_input") 絞り込み
+            input#_input.Search__input
+            input.Search__button(type="reset")
+
+    each reference in references.slice().reverse()
+      article.Stack.-small(
+        id=`reference:${reference.id}`,
+        aria-labelledby=`reference:${reference.id}-heading`,
+        data-tags=`${reference.data.tags.map((title) => `${title}:${tags.find(tag => tag.title === title).slug}`).join(',')}`,
+        data-year=`${reference.data.year}`
+      )
+        h2.ItemTitle(id=`reference:${reference.id}-heading`)
+          a.WithIcon.-reference.-hang(href=reference.data.link)= reference.data.title
+        != reference.marked
+        footer
+          p
+            span.Invisible タグ：
+            span.WithIcon.-tag
+              each tag, index in reference.data.tags
+                if index
+                  | ,
+                  |
+                a(href=`/tags/${tags.find(t => t.title === tag).slug}/`)= tag

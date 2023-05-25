@@ -1,6 +1,6 @@
 {
   "name": "accrefs",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Web Accessibility References",
   "keywords": [
     "accrefs",
@@ -15,22 +15,28 @@
   "bugs": {
     "url": "https://github.com/oti/accrefs/issues"
   },
-  "engines": {
-    "node": ">=12.7.0"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "fast-glob": "^3.2.12",
-    "gray-matter": "^4.0.3",
-    "js-yaml": "^3.14.1"
-  },
   "scripts": {
     "clean": "rm -rf dist",
-    "prestart": "npm run clean",
-    "start": "eleventy --serve --quiet",
-    "prebuild": "npm run lint && npm run clean",
-    "build": "eleventy",
-    "lint": "node lint-content-format.js",
-    "create-draft": "node create-draft-md.js"
+    "build": "node task/build.mjs",
+    "draft": "node task/draft.mjs",
+    "lint": "node task/lint.mjs",
+    "markuplint": "markuplint 'dist/**/*.html'",
+    "postbuild": "npx prettier --write dist && npm run test",
+    "prebuild": "npm run lint & npm run clean",
+    "prepare": "husky install",
+    "serve": " cd dist && python3 -m http.server 3000",
+    "start": "npm run build && npm run serve",
+    "stylelint": "stylelint 'dist/**/*.css'",
+    "test": "npm run stylelint && npm run markuplint"
+  },
+  "devDependencies": {
+    "@prettier/plugin-pug": "^2.4.2",
+    "fast-glob": "^3.2.12",
+    "gray-matter": "^4.0.3",
+    "husky": "^8.0.3",
+    "marked": "^4.3.0",
+    "markuplint": "^3.8.0",
+    "pug": "^3.0.2",
+    "stylelint": "^15.5.0"
   }
 }

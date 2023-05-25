@@ -1,0 +1,33 @@
+extends _base
+
+block main
+  .Stack.-large
+    .Stack
+      h1.Heading
+        span.WithIcon.-tag.-hang.-tighter= tag.title
+        span.Invisible タグ
+
+      div
+        search.Search.Cluster.-justify-start
+          form#Search
+            label(for="_input") 絞り込み
+            input#_input.Search__input
+            input.Search__button(type="reset")
+
+    section#references(aria-labelledby="references-heading")
+      h2#references-heading.Invisible 参考資料
+
+      if collection.length > 0
+        .Stack.-large
+          each reference in collection.slice().reverse()
+            article.Stack.-small(
+              id=`references:${reference.id}`,
+              aria-labelledby=`references:${reference.id}-heading`,
+              data-tags=`${reference.data.tags.map((title) => `${title}:${tags.find(tag => tag.title === title).slug}`).join(',')}`,
+              data-year=`${reference.data.year}`
+            )
+              h3.ItemTitle(id=`references:${reference.id}-heading`)
+                a.WithIcon.-reference.-hang(href=reference.data.link)= reference.data.title
+              != reference.marked
+      else
+        p 参考資料がまだ登録されていません。
