@@ -19,7 +19,6 @@ accrefs は、参考資料の掲載について誰からの提案でも受け付
 
 リクエスト方法は下記のいずれかから可能です。
 
-- [Google フォーム](https://forms.gle/b4Nu24JNhnc4Z8qM9)：Google フォームでは追加リクエストのみ受け付けています。
 - [リポジトリのイシュー](https://github.com/a11yj/accrefs/issues/new/choose)：追加リクエスト用のテンプレートを用意しています。
 - [A11YJ Slack チーム](https://a11yj.github.io/)：チームに参加後、`#a11y_matome_site`チャンネルで旨を発言してください。
 
