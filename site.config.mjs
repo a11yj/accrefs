@@ -4,16 +4,8 @@ export const TAGS = [
     slug: "introduction_to_web_accessibility",
   },
   {
-    title: "企業がWebアクセシビリティに取り組む理由",
-    slug: "company_effort",
-  },
-  {
-    title: "個人がWebアクセシビリティに取り組む理由",
-    slug: "personal_effort",
-  },
-  {
-    title: "組織導入事例",
-    slug: "case_study",
+    title: "取り組む理由",
+    slug: "effort",
   },
   {
     title: "海外の動き",
@@ -168,7 +160,7 @@ export const TAGS = [
     slug: "checklist",
   },
   {
-    title: "企業の活動報告",
+    title: "活動報告",
     slug: "report",
   },
 ];
