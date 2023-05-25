@@ -16,7 +16,8 @@ npm start
 このウェブサイトには次の種類のページが存在します：
 
 - ホーム（`/`）
-- タグ詳細（`/tags/:slug/`）
+- タグ別一覧（`/tags/:slug/`）
+- 年別一覧（`/years/:year/`）
 - 参考資料一覧（`/references/`）
 
 参考資料詳細は存在しません。
@@ -101,16 +102,12 @@ YAML ブロックには上から「タイトル」「タグ」「リンク先 UR
 ```javascript
 [
   {
-    title: "何から手を着けていいのか分からないときは",
-    slug: "getting_started",
-  },
-  {
-    title: "Webアクセシビリティとは？的なもの",
+    title: "Webアクセシビリティとは",
     slug: "introduction_to_web_accessibility",
   },
   {
-    title: "企業がWebアクセシビリティに取り組む価値",
-    slug: "company_effort",
+    title: "取り組む理由",
+    slug: "effort",
   },
   ...
 ]
