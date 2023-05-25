@@ -88,8 +88,8 @@ export const TAGS = [
     slug: "as",
   },
   {
-    title: "失敗事例集",
-    slug: "mistake",
+    title: "失敗事例・改善事例",
+    slug: "case_study",
   },
   {
     title: "ネイティブアプリ",
@@ -106,10 +106,6 @@ export const TAGS = [
   {
     title: "チェックツール",
     slug: "check_tool",
-  },
-  {
-    title: "自動化",
-    slug: "automation_tool",
   },
   {
     title: "Q&A",
