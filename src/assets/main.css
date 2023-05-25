@@ -54,19 +54,19 @@
     --color-divider: hsla(0, 0%, 100%, 0.15);
   }
 
-  .WithIcon.-reference {
+  .-system .WithIcon.-reference {
     background-image: url("/assets/icons.svg#reference_dark");
   }
 
-  .WithIcon.-tag {
+  .-system .WithIcon.-tag {
     background-image: url("/assets/icons.svg#tag_dark");
   }
 
-  .WithIcon.-back {
+  .-system .WithIcon.-back {
     background-image: url("/assets/icons.svg#back_dark");
   }
 
-  .WithIcon.-year {
+  .-system .WithIcon.-year {
     background-image: url("/assets/icons.svg#year_dark");
   }
 }
