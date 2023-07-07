@@ -37,6 +37,6 @@
     "marked": "^4.3.0",
     "markuplint": "^3.8.0",
     "pug": "^3.0.2",
-    "stylelint": "^15.5.0"
+    "stylelint": "^15.10.1"
   }
 }
