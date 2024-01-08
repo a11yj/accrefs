@@ -17,10 +17,7 @@ accrefs は、参考資料の掲載について誰からの提案でも受け付
 - あなた自身が書いたブログや登壇資料の掲載も大歓迎！
 - タグや項目の削除の際は理由を添えてください。
 
-リクエスト方法は下記のいずれかから可能です。
-
-- [リポジトリのイシュー](https://github.com/a11yj/accrefs/issues/new/choose)：追加リクエスト用のテンプレートを用意しています。
-- [A11YJ Slack チーム](https://a11yj.github.io/)：チームに参加後、`#a11y_matome_site`チャンネルで旨を発言してください。
+[リポジトリのイシュー](https://github.com/a11yj/accrefs/issues/new/choose)から専用のテンプレートで行えます。
 
 遠慮なくリクエストしてください！
 
