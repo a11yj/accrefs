@@ -37,7 +37,7 @@ Patches Welcome!
 
 ## ライセンス
 
-[accrefs](https://accrefs.jp/) by [A11YJ Slack Team](https://a11yj.slack.com) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.ja).
+[accrefs](https://accrefs.jp/) by A11YJ Slack Team(suspended) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.ja).
 
 無断引用大歓迎！　発見次第即乾杯！！
 
