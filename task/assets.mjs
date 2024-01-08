@@ -20,6 +20,6 @@ export const assets = async () =>
           async () =>
             await fs
               .copyFile(filepath, filepath.replace("src", "dist"))
-              .catch(error)
-        )
+              .catch(error),
+        ),
   );

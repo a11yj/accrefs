@@ -14,7 +14,7 @@ export const html = async (database) => {
   await Promise.all([
     await makeDir("dist/references"),
     ...database.tags.map(
-      async ({ slug }) => await makeDir(`dist/tags/${slug}`)
+      async ({ slug }) => await makeDir(`dist/tags/${slug}`),
     ),
     ...database.years.map(async (year) => await makeDir(`dist/years/${year}`)),
   ]);
@@ -31,7 +31,7 @@ export const html = async (database) => {
         pugCompiler({
           type: "home",
           ...database,
-        })
+        }),
       )
       .catch(error);
   };
@@ -42,7 +42,7 @@ export const html = async (database) => {
       `extends ../../src/templates/references`,
       {
         filename,
-      }
+      },
     );
     return await fs
       .writeFile(
@@ -50,7 +50,7 @@ export const html = async (database) => {
         pugCompiler({
           type: "references",
           ...database,
-        })
+        }),
       )
       .catch(error);
   };
@@ -59,14 +59,14 @@ export const html = async (database) => {
     return database.tags.map(async (tag) => {
       // タグにマッチするリンクだけ抽出する
       const collection = database.references.filter((ref) =>
-        ref.data.tags.includes(tag.title)
+        ref.data.tags.includes(tag.title),
       );
       const filename = `dist/tags/${tag.slug}/index`;
       const pugCompiler = await pug.compile(
         `extends ../../../src/templates/tag`,
         {
           filename,
-        }
+        },
       );
       return await fs
         .writeFile(
@@ -76,7 +76,7 @@ export const html = async (database) => {
             tag,
             collection,
             ...database,
-          })
+          }),
         )
         .catch(error);
     });
@@ -86,14 +86,14 @@ export const html = async (database) => {
     return database.years.map(async (year) => {
       // year にマッチするリンクだけ抽出する
       const collection = database.references.filter(
-        (ref) => ref.data.year === year
+        (ref) => ref.data.year === year,
       );
       const filename = `dist/years/${year}/index`;
       const pugCompiler = await pug.compile(
         `extends ../../../src/templates/year`,
         {
           filename,
-        }
+        },
       );
       return await fs
         .writeFile(
@@ -103,7 +103,7 @@ export const html = async (database) => {
             year,
             collection,
             ...database,
-          })
+          }),
         )
         .catch(error);
     });
@@ -120,7 +120,7 @@ export const html = async (database) => {
         `${filename}.xml`,
         pugCompiler({
           ...database,
-        })
+        }),
       )
       .catch(error);
   };
@@ -136,7 +136,7 @@ export const html = async (database) => {
         pugCompiler({
           type: "404",
           ...database,
-        })
+        }),
       )
       .catch(error);
   };

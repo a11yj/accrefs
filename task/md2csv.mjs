@@ -18,12 +18,10 @@ const refs = [
   ].join(","),
   ...(
     await Promise.all(
-      (
-        await fg("src/references/*.md")
-      ).map(async (filepath) => ({
+      (await fg("src/references/*.md")).map(async (filepath) => ({
         id: path.parse(filepath).name,
         ...matter(await fs.readFile(filepath, "utf8")),
-      }))
+      })),
     )
   ).map(({ id, content, data: { ignore, title, tags, link } }) =>
     [
@@ -35,7 +33,7 @@ const refs = [
       year,
       `"${content.trim()}"`,
       "\n",
-    ].join(",")
+    ].join(","),
   ),
 ];
 

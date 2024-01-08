@@ -8,5 +8,5 @@ export const matters = async (glob) =>
     (await fg(glob)).map(async (filepath) => ({
       id: path.parse(filepath).name,
       ...matter(await fs.readFile(filepath, "utf8")),
-    }))
+    })),
   );

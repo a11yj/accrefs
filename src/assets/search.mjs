@@ -16,7 +16,7 @@ export class Search {
     this.$Search.addEventListener(
       "input",
       (e) => this.handleInput(e.target.value),
-      false
+      false,
     );
     this.$Search.addEventListener("reset", () => this.handleReset(), false);
   }
@@ -29,7 +29,7 @@ export class Search {
           RegExp(query).test(link) ||
           RegExp(query).test(tags) ||
           RegExp(query).test(year) ||
-          RegExp(query).test(content)
+          RegExp(query).test(content),
       )
       .map(({ id }) => id);
 
@@ -38,7 +38,7 @@ export class Search {
     this.refs.forEach((ref) =>
       ids.includes(ref.id)
         ? ref.removeAttribute("hidden")
-        : ref.setAttribute("hidden", "")
+        : ref.setAttribute("hidden", ""),
     );
   };
 

@@ -18,7 +18,7 @@ await fs.readFile("src/refs.csv", "utf8").then((csv) => {
         const link = `"${data[3]}"`;
         // カラムの4,5,6はタギング決め打ち
         const tags = [data[4], data[5], data[6]].flatMap((v) =>
-          v !== "" ? `"${v}"` : []
+          v !== "" ? `"${v}"` : [],
         );
         const year = data[7];
         const desc = data[8].replace(/"([^"]*)"/g, "$1");
@@ -46,6 +46,6 @@ await fs.readFile("src/refs.csv", "utf8").then((csv) => {
           console.error(error);
           throw error;
         });
-      })
+      }),
   );
 });

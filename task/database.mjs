@@ -9,13 +9,13 @@ export const database = (matter) => ({
           id,
           marked: marked.parse(content),
         }
-      : []
+      : [],
   ),
   years: [
     ...new Set(
       matter.flatMap((item) =>
-        !item.data.ignore && item.data.year ? item.data.year : []
-      )
+        !item.data.ignore && item.data.year ? item.data.year : [],
+      ),
     ),
   ]
     .sort()

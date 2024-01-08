@@ -4,7 +4,7 @@ export class Switcher {
       this.$Html = document.documentElement;
       this.$Mode = document.querySelector("#Mode");
       this.modes = [...this.$Mode.querySelectorAll(`[name="mode"]`)].map(
-        (v) => v.value
+        (v) => v.value,
       );
       this.preferd = localStorage.getItem("prefer-accrefs-mode");
       this.value = this.modes.includes(this.preferd)
@@ -18,7 +18,7 @@ export class Switcher {
       this.$Mode.addEventListener(
         "change",
         (e) => this.update(e.target.value),
-        false
+        false,
       );
     } catch (e) {
       console.error(e);
