@@ -30,13 +30,13 @@
     "test": "npm run stylelint && npm run markuplint"
   },
   "devDependencies": {
-    "@prettier/plugin-pug": "^3.0.0",
-    "fast-glob": "^3.3.2",
+    "@prettier/plugin-pug": "^3.2.1",
+    "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
-    "husky": "^8.0.3",
-    "marked": "^11.1.1",
-    "markuplint": "^3.15.0",
-    "pug": "^3.0.2",
-    "stylelint": "^16.1.0"
+    "husky": "^9.1.7",
+    "marked": "^15.0.7",
+    "markuplint": "^4.11.7",
+    "pug": "^3.0.3",
+    "stylelint": "^16.15.0"
   }
 }
