@@ -1,5 +1,4 @@
 import fs from "node:fs/promises";
-import fg from "fast-glob";
 import path from "node:path";
 import { ASSETS } from "../src/config.mjs";
 
@@ -9,7 +8,7 @@ const error = (error) => {
 };
 
 export const assets = async () =>
-  (await fg(ASSETS)).map(
+  (await Array.fromAsync(await fs.glob(ASSETS))).map(
     async (filepath) =>
       await fs
         .mkdir(path.parse(filepath).dir.replace("src", "dist"), {

@@ -1,8 +1,7 @@
-import fg from "fast-glob";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const last = (await fg("src/references/*.md"))
+const last = (await Array.fromAsync(await fs.glob("src/references/*.md")))
   .map((filepath) => Number(path.parse(filepath).name))
   .reduce((a, b) => Math.max(a, b));
 const id = String(last + 1).padStart(5, "0");

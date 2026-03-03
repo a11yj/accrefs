@@ -1,6 +1,5 @@
-import fg from "fast-glob";
-import matter from "gray-matter";
 import fs from "node:fs/promises";
+import matter from "gray-matter";
 import { TAGS } from "../src/config.mjs";
 
 const getDuplicatedTagIndex = (tags, key, value, currentTagIndex) => {
@@ -66,13 +65,15 @@ const validateTags = (tags) => {
 
 const readReferences = async () => {
   return Promise.all(
-    (await fg("src/references/*.md")).map(async (filepath) => {
-      const content = await fs.readFile(filepath, "utf8");
-      return {
-        ...matter(content),
-        filepath,
-      };
-    }),
+    (await Array.fromAsync(await fs.glob("src/references/*.md"))).map(
+      async (filepath) => {
+        const content = await fs.readFile(filepath, "utf8");
+        return {
+          ...matter(content),
+          filepath,
+        };
+      },
+    ),
   );
 };
 
