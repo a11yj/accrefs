@@ -20,23 +20,19 @@
     "build": "node task/build.mjs",
     "draft": "node task/draft.mjs",
     "lint": "node task/lint.mjs",
-    "markuplint": "markuplint 'dist/**/*.html'",
-    "postbuild": "npx prettier --write dist && npm run test",
+    "markuplint": "npx markuplint 'dist/**/*.html'",
+    "postbuild": "npx prettier --write dist && npm test",
     "prebuild": "npm run lint & npm run clean",
     "prepare": "husky install",
     "serve": " cd dist && python3 -m http.server 3000",
     "start": "npm run build && npm run serve",
-    "stylelint": "stylelint 'dist/**/*.css'",
+    "stylelint": "npx stylelint 'dist/**/*.css'",
     "test": "npm run stylelint && npm run markuplint"
   },
   "devDependencies": {
-    "@prettier/plugin-pug": "^3.2.1",
-    "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
     "husky": "^9.1.7",
-    "marked": "^15.0.7",
-    "markuplint": "^4.11.7",
-    "pug": "^3.0.3",
-    "stylelint": "^16.15.0"
+    "marked": "^17.0.3",
+    "pug": "^3.0.3"
   }
 }
