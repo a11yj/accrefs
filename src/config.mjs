@@ -161,7 +161,11 @@ export const TAGS = [
   },
 ];
 
-export const ASSETS = "src/(assets/**/*|apple-touch-icon.png|favicon.ico)";
+export const ASSETS = [
+  "src/assets/**/*",
+  "apple-touch-icon.png",
+  "favicon.ico",
+];
 
 export const CONSTANTS = {
   SITE_DESC: "Webアクセシビリティの参考資料まとめ",
