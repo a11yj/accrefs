@@ -1,5 +1,5 @@
 import { marked } from "marked";
-import { CONSTANTS } from "../site.config.mjs";
+import { CONSTANTS } from "../src/config.mjs";
 
 export const database = (matter) => ({
   references: matter.flatMap(({ content, data, id }) =>

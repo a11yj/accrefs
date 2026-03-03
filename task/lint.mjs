@@ -1,7 +1,7 @@
 import fg from "fast-glob";
 import matter from "gray-matter";
 import fs from "node:fs/promises";
-import { TAGS } from "../site.config.mjs";
+import { TAGS } from "../src/config.mjs";
 
 const getDuplicatedTagIndex = (tags, key, value, currentTagIndex) => {
   return tags.findIndex(

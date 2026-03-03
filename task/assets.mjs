@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import fg from "fast-glob";
 import path from "node:path";
-import { ASSETS } from "../site.config.mjs";
+import { ASSETS } from "../src/config.mjs";
 
 const error = (error) => {
   console.error(error);
