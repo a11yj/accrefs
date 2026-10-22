@@ -57,9 +57,7 @@
               "property": {
                 "pattern": "/^og:.+/"
               },
-              "content": {
-                "type": "NoEmptyAny"
-              }
+              "content": "NoEmptyAny"
             }
           }
         },
